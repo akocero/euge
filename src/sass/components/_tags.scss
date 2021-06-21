@@ -1,0 +1,70 @@
+.tag {
+	padding: 0.4rem 2rem 0.6rem 2rem;
+	background-color: $dark-grey;
+	border-radius: 4px;
+	margin-right: 1rem;
+	display: inline-block;
+	margin-top: 1rem;
+	font-weight: 500;
+	font-size: 2rem;
+	color: $dark-grey-3;
+	// box-shadow: 4px 4px 2px rgb(26, 26, 26);
+
+	&--javascript {
+		background-color: #f0db4f;
+		color: black;
+	}
+
+	&--php {
+		background-color: #8892bf;
+		color: #222530;
+	}
+
+	&--laravel {
+		background-color: #ff2d20;
+		color: white;
+	}
+
+	&--react {
+		background-color: #61dafb;
+		color: #20232a;
+	}
+
+	&--vue {
+		background-color: #41b883;
+		color: #20232a;
+	}
+
+	&--bootstrap {
+		background-color: #7952b3;
+		color: #f7f2fb;
+	}
+
+	&--sass {
+		background-color: #cf649a;
+		color: #f8f9fa;
+	}
+
+	&--firebase {
+		background-color: #ffca2a;
+		color: #252525;
+	}
+
+	&--mysql {
+		background-color: #268aa0;
+		color: #252525;
+	}
+
+	&--sm {
+		padding: 0.3rem 1rem 0.5rem 1rem;
+		font-weight: 600;
+		font-size: 1.6rem;
+		display: inline-block;
+		// box-shadow: 4px 4px 2px rgb(17, 17, 17);
+	}
+
+	&--nextjs {
+		background-color: #fff;
+		color: #191819;
+	}
+}

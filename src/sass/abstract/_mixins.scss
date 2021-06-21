@@ -1,0 +1,71 @@
+@mixin textTransform {
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+@mixin boxShadow {
+	box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+}
+
+@mixin popupShadow {
+	box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+}
+
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY Mixins
+/*
+0-600px: phone
+600-900px: tablet portrait
+900-1200px: tablet landscape
+1200-1800px: Normal styles
+1800px +: Big desktop
+*/
+
+/*
+$breakpoint argument choices:
+- phone:
+- tab-port
+- tabl-land
+- big desktop
+ORDER: Base + typography > general layout > Components
+*/
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media only screen and (max-width: 37.5em) {
+			@content;
+		} //600px
+	}
+
+	@if $breakpoint == tab-port {
+		@media only screen and (max-width: 56.25em) {
+			@content;
+		} //900px
+	}
+
+	@if $breakpoint == tab-land {
+		@media only screen and (max-width: 75em) {
+			@content;
+		} //1200px
+	}
+
+	@if $breakpoint == big-desktop {
+		@media only screen and (min-width: 112.5em) {
+			@content;
+		} //1800px
+	}
+}
