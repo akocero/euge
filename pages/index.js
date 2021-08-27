@@ -1,20 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  return (
-    <section className="main">
-        <div className="main__content">
-            <h4 className="text-xl">Hello, my name is Eugene Paul Badato</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nostrum non tenetur sunt dolores amet voluptate quisquam facilis quos autem nesciunt quia aliquid quod eius, adipisci dolorum distinctio veritatis fugiat.</p>
-            <button className="pushable mt-5">
-                <span className="front">
-                    Contact
-                </span>
-            </button>
-        </div>
-        
-    </section>
-  )
+	return (
+		<div>
+			<section className="main">
+				<div className="main__content">
+					<h4 className="">Hello, It's Eugene from Philippinnes</h4>
+					<p>I make things happen!</p>
+					<button className="btn mt-6">Projects</button>
+				</div>
+			</section>
+			<section className="main">
+				<div className="main__content">
+					{/* <h4 className="">Hello, It's Eugene from Philippinnes</h4> */}
+					<p>What am i doing now?</p>
+					<button className="btn mt-6">Projects</button>
+				</div>
+			</section>
+		</div>
+	);
 }

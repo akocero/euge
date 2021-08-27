@@ -1,0 +1,114 @@
+// .btn {
+// 	padding: 1rem 3rem;
+// 	border: none;
+// 	font-size: 1.8rem;
+// 	border-radius: 4px;
+// 	margin-top: 5rem;
+// 	cursor: pointer;
+// 	// border-bottom: 4px solid #292929;
+// 	// box-shadow: 5px 5px 2px #212121;
+// 	text-transform: uppercase;
+// 	// transition: all 0.3s linear;
+// 	&--primary {
+// 		background-color: #f05454;
+// 		color: white;
+
+// 		&:hover {
+// 			background-color: darken(#f05454, 3);
+// 		}
+// 	}
+// }
+
+// .pushable {
+// 	background: #00796b;
+// 	border: none;
+// 	border-radius: 4px;
+// 	padding: 0;
+// 	cursor: pointer;
+// 	outline-offset: 0;
+// 	box-shadow: 0 5px 2px #1d1d1d;
+// }
+// .front {
+// 	font-family: inherit;
+// 	display: flex;
+// 	// justify-content: space-evenly;
+// 	align-items: center;
+// 	padding: 1rem 2rem;
+// 	border-radius: 4px;
+// 	font-size: 1.2rem;
+// 	font-weight: 700;
+// 	letter-spacing: 1.5px;
+// 	text-transform: uppercase;
+// 	background: #009688;
+// 	color: white;
+// 	transform: translateY(-4px);
+// }
+
+// .front-icon {
+// 	font-family: inherit;
+// 	display: flex;
+// 	// justify-content: space-evenly;
+// 	align-items: center;
+// 	padding: 1rem;
+// 	border-radius: 4px;
+// 	font-size: 1.2rem;
+// 	font-weight: 700;
+// 	letter-spacing: 1.5px;
+// 	text-transform: uppercase;
+// 	background: #009688;
+// 	color: white;
+// 	transform: translateY(-4px);
+// }
+
+// .bg-fb {
+// 	background: darken(#0b83ed, 15%);
+
+// 	span {
+// 		background: #0b83ed;
+// 	}
+// }
+
+// .bg-twitter {
+// 	background: darken(#1da1f2, 15%);
+
+// 	span {
+// 		background: #1da1f2;
+// 	}
+// }
+
+// .bg-linkedin {
+// 	background: darken(#0a66c2, 15%);
+
+// 	span {
+// 		background: #0a66c2;
+// 	}
+// }
+
+// .pushable:active .front,
+// .pushable:active .front-icon {
+// 	transform: translateY(-2px);
+// }
+
+// .flex {
+// 	display: flex;
+// }
+
+// .ml-auto {
+// 	margin-left: auto;
+// }
+
+.btn {
+	// font-family: Arial, Helvetica, sans-serif !important;
+	padding: 14px 26px;
+	border-radius: 32px;
+	background-color: #2260f3;
+	letter-spacing: 1.2px;
+	font-family: "Nunito";
+	color: #fff;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+}
