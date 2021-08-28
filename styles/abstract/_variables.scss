@@ -16,3 +16,14 @@ $default-border-radius: 3px;
 // FONT SIZES
 
 $default-font-size: 1.6rem;
+
+// Future Variables
+:root {
+	--bg: 0, 0%, 10%;
+	--shade: 0, 0%, 16%;
+	--text-color: 0, 0%, 98%;
+	// --text-color: 26, 83%, 48%; // i like this use it // orange
+	--primary: 26, 83%, 48%;
+	--secondary: blue;
+	--accent: red;
+}
