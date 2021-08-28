@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 body {
-	color: $light-grey-1;
 	font-family: "Nunito";
 	font-weight: 400;
 	// font-smooth: auto;
@@ -12,8 +11,38 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "Poppins";
+}
 
 .text-xl {
-	font-size: 4rem;
-	// letter-spacing: 2px;
+	font-family: "Poppins";
+	font-weight: 700;
+	font-size: 7.8rem;
+	line-height: 9.4rem;
+}
+
+.h1 {
+	font-size: 1.8rem;
+	font-weight: 300;
+}
+
+.h2 {
+	font-size: 3.8rem;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.h3 {
+	font-size: 2.6rem;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.p {
+	letter-spacing: 1px;
 }
