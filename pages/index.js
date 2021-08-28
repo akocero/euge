@@ -76,6 +76,57 @@ export default function Home() {
 					</article>
 				</div>
 			</section>
+			<div className="projects mt-4">
+				<div className="card">
+					<img
+						src="./images/projects/pelikula/pelikula.webp"
+						alt=""
+					/>
+
+					<div className="card__info">
+						<label className="card__header">
+							<strong>Pelikula</strong> - Movie Web Application
+						</label>
+						<div className="card__tags">
+							<span className="tag tag--firebase tag--sm">
+								#firebase
+							</span>
+							<span className="tag tag--react tag--sm">
+								#react
+							</span>
+							<span className="tag tag--javascript tag--sm">
+								#javascript
+							</span>
+							<span className="tag tag--sass tag--sm">#sass</span>
+						</div>
+					</div>
+				</div>
+
+				<div className="card">
+					<img
+						src="./images/projects/brgy-system/brgy-system.png"
+						alt=""
+					/>
+
+					<div className="card__info">
+						<label className="card__header">
+							<strong>Pelikula</strong> - Movie Web Application
+						</label>
+						<div className="card__tags">
+							<span className="tag tag--firebase tag--sm">
+								#firebase
+							</span>
+							<span className="tag tag--react tag--sm">
+								#react
+							</span>
+							<span className="tag tag--javascript tag--sm">
+								#javascript
+							</span>
+							<span className="tag tag--sass tag--sm">#sass</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 	);
 }
