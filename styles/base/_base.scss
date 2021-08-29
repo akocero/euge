@@ -59,6 +59,7 @@ section {
 main {
 	max-width: 1280px;
 	margin: 0 auto;
+	padding-bottom: 10rem;
 }
 
 .intro {
@@ -68,13 +69,13 @@ main {
 	min-height: calc(100vh - 10rem);
 
 	&__img {
-		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		transform: translateY(6%);
 		// background-color: orangered;
 		img {
-			position: absolute;
-			right: 2rem;
-			bottom: 20%;
-			width: 70%;
+			width: 45%;
 		}
 	}
 	&__content {
@@ -93,10 +94,38 @@ main {
 
 .article {
 	margin-bottom: 4rem;
+	position: relative;
+
+	&__img {
+		// text-align: center;
+	}
+	img.land {
+		border-radius: 8px;
+		width: 90%;
+		transform: rotateZ(1.5deg);
+		box-shadow: hsla(0, 0%, 0%, 0.479) 0px 7px 29px 3px;
+	}
+
+	img.port {
+		width: 30%;
+		transform: rotateZ(-1.5deg);
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	&__actions {
+		margin-top: auto;
+	}
 }
 
 .heading {
-	margin-bottom: 3rem;
+	margin-bottom: 6rem;
 }
 
 .intro {
@@ -105,5 +134,21 @@ main {
 .projects {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1.8rem;
+	grid-gap: 2.8rem;
+}
+
+.expi {
+	&__list {
+		margin-top: 4rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 3rem 5rem;
+	}
+
+	&__item {
+		svg {
+			height: 3.8rem;
+			width: 3.8rem;
+		}
+	}
 }
