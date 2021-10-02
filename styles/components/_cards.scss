@@ -1,0 +1,30 @@
+.card {
+	background-color: #1d1d1d;
+	padding: 1.6rem 2rem;
+	border-radius: $border-rad;
+	position: relative;
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		& > * {
+			margin-left: 1rem;
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 2px solid #222222;
+		height: 102%;
+		width: 102%;
+		// border-radius: 4rem;
+		color: white;
+		transform: rotateZ(-1.5deg);
+		border-radius: $border-rad;
+	}
+}

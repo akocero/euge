@@ -4,8 +4,9 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
-
+@import "./abstract/variables";
 @import "./components/buttons";
+@import "./components/cards";
 *,
 *::after,
 *::before {
@@ -23,4 +24,11 @@ body {
 	background-color: #171717;
 	color: rgb(248, 248, 248);
 	font-family: "Nunito";
+}
+
+.d-grid {
+	display: grid;
+	// grid-auto-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
 }

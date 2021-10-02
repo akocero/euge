@@ -1,6 +1,3 @@
-$accent: #00e472;
-$dark-2: #262626;
-$dark-3: #383838;
 .d-flex {
 	display: flex;
 	// justify-content: center;
@@ -43,8 +40,8 @@ $dark-3: #383838;
 	top: -2%;
 	left: -2%;
 	border: 1px solid $accent;
-	height: 102%;
-	width: 102%;
+	height: 105%;
+	width: 105%;
 	border-radius: 4rem;
 	color: white;
 	transform: rotateZ(-3.5deg);
