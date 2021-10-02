@@ -7,7 +7,7 @@ import {
 	FiTwitter,
 	FiGitlab,
 	FiCode,
-	FiLink,
+	FiExternalLink,
 	FiPlus,
 } from "react-icons/fi";
 
@@ -38,7 +38,7 @@ export default function Home() {
 							<FiGithub />
 						</button>
 						<button className="btn btn__link">
-							<FiGitlab />
+							<FiExternalLink />
 						</button>
 					</div>
 					<div className="card__content">
@@ -64,7 +64,7 @@ export default function Home() {
 							<FiGithub />
 						</button>
 						<button className="btn btn__link">
-							<FiGitlab />
+							<FiExternalLink />
 						</button>
 					</div>
 					<div className="card__content">
@@ -90,7 +90,7 @@ export default function Home() {
 							<FiGithub />
 						</button>
 						<button className="btn btn__link">
-							<FiGitlab />
+							<FiExternalLink />
 						</button>
 					</div>
 					<div className="card__content">

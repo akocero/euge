@@ -8,10 +8,21 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		margin-bottom: 2rem;
 
 		& > * {
 			margin-left: 1rem;
 		}
+	}
+	&__subtitle {
+		color: $accent;
+	}
+	&__title {
+		font-weight: 900;
+		letter-spacing: 1.2px;
+	}
+	&__body {
+		margin: 2rem 0;
 	}
 
 	&::after {
@@ -19,7 +30,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		border: 2px solid #222222;
+		border: 2px solid $dark-3;
 		height: 102%;
 		width: 102%;
 		// border-radius: 4rem;
