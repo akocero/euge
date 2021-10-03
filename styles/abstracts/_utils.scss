@@ -4,3 +4,14 @@
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 2rem;
 }
+
+.wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.d-flex {
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+}
