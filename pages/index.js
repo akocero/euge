@@ -14,8 +14,8 @@ export default function Home() {
 	return (
 		<div className="wrapper">
 			<section className="intro">
-				<p>Hello, It’s Me Eugene.</p>
-				<h1>Let my portfolio describe me.</h1>
+				<p className="intro__body">Hello, It’s Me Eugene.</p>
+				<h1 className="intro__title">Let my portfolio describe me.</h1>
 
 				<div className="intro__actions d-flex">
 					<button className="btn btn__primary">project</button>

@@ -8,3 +8,17 @@
 
 @import "./components/buttons";
 @import "./components/cards";
+
+.intro {
+	&__title {
+		font-size: 7.2rem;
+		font-weight: 900;
+		line-height: 120%;
+		max-width: 70%;
+	}
+
+	&__body {
+		font-size: 2.4rem;
+		// font-weight: 900;
+	}
+}
