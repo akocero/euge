@@ -1,0 +1,41 @@
+.card {
+	background-color: #1d1d1d;
+	padding: 1.6rem 2rem;
+	border-radius: $border-rad;
+	position: relative;
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: 2rem;
+
+		& > * {
+			margin-left: 1rem;
+		}
+	}
+	&__subtitle {
+		color: $accent;
+	}
+	&__title {
+		font-weight: 900;
+		letter-spacing: 1.2px;
+	}
+	&__body {
+		margin: 2rem 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 2px solid $dark-3;
+		height: 102%;
+		width: 102%;
+		// border-radius: 4rem;
+		color: white;
+		transform: rotateZ(-1.5deg);
+		border-radius: $border-rad;
+	}
+}
