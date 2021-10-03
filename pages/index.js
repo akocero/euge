@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import {
 	FiGithub,
 	FiLinkedin,
@@ -13,7 +12,7 @@ import {
 
 export default function Home() {
 	return (
-		<div>
+		<div className="wrapper">
 			<div className="d-flex">
 				<button className="btn btn__primary">Project</button>
 				<div className="d-flex">

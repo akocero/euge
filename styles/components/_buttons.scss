@@ -11,6 +11,7 @@
 	text-transform: lowercase;
 	cursor: pointer;
 	font-size: 1.6rem;
+	z-index: 1;
 
 	&__primary {
 		background-color: $accent;
@@ -57,5 +58,6 @@
 	width: 104%;
 	border-radius: 4rem;
 	color: white;
+	z-index: -1;
 	// transform: rotateZ(-3.5deg);
 }
