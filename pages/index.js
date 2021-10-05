@@ -14,13 +14,17 @@ export default function Home() {
 	return (
 		<div className="wrapper">
 			<section className="intro">
+				<div className="triangle">&nbsp;</div>
+				<div className="triangle2">&nbsp;</div>
 				<p className="intro__body">Hello, It’s Me Eugene.</p>
-				<h1 className="intro__title">Let my portfolio describe me.</h1>
+				<h1 className="intro__title">
+					Let my <span>portfolio</span> describe me.
+				</h1>
 
-				<div className="intro__actions d-flex">
+				<div className="intro__actions">
 					<button className="btn btn__primary">project</button>
 
-					<div classNam="intro__links ">
+					<div className="intro__links ">
 						<button className="btn btn__link">
 							<FiGithub />
 						</button>
@@ -39,54 +43,74 @@ export default function Home() {
 
 			<section className="featured">
 				<div className="section__heading">
-					<h2>feature project</h2>
+					<h2>featured project</h2>
 					<label htmlFor="">what i'm doing?</label>
 				</div>
 
 				<article className="featured__item">
-					<div>
-						<div className="featured__img-container">
-							<img src="" alt="" />
+					<div className="featured__img-container">
+						<img src="./images/pelikula.png" alt="" />
+					</div>
+					<div className="featured__content">
+						<h3 className="featured__title">PelikulaPH</h3>
+						<label className="featured__subtitle">
+							IMDB + Mobilarian Alternative
+						</label>
+						<p className="featured__body">
+							Lorem Ipsum is simply dummy text of the printing and
+							typesetting industry. Lorem Ipsum has been the
+							industry's.
+						</p>
+
+						<div className="tags">
+							<span className="tag">$javascript</span>
+							<span className="tag">$vue</span>
+							<span className="tag">$firebase</span>
+							<span className="tag">$tmdbApi</span>
+							<span className="tag">$scss</span>
 						</div>
-						<div className="featured__content">
-							<h3 className="featured__title">Pelikula PH</h3>
-							<label htmlFor="featured__subtitle">
-								IMDB + Mobilarian Alternative
-							</label>
-							<p className="feature_body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</p>
-							<div className="tags">
-								<span className="tag">$javascript</span>
-								<span className="tag">$vue</span>
-								<span className="tag">$firebase</span>
-							</div>
+
+						<div className="featured__actions">
+							<button className="btn btn__primary">
+								view website
+							</button>
+							<button className="btn btn__link">
+								<FiGithub />
+							</button>
 						</div>
 					</div>
 				</article>
 
 				<article className="featured__item">
-					<div>
-						<div className="featured__img-container">
-							<img src="" alt="" />
+					<div className="featured__img-container">
+						<img src="./images/pelikula.png" alt="" />
+					</div>
+					<div className="featured__content">
+						<h3 className="featured__title">PelikulaPH</h3>
+						<label className="featured__subtitle">
+							IMDB + Mobilarian Alternative
+						</label>
+						<p className="featured__body">
+							Lorem Ipsum is simply dummy text of the printing and
+							typesetting industry. Lorem Ipsum has been the
+							industry's.
+						</p>
+
+						<div className="tags">
+							<span className="tag">$javascript</span>
+							<span className="tag">$vue</span>
+							<span className="tag">$firebase</span>
+							<span className="tag">$api</span>
+							<span className="tag">$scss</span>
 						</div>
-						<div className="featured__content">
-							<h3 className="featured__title">Pelikula PH</h3>
-							<label htmlFor="featured__subtitle">
-								IMDB + Mobilarian Alternative
-							</label>
-							<p className="feature_body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</p>
-							<div className="tags">
-								<span className="tag">$javascript</span>
-								<span className="tag">$vue</span>
-								<span className="tag">$firebase</span>
-							</div>
+
+						<div className="featured__actions">
+							<button className="btn btn__primary">
+								view website
+							</button>
+							<button className="btn btn__link">
+								<FiGithub />
+							</button>
 						</div>
 					</div>
 				</article>
@@ -136,6 +160,64 @@ export default function Home() {
 							</button>
 						</div>
 						<div className="card__content">
+							<h4 className="card__title">HxH API</h4>
+							<h5 htmlFor="" className="card__subtitle">
+								IMDB + Mobilarian Alternative
+							</h5>
+
+							<div className="card__body">
+								Lorem Ipsum is simply dummy text of the printing
+								and typesetting industry. Lorem Ipsum has been
+								the industry's.
+							</div>
+						</div>
+
+						<div className="tags">
+							<span className="tag">$javascript</span>
+							<span className="tag">$vue</span>
+							<span className="tag">$firebase</span>
+						</div>
+					</div>
+					<div className="card">
+						<div className="card__actions">
+							<button className="btn btn__link">
+								<FiGithub />
+							</button>
+							<button className="btn btn__link">
+								<FiExternalLink />
+							</button>
+						</div>
+						<div className="card__content">
+							<h4 className="card__title">
+								Payroll Cloud Enterprise
+							</h4>
+							<h5 htmlFor="" className="card__subtitle">
+								IMDB + Mobilarian Alternative
+							</h5>
+
+							<div className="card__body">
+								Lorem Ipsum is simply dummy text of the printing
+								and typesetting industry. Lorem Ipsum has been
+								the industry's.
+							</div>
+						</div>
+
+						<div className="tags">
+							<span className="tag">$javascript</span>
+							<span className="tag">$vue</span>
+							<span className="tag">$firebase</span>
+						</div>
+					</div>
+					<div className="card">
+						<div className="card__actions">
+							<button className="btn btn__link">
+								<FiGithub />
+							</button>
+							<button className="btn btn__link">
+								<FiExternalLink />
+							</button>
+						</div>
+						<div className="card__content">
 							<h4 className="card__title">Pelikula PH</h4>
 							<h5 htmlFor="" className="card__subtitle">
 								IMDB + Mobilarian Alternative
@@ -154,6 +236,7 @@ export default function Home() {
 							<span className="tag">$firebase</span>
 						</div>
 					</div>
+
 					<div className="card">
 						<div className="card__actions">
 							<button className="btn btn__link">

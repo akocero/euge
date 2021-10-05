@@ -1,6 +1,12 @@
+.card__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2.4rem;
+}
+
 .card {
-	background-color: #1d1d1d;
-	padding: 1.6rem 2rem;
+	background-color: $dark-4;
+	padding: 1.6rem 2.4rem;
 	border-radius: $border-rad;
 	position: relative;
 
@@ -15,14 +21,20 @@
 		}
 	}
 	&__subtitle {
+		font-size: 1.6rem;
 		color: $accent;
+		// letter-spacing: 1.2px;
+		font-weight: 400;
+		font-family: "Cascadia Code";
 	}
 	&__title {
+		font-size: 2.4rem;
 		font-weight: 900;
 		letter-spacing: 1.2px;
 	}
 	&__body {
 		margin: 2rem 0;
+		letter-spacing: 1.2px;
 	}
 
 	&::after {
@@ -30,7 +42,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		border: 2px solid $dark-3;
+		border: 2px solid $dark-4;
 		height: 102%;
 		width: 102%;
 		// border-radius: 4rem;
@@ -38,4 +50,29 @@
 		transform: rotateZ(-1.5deg);
 		border-radius: $border-rad;
 	}
+}
+
+.triangle {
+	position: absolute;
+
+	left: -5.8%;
+	bottom: 8%;
+	height: 60px;
+	width: 60px;
+
+	background-color: rgb(100, 100, 100);
+	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
+	transform: rotateZ(30deg);
+	opacity: 40%;
+}
+
+.triangle2 {
+	position: absolute;
+	left: -5%;
+	bottom: 10%;
+	height: 60px;
+	width: 60px;
+	background-color: $accent;
+	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
+	transform: rotateZ(30deg);
 }
