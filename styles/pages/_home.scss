@@ -1,0 +1,180 @@
+section:not(:first-child) {
+	margin-bottom: 10rem;
+}
+
+.intro {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	// align-items: center;
+	justify-content: center;
+	transform: translateY(-10%);
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 30%;
+		right: 5%;
+		height: 237px;
+		width: 237px;
+		background-color: $accent;
+		z-index: -1;
+		border-radius: 50%;
+		opacity: 67%;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 40%;
+		right: 15%;
+		height: 178px;
+		width: 178px;
+		background-color: rgb(100, 100, 100);
+		z-index: -1;
+		border-radius: 50%;
+		opacity: 67%;
+	}
+	&__title {
+		font-size: 7.2rem;
+		font-weight: 900;
+		line-height: 120%;
+		max-width: 70%;
+		letter-spacing: 2px;
+		margin-bottom: 4.2rem;
+		span {
+			color: $accent;
+		}
+	}
+
+	&__body {
+		font-size: 2.4rem;
+		font-family: "Cascadia Code";
+		// font-weight: 900;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		& > button {
+			margin-right: 2.4rem;
+		}
+	}
+
+	&__links {
+		& > * {
+			margin-right: 0.8rem;
+		}
+	}
+}
+
+.section__heading {
+	margin-bottom: 4.8rem;
+	h2 {
+		font-size: 3.6rem;
+		font-weight: 900;
+	}
+
+	label {
+		font-size: 2.2rem;
+		color: $accent;
+		font-family: "Cascadia Code";
+	}
+}
+
+.featured {
+	&__title {
+		font-size: 3.2rem;
+		font-weight: 900;
+	}
+
+	&__subtitle {
+		font-size: 1.8rem;
+		color: $accent;
+		// font-family: "Cascadia Code";
+		font-weight: 700;
+	}
+
+	&__body {
+		margin: 2.4rem 0;
+		font-size: 1.8rem;
+		letter-spacing: 1.2px;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		margin-top: 4.2rem;
+
+		& > * {
+			margin-right: 2rem;
+		}
+	}
+	&__item {
+		width: 100%;
+		display: flex;
+		// background-color: orangered;
+		//
+		position: relative;
+		margin: 15rem 0;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -10%;
+			left: 10%;
+			height: 120%;
+			width: 80%;
+			background-color: $dark-4;
+			z-index: -1;
+			border-radius: $border-rad;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -10%;
+			left: 9%;
+			height: 120%;
+			width: 82%;
+			// background-color: $dark-2;
+			border: 2px solid $dark-4;
+			z-index: -1;
+			border-radius: $border-rad;
+			transform: rotateZ(-1deg);
+		}
+	}
+
+	&__img-container {
+		// width: 70%;
+		// background-color: red;
+		margin-right: 2.4rem;
+		img {
+			border-radius: 1rem;
+		}
+	}
+}
+.experience {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 4.8rem;
+	}
+
+	&__title {
+		font-size: 2.2rem;
+		color: $accent;
+	}
+
+	&__subtitle {
+		font-size: 1.8rem;
+		font-family: "Cascadia Code";
+		font-weight: 400;
+		color: $grey;
+	}
+
+	&__body {
+		margin-top: 1rem;
+		letter-spacing: 1.2px;
+	}
+}

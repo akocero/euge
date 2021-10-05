@@ -1,0 +1,15 @@
+.tags {
+	& > *:not(:last-child) {
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+	}
+	.tag {
+		color: rgb(201, 201, 201);
+		// font-size: 1.6rem;
+		background-color: $dark-2;
+		border-radius: $border-rad;
+		padding: 0.4rem 1rem;
+		display: inline-block;
+		font-family: "Cascadia Code";
+	}
+}

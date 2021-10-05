@@ -11,8 +11,10 @@
 
 	&__primary {
 		background-color: $accent;
-		padding: 1.4rem 2.4rem;
+		padding: 1.2rem 2.4rem;
 		border-radius: 4rem;
+		// color: $dark;
+		font-weight: 500;
 	}
 
 	&__link {
@@ -24,6 +26,14 @@
 		// display: flex;
 		// justify-content: center;
 		// align-items: center;
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: block;
+		}
 	}
 
 	&:hover {
@@ -49,11 +59,9 @@
 	position: absolute;
 	top: 3%;
 	left: 3%;
-	border: 1px solid $dark-3;
+	border: 1px solid $dark-2;
 	height: 104%;
 	width: 104%;
 	border-radius: 4rem;
-	color: white;
 	z-index: -1;
-	// transform: rotateZ(-3.5deg);
 }
