@@ -1,0 +1,76 @@
+.featured {
+	&__title {
+		font-size: 3.2rem;
+		font-weight: 900;
+	}
+
+	&__subtitle {
+		font-size: 1.8rem;
+		color: $accent;
+		// font-family: "Cascadia Code";
+		font-weight: 700;
+	}
+
+	&__body {
+		margin: 2.4rem 0;
+		font-size: 1.8rem;
+		letter-spacing: 1.2px;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		margin-top: 4.2rem;
+
+		& > * {
+			margin-right: 2rem;
+		}
+	}
+	&__item {
+		width: 100%;
+		display: flex;
+		// background-color: orangered;
+		//
+		position: relative;
+		margin: 15rem 0;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -10%;
+			left: 10%;
+			height: 120%;
+			width: 80%;
+			background-color: $dark-4;
+			z-index: -1;
+			border-radius: $border-rad;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -10%;
+			left: 9%;
+			height: 120%;
+			width: 82%;
+			// background-color: $dark-2;
+			border: 2px solid $dark-4;
+			z-index: -1;
+			border-radius: $border-rad;
+			transform: rotateZ(-1deg);
+		}
+	}
+
+	&__img-container {
+		width: 60%;
+		// background-color: red;
+		padding-right: 2.4rem;
+		img {
+			border-radius: 1rem;
+		}
+	}
+
+	&__content {
+		width: 40%;
+	}
+}
