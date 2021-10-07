@@ -1,0 +1,15 @@
+.footer {
+	padding: 5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	h5 {
+		font-size: 1.6rem;
+	}
+	.site-author {
+		svg {
+			fill: white;
+			width: 18px;
+		}
+	}
+}

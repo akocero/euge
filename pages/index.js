@@ -9,8 +9,34 @@ import {
 	FiExternalLink,
 	FiPlus,
 } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { createClient } from "contentful";
+import FeaturedItem from "../components/FeaturedItem";
+import ProjectItem from "../components/ProjectItem";
+import ExperienceItem from "../components/ExperienceItem";
+import AboutSection from "../components/AboutSection";
 
-export default function Home() {
+export async function getStaticProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID,
+		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+	});
+
+	const res = await client.getEntries({
+		content_type: "project",
+	});
+
+	return {
+		props: {
+			projects: res.items,
+		},
+	};
+}
+
+export default function Home({ projects }) {
+	useEffect(() => {
+		console.log(projects);
+	}, []);
 	return (
 		<div className="wrapper">
 			<section className="intro">
@@ -47,75 +73,16 @@ export default function Home() {
 					<h2>featured project</h2>
 					<label htmlFor="">what i'm doing?</label>
 				</div>
-
-				<article className="featured__item">
-					<div className="featured__img-container">
-						<img src="./images/pelikula.png" alt="" />
-					</div>
-					<div className="featured__content">
-						<h3 className="featured__title">PelikulaPH</h3>
-						<label className="featured__subtitle">
-							IMDB + Mobilarian Alternative
-						</label>
-						<p className="featured__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the
-							industry's.
-						</p>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-							<span className="tag">$tmdbApi</span>
-							<span className="tag">$scss</span>
-						</div>
-
-						<div className="featured__actions">
-							<button className="btn btn__primary">
-								view website
-							</button>
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-						</div>
-					</div>
-				</article>
-
-				<article className="featured__item">
-					<div className="featured__img-container">
-						<img src="./images/pelikula.png" alt="" />
-					</div>
-					<div className="featured__content">
-						<h3 className="featured__title">PelikulaPH</h3>
-						<label className="featured__subtitle">
-							IMDB + Mobilarian Alternative
-						</label>
-						<p className="featured__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the
-							industry's.
-						</p>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-							<span className="tag">$api</span>
-							<span className="tag">$scss</span>
-						</div>
-
-						<div className="featured__actions">
-							<button className="btn btn__primary">
-								view website
-							</button>
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-						</div>
-					</div>
-				</article>
+				{projects
+					.filter((project) => project.fields.featured)
+					.map((featuredProject) => (
+						<FeaturedItem
+							featuredProject={featuredProject}
+							key={featuredProject.sys.id}
+						/>
+					))}
 			</section>
+
 			<section className="project">
 				<div className="section__heading">
 					<h2>noteworthy projects</h2>
@@ -123,151 +90,12 @@ export default function Home() {
 				</div>
 
 				<div className="card__list">
-					<div className="card">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">Pelikula PH</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								IMDB + Mobilarian Alternative
-							</h5>
-
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-						</div>
-					</div>
-					<div className="card">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">HxH API</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								IMDB + Mobilarian Alternative
-							</h5>
-
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-						</div>
-					</div>
-					<div className="card">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">
-								Payroll Cloud Enterprise
-							</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								IMDB + Mobilarian Alternative
-							</h5>
-
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-						</div>
-					</div>
-					<div className="card">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">Pelikula PH</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								IMDB + Mobilarian Alternative
-							</h5>
-
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-						</div>
-					</div>
-
-					<div className="card">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">Pelikula PH</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								IMDB + Mobilarian Alternative
-							</h5>
-
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$javascript</span>
-							<span className="tag">$vue</span>
-							<span className="tag">$firebase</span>
-						</div>
-					</div>
+					{projects.map((project) => (
+						<ProjectItem project={project} key={project.sys.id} />
+					))}
 				</div>
 			</section>
+
 			<section className="experience">
 				<div className="section__heading">
 					<h2>experiences</h2>
@@ -275,99 +103,14 @@ export default function Home() {
 				</div>
 
 				<div className="experience__list">
-					<div className="experience__item">
-						<h4 className="experience__title">
-							Mustard Seed Systems Corp.
-						</h4>
-						<h5 className="experience__subtitle">Web Developer</h5>
-						<p className="experience__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting. (1 Year)
-						</p>
-					</div>
-					<div className="experience__item">
-						<h4 className="experience__title">
-							Mustard Seed Systems Corp.
-						</h4>
-						<h5 className="experience__subtitle">Web Developer</h5>
-						<p className="experience__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting. (1 Year)
-						</p>
-					</div>
-					<div className="experience__item">
-						<h4 className="experience__title">
-							Mustard Seed Systems Corp.
-						</h4>
-						<h5 className="experience__subtitle">Web Developer</h5>
-						<p className="experience__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting. (1 Year)
-						</p>
-					</div>
-					<div className="experience__item">
-						<h4 className="experience__title">
-							Mustard Seed Systems Corp.
-						</h4>
-						<h5 className="experience__subtitle">Web Developer</h5>
-						<p className="experience__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting. (1 Year)
-						</p>
-					</div>
+					{projects.map((project) => (
+						<ExperienceItem key={project.sys.id} />
+					))}
 				</div>
 			</section>
-			<section className="about">
-				<div className="triangle">&nbsp;</div>
-				<div className="triangle2">&nbsp;</div>
-				<div className="rectangle">&nbsp;</div>
-				<div className="rectangle2">&nbsp;</div>
-				<img
-					src="../images/about2.jpg"
-					alt=""
-					className="about__float-img-1"
-				/>
 
-				<img
-					src="../images/about3.jpg"
-					alt=""
-					className="about__float-img-2"
-				/>
-				<div className="about__wrapper">
-					<div className="card about__content">
-						<div className="card__actions">
-							<button className="btn btn__link">
-								<FiGithub />
-							</button>
-							<button className="btn btn__link">
-								<FiExternalLink />
-							</button>
-						</div>
-						<div className="card__content">
-							<h4 className="card__title">About</h4>
-							<h5 htmlFor="" className="card__subtitle">
-								what i love?
-							</h5>
+			<AboutSection />
 
-							<div className="card__body">
-								Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry. Lorem Ipsum has been
-								the industry's. dummy text of the printing and
-								typesetting industry.
-							</div>
-						</div>
-
-						<div className="tags">
-							<span className="tag">$teaching</span>
-							<span className="tag">$coding</span>
-							<span className="tag">$goals</span>
-						</div>
-					</div>
-					<div className="about__img-container">
-						<img src="../images/about.jpg" alt="" />
-					</div>
-				</div>
-			</section>
 			<section className="contact">
 				<div className="card">
 					<h1>Let's Work Together</h1>
@@ -376,6 +119,7 @@ export default function Home() {
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
 			</section>
+			
 		</div>
 	);
 }

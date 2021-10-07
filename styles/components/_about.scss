@@ -1,0 +1,59 @@
+.about {
+	position: relative;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__content {
+		width: 45%;
+		opacity: 90%;
+
+		.card__actions {
+			justify-content: flex-start;
+
+			& > * {
+				margin-left: 0;
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	&__img-container {
+		width: 60%;
+		margin-left: -5%;
+	}
+
+	&__float-img-1 {
+		position: absolute;
+		bottom: -30%;
+		right: 30%;
+		width: 19%;
+		transform: rotateZ(6deg);
+	}
+
+	&__float-img-2 {
+		position: absolute;
+		top: -14%;
+		left: 30%;
+		width: 25%;
+		transform: rotateZ(3deg);
+	}
+
+	img {
+		border-radius: 1rem;
+	}
+
+	.triangle,
+	.triangle2 {
+		right: 0;
+		top: -10%;
+		height: 60px;
+		width: 60px;
+	}
+
+	.triangle2 {
+		top: -6%;
+	}
+}

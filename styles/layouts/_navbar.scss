@@ -4,8 +4,12 @@
 	justify-content: space-between;
 	height: 7.2rem;
 	font-size: 1.8rem;
-	font-weight: bold;
+
+	.name {
+		font-weight: bold;
+	}
 	&__nav-list {
+		font-weight: 600;
 		display: flex;
 
 		& > * {
