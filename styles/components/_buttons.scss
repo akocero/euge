@@ -52,6 +52,7 @@
 	border-radius: 4rem;
 	color: white;
 	transform: rotateZ(-3.5deg);
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn__link::before {
@@ -60,8 +61,10 @@
 	top: 3%;
 	left: 3%;
 	border: 1px solid $dark-2;
+	background: transparent;
 	height: 104%;
 	width: 104%;
 	border-radius: 4rem;
 	z-index: -1;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
