@@ -1,0 +1,66 @@
+.triangle {
+	position: absolute;
+
+	left: -5.8%;
+	bottom: 8%;
+	height: 60px;
+	width: 60px;
+
+	background-color: rgb(100, 100, 100);
+	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
+	transform: rotateZ(30deg);
+	opacity: 40%;
+}
+
+.triangle2 {
+	position: absolute;
+	left: -5%;
+	bottom: 10%;
+	height: 60px;
+	width: 60px;
+	background-color: $accent;
+	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
+	transform: rotateZ(30deg);
+}
+
+.rectangle {
+	position: absolute;
+	bottom: -20%;
+	right: 10%;
+	height: 60px;
+	width: 60px;
+	background-color: #353535;
+	transform: rotateZ(4deg);
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+
+		transform: translate(20%, 30%);
+
+		background-color: $accent;
+	}
+}
+
+.rectangle2 {
+	position: absolute;
+	top: -16%;
+	right: 0;
+	height: 60px;
+	width: 60px;
+	background-color: #353535;
+	transform: rotateZ(4deg);
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+
+		transform: translate(20%, 30%);
+
+		background-color: $accent;
+	}
+}

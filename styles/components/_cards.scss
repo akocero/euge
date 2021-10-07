@@ -51,28 +51,3 @@
 		border-radius: $border-rad;
 	}
 }
-
-.triangle {
-	position: absolute;
-
-	left: -5.8%;
-	bottom: 8%;
-	height: 60px;
-	width: 60px;
-
-	background-color: rgb(100, 100, 100);
-	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
-	transform: rotateZ(30deg);
-	opacity: 40%;
-}
-
-.triangle2 {
-	position: absolute;
-	left: -5%;
-	bottom: 10%;
-	height: 60px;
-	width: 60px;
-	background-color: $accent;
-	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
-	transform: rotateZ(30deg);
-}
