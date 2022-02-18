@@ -119,7 +119,6 @@ export default function Home({ projects }) {
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
 			</section>
-			
 		</div>
 	);
 }

@@ -76,6 +76,10 @@ section:not(:first-child) {
 
 .section__heading {
 	margin-bottom: 4.8rem;
+
+	@include respond(phone) {
+		text-align: center;
+	}
 	h2 {
 		font-size: 3.6rem;
 		font-weight: 900;
@@ -104,6 +108,10 @@ section:not(:first-child) {
 		padding-bottom: 2.4rem;
 		width: 60%;
 		margin: 0 auto;
+
+		@include respond(phone) {
+			width: 100%;
+		}
 	}
 
 	.triangle,

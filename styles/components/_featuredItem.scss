@@ -31,6 +31,9 @@
 		display: flex;
 		// background-color: orangered;
 		//
+		@include respond(phone) {
+			flex-direction: column;
+		}
 		position: relative;
 		margin: 15rem 0;
 
@@ -63,8 +66,13 @@
 
 	&__img-container {
 		width: 60%;
+
 		// background-color: red;
 		padding-right: 2.4rem;
+		@include respond(phone) {
+			width: unset;
+			padding: 0;
+		}
 		img {
 			border-radius: 1rem;
 		}
@@ -72,5 +80,9 @@
 
 	&__content {
 		width: 40%;
+
+		@include respond(phone) {
+			width: unset;
+		}
 	}
 }

@@ -7,12 +7,23 @@
 }
 html {
 	font-size: 62.5%;
+
+	@include respond(tab-port) {
+		// width < 900?
+		font-size: 50%; //1 rem = 8px, 8/16 = 50%
+	}
 }
 
 body {
 	box-sizing: border-box;
 	background-color: $dark;
 	color: $light;
+	overflow-x: hidden;
+
+	@include respond(phone) {
+		padding: 2rem;
+		width: 100%;
+	}
 }
 
 ul {
