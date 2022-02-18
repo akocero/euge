@@ -5,11 +5,18 @@
 	align-items: center;
 	h5 {
 		font-size: 1.6rem;
+		@include respond(phone) {
+			margin-top: 4rem;
+		}
 	}
 	.site-author {
 		svg {
 			fill: white;
 			width: 18px;
 		}
+	}
+
+	@include respond(phone) {
+		flex-direction: column;
 	}
 }

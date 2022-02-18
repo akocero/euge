@@ -21,7 +21,7 @@ body {
 	overflow-x: hidden;
 
 	@include respond(phone) {
-		padding: 2rem;
+		padding: 3.2rem;
 		width: 100%;
 	}
 }

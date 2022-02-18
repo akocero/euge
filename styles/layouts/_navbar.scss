@@ -15,5 +15,9 @@
 		& > * {
 			margin-left: 2.4rem;
 		}
+
+		@include respond(phone) {
+			display: none;
+		}
 	}
 }

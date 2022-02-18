@@ -9,7 +9,7 @@ import {
 	FiExternalLink,
 	FiPlus,
 } from "react-icons/fi";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { createClient } from "contentful";
 import FeaturedItem from "../components/FeaturedItem";
 import ProjectItem from "../components/ProjectItem";
@@ -34,9 +34,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ projects }) {
-	useEffect(() => {
-		console.log(projects);
-	}, []);
+	// useEffect(() => {
+	// 	// console.log(projects);
+	// }, []);
 	return (
 		<div className="wrapper">
 			<section className="intro">
@@ -71,7 +71,7 @@ export default function Home({ projects }) {
 			<section className="featured">
 				<div className="section__heading">
 					<h2>featured project</h2>
-					<label htmlFor="">what i'm doing?</label>
+					<label>{"what i'm doing?"}</label>
 				</div>
 				{projects
 					.filter((project) => project.fields.featured)
@@ -86,7 +86,7 @@ export default function Home({ projects }) {
 			<section className="project">
 				<div className="section__heading">
 					<h2>noteworthy projects</h2>
-					<label htmlFor="">what i have done?</label>
+					<label>what i have done?</label>
 				</div>
 
 				<div className="card__list">
@@ -99,7 +99,7 @@ export default function Home({ projects }) {
 			<section className="experience">
 				<div className="section__heading">
 					<h2>experiences</h2>
-					<label htmlFor="">what i have done?</label>
+					<label>what i have done?</label>
 				</div>
 
 				<div className="experience__list">
@@ -113,7 +113,7 @@ export default function Home({ projects }) {
 
 			<section className="contact">
 				<div className="card">
-					<h1>Let's Work Together</h1>
+					<h1>{"Let's Work Together"} </h1>
 					<button className="btn btn__primary">message me</button>
 				</div>
 				<div className="triangle">&nbsp;</div>
