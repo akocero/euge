@@ -22,6 +22,10 @@ section:not(:first-child) {
 		z-index: -1;
 		border-radius: 50%;
 		opacity: 67%;
+
+		@include respond(phone) {
+			opacity: 7%;
+		}
 	}
 	&::before {
 		content: "";
@@ -34,6 +38,9 @@ section:not(:first-child) {
 		z-index: -1;
 		border-radius: 50%;
 		opacity: 67%;
+		@include respond(phone) {
+			opacity: 7%;
+		}
 	}
 	&__title {
 		font-size: 7.2rem;
@@ -43,6 +50,7 @@ section:not(:first-child) {
 		letter-spacing: 2px;
 		margin-bottom: 4.2rem;
 		text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
+
 		span {
 			color: $accent;
 		}

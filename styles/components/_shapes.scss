@@ -11,6 +11,10 @@
 	transform: rotateZ(30deg);
 	opacity: 40%;
 	// overflow: hidden;
+
+	@include respond(phone) {
+		opacity: $shape-opacity;
+	}
 }
 
 .triangle2 {
@@ -22,6 +26,10 @@
 	background-color: $accent;
 	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
 	transform: rotateZ(30deg);
+
+	@include respond(phone) {
+		opacity: $shape-opacity;
+	}
 }
 
 .rectangle {
@@ -32,6 +40,10 @@
 	width: 60px;
 	background-color: #353535;
 	transform: rotateZ(4deg);
+
+	@include respond(phone) {
+		opacity: $shape-opacity;
+	}
 
 	&::after {
 		content: "";
@@ -53,6 +65,10 @@
 	width: 60px;
 	background-color: #353535;
 	transform: rotateZ(4deg);
+
+	@include respond(phone) {
+		opacity: $shape-opacity;
+	}
 
 	&::after {
 		content: "";

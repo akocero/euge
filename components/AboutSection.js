@@ -42,10 +42,9 @@ const AboutSection = () => {
 						</h5>
 
 						<div className="card__body">
-							Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry. Lorem Ipsum has been the
-							industry's. dummy text of the printing and
-							typesetting industry.
+							{
+								"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. dummy text of the printing and typesetting industry."
+							}
 						</div>
 					</div>
 
