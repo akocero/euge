@@ -43,13 +43,14 @@ export default function Home({ projects }) {
 				<div className="rectangle">&nbsp;</div>
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
-				<p className="intro__body">Hello, It’s Me Eugene.</p>
+				<p className="intro__body">Hello, It’s Me Eugene Badato.</p>
 				<h1 className="intro__title">
-					Let my <span>portfolio</span> describe me.
+					I <span>design</span> and <span>develop</span> things for
+					the web.
 				</h1>
 
 				<div className="intro__actions">
-					<button className="btn btn__primary">project</button>
+					<button className="btn btn__primary">projects</button>
 
 					<div className="intro__links ">
 						<button className="btn btn__link">
