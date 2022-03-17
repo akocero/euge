@@ -3,13 +3,14 @@
 	align-items: center;
 	justify-content: space-between;
 	height: 7.2rem;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
+	font-family: "Cascadia Code";
 
 	.name {
-		font-weight: bold;
+		// font-weight: bold;
 	}
 	&__nav-list {
-		font-weight: 600;
+		// font-weight: 600;
 		display: flex;
 
 		& > * {

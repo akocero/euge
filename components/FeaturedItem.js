@@ -40,7 +40,13 @@ const FeaturedItem = ({ featuredProject }) => {
 				</div>
 
 				<div className="featured__actions">
-					<button className="btn btn__primary">view website</button>
+					<a
+						className="btn btn__primary"
+						href={website}
+						target="__blank"
+					>
+						live website
+					</a>
 					<button className="btn btn__link">
 						<FiGithub />
 					</button>
