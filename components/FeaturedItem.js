@@ -47,9 +47,9 @@ const FeaturedItem = ({ featuredProject }) => {
 					>
 						live website
 					</a>
-					<button className="btn btn__link">
+					<a className="btn btn__link" href={github} target="__blank">
 						<FiGithub />
-					</button>
+					</a>
 				</div>
 			</div>
 		</article>

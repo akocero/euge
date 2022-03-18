@@ -14,9 +14,9 @@ const ProjectItem = ({ project }) => {
 	return (
 		<div className="card">
 			<div className="card__actions">
-				<button className="btn btn__link">
+				<a className="btn btn__link" href={github} target="__blank">
 					<FiGithub />
-				</button>
+				</a>
 				<a className="btn btn__link" href={website} target="__blank">
 					<FiExternalLink />
 				</a>
