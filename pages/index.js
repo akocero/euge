@@ -26,14 +26,19 @@ export async function getStaticProps() {
 		content_type: "project",
 	});
 
+	const res2 = await client.getEntries({
+		content_type: "experiences",
+	});
+
 	return {
 		props: {
 			projects: res.items,
+			experieces: res2.items,
 		},
 	};
 }
 
-export default function Home({ projects }) {
+export default function Home({ projects, experieces }) {
 	// useEffect(() => {
 	// 	// console.log(projects);
 	// }, []);
@@ -72,7 +77,7 @@ export default function Home({ projects }) {
 			<section className="featured">
 				<div className="section__heading">
 					<h2>featured project</h2>
-					<label>{"what i'm doing?"}</label>
+					<label>{"- latest projects"}</label>
 				</div>
 				{projects
 					.filter((project) => project.fields.featured)
@@ -104,8 +109,11 @@ export default function Home({ projects }) {
 				</div>
 
 				<div className="experience__list">
-					{projects.map((project) => (
-						<ExperienceItem key={project.sys.id} />
+					{experieces.map((experiece) => (
+						<ExperienceItem
+							key={experiece.sys.id}
+							experiece={experiece}
+						/>
 					))}
 				</div>
 			</section>
@@ -114,7 +122,7 @@ export default function Home({ projects }) {
 
 			<section className="contact">
 				<div className="card">
-					<h1>{"Let's Work Together"} </h1>
+					<h1>{"Let's Work Together"}</h1>
 					<button className="btn btn__primary">message me</button>
 				</div>
 				<div className="triangle">&nbsp;</div>

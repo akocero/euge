@@ -3,7 +3,11 @@ import Link from "next/link";
 const Navbar = () => {
 	return (
 		<header className="navbar">
-			<div className="name">@eugenebadato</div>
+			<div className="name">
+				<a href="http://" target="_blank" rel="noopener noreferrer">
+					@eugenebadato
+				</a>
+			</div>
 			<nav className="navbar__nav">
 				<ul className="navbar__nav-list">
 					<li className="navbar__item">
