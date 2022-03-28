@@ -15,6 +15,7 @@ import FeaturedItem from "../components/FeaturedItem";
 import ProjectItem from "../components/ProjectItem";
 import ExperienceItem from "../components/ExperienceItem";
 import AboutSection from "../components/AboutSection";
+import SectionHeading from "../components/SectionHeading";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -75,10 +76,10 @@ export default function Home({ projects, experieces }) {
 			</section>
 
 			<section className="featured">
-				<div className="section__heading">
-					<h2>featured project</h2>
-					<label>{"- latest projects"}</label>
-				</div>
+				<SectionHeading
+					title="featured project"
+					subtitle="- latest projects"
+				/>
 				{projects
 					.filter((project) => project.fields.featured)
 					.map((featuredProject) => (
