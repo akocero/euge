@@ -76,6 +76,11 @@ section:not(:first-child) {
 		span {
 			color: $accent;
 		}
+
+		@include respond(phone) {
+			max-width: 100%;
+			font-size: 5.8rem;
+		}
 	}
 
 	&__body {
