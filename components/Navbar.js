@@ -12,24 +12,33 @@ const Navbar = () => {
 				<ul className="navbar__nav-list">
 					<li className="navbar__item">
 						{"{ "}
-						<a href="" className="navbar__link">
-							projects,
-						</a>
+						<Link href="#home">
+							<a className="navbar__link">home</a>
+						</Link>
+						,
 					</li>
 					<li className="navbar__item">
-						<a href="" className="navbar__link">
-							experieces,
-						</a>
+						<Link href="#projects">
+							<a className="navbar__link">projects</a>
+						</Link>
+						,
 					</li>
 					<li className="navbar__item">
-						<a href="" className="navbar__link">
-							about,
-						</a>
+						<Link href="#experiences">
+							<a className="navbar__link">experiences</a>
+						</Link>
+						,
 					</li>
 					<li className="navbar__item">
-						<a href="" className="navbar__link">
-							contact
-						</a>
+						<Link href="#about">
+							<a className="navbar__link">about</a>
+						</Link>
+						,
+					</li>
+					<li className="navbar__item">
+						<Link href="#contact">
+							<a className="navbar__link">conatct</a>
+						</Link>
 						{" }"}
 					</li>
 				</ul>

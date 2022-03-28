@@ -9,7 +9,7 @@ import {
 } from "react-icons/fi";
 const AboutSection = () => {
 	return (
-		<section className="about">
+		<section className="about" id="about">
 			<div className="triangle">&nbsp;</div>
 			<div className="triangle2">&nbsp;</div>
 			<div className="rectangle">&nbsp;</div>

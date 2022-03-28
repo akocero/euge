@@ -45,7 +45,7 @@ export default function Home({ projects, experieces }) {
 	// }, []);
 	return (
 		<div className="wrapper">
-			<section className="intro">
+			<section className="intro" id="home">
 				<div className="rectangle">&nbsp;</div>
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
@@ -75,7 +75,7 @@ export default function Home({ projects, experieces }) {
 				</div>
 			</section>
 
-			<section className="featured">
+			<section className="featured" id="featured">
 				<SectionHeading
 					title="featured project"
 					subtitle="- latest projects"
@@ -90,11 +90,11 @@ export default function Home({ projects, experieces }) {
 					))}
 			</section>
 
-			<section className="project">
-				<div className="section__heading">
-					<h2>noteworthy projects</h2>
-					<label>what i have done?</label>
-				</div>
+			<section className="project" id="projects">
+				<SectionHeading
+					title="noteworthy projects"
+					subtitle="what i have done?"
+				/>
 
 				<div className="card__list">
 					{projects.map((project) => (
@@ -103,11 +103,11 @@ export default function Home({ projects, experieces }) {
 				</div>
 			</section>
 
-			<section className="experience">
-				<div className="section__heading">
-					<h2>experiences</h2>
-					<label>what i have done?</label>
-				</div>
+			<section className="experience" id="experiences">
+				<SectionHeading
+					title="experiences"
+					subtitle="what i have done?"
+				/>
 
 				<div className="experience__list">
 					{experieces.map((experiece) => (
@@ -121,7 +121,7 @@ export default function Home({ projects, experieces }) {
 
 			<AboutSection />
 
-			<section className="contact">
+			<section className="contact" id="contact">
 				<div className="card">
 					<h1>{"Let's Work Together"}</h1>
 					<button className="btn btn__primary">message me</button>
