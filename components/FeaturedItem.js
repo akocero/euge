@@ -45,7 +45,7 @@ const FeaturedItem = ({ featuredProject }) => {
 						href={website}
 						target="__blank"
 					>
-						live website
+						take a look
 					</a>
 					<a className="btn btn__link" href={github} target="__blank">
 						<FiGithub />

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import {
 	FiGithub,
 	FiLinkedin,
@@ -59,21 +60,31 @@ export default function Home({ projects, experieces }) {
 				</h1>
 
 				<div className="intro__actions">
-					<button className="btn btn__primary">projects</button>
+					<Link href="#projects">
+						<a className="btn btn__primary">projects</a>
+					</Link>
 
-					<div className="intro__links ">
-						<button className="btn btn__link">
-							<FiGithub />
-						</button>
-						<button className="btn btn__link">
-							<FiGitlab />
-						</button>
-						<button className="btn btn__link">
-							<FiLinkedin />
-						</button>
-						<button className="btn btn__link">
-							<FiTwitter />
-						</button>
+					<div className="intro__links">
+						<Link href="https://github.com/akocero">
+							<a className="btn btn__link" target="__blank">
+								<FiGithub />
+							</a>
+						</Link>
+						<Link href="https://gitlab.com/akocero">
+							<a className="btn btn__link" target="__blank">
+								<FiGitlab />
+							</a>
+						</Link>
+						<Link href="https://www.linkedin.com/in/eugenebadato/">
+							<a className="btn btn__link" target="__blank">
+								<FiLinkedin />
+							</a>
+						</Link>
+						<Link href="https://twitter.com/eugenebadato">
+							<a className="btn btn__link" target="__blank">
+								<FiTwitter />
+							</a>
+						</Link>
 					</div>
 				</div>
 			</section>
