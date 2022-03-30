@@ -1,14 +1,14 @@
 .featured {
 	&__title {
 		font-size: 3.2rem;
-		font-weight: 900;
+		font-weight: 600;
 	}
 
 	&__subtitle {
 		font-size: 1.8rem;
 		color: $accent;
-		// font-family: "Cascadia Code";
-		font-weight: 700;
+		font-family: "Cascadia Code";
+		font-weight: 400;
 	}
 
 	&__body {

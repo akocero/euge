@@ -11,11 +11,10 @@
 	justify-content: space-between;
 	height: 7.2rem;
 	font-size: 1.6rem;
-	font-family: "Cascadia Code";
+	font-family: "Kanit";
 	z-index: 99;
-	.name {
-		// font-weight: bold;
-	}
+	letter-spacing: 0.6px;
+
 	&__nav-list {
 		// font-weight: 600;
 		display: flex;

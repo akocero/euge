@@ -9,9 +9,9 @@
 	// background-color: blue;
 	// background-color: red;
 	// align-items: center;
-	justify-content: center;
+	// justify-content: center;
 	align-items: center;
-	// transform: translateY(-10%);
+	// transform: translateY(-5%);
 	position: relative;
 
 	// &::after {
@@ -67,22 +67,28 @@
 	// }
 
 	&__content {
+		margin-top: -6%;
 		padding-left: 8%;
 		width: 75%;
 		// background-color: red;
 	}
 
 	&__img {
+		margin-top: -6%;
 		width: 25%;
 		// background-color: blue;
 		img {
 			width: 100%;
-			transform: rotateZ(-12deg);
+		}
+
+		&:hover {
+			transform: rotateZ(-8deg) scale(1.1);
+			// transition: all 0.2s ease;
 		}
 	}
 	&__title {
 		font-size: 6.2rem;
-		font-weight: 900;
+		// font-weight: 900;
 		line-height: 120%;
 		// max-width: 70%;
 		letter-spacing: 2px;
@@ -103,6 +109,7 @@
 		font-size: 2.2rem;
 		font-family: "Cascadia Code";
 		margin-bottom: 2rem;
+		letter-spacing: 0.6px;
 		// color: hsl(0, 0%, 44%);
 		// font-weight: 900;
 	}
@@ -134,8 +141,9 @@
 		text-align: center;
 	}
 	h2 {
+		font-weight: 700;
 		font-size: 3.6rem;
-		font-weight: 900;
+		// font-weight: 900;
 		text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 	}
 

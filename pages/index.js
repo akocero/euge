@@ -57,14 +57,14 @@ export default function Home({ projects, experieces }) {
 
 				<div className="intro__img">
 					<Image
-						src="/images/me.png"
+						src="/images/me-final3.png"
 						alt=""
-						width="1140"
-						height="1234"
+						width="350"
+						height="396"
 					/>
 				</div>
 				<div className="intro__content">
-					<p className="intro__body">Hello, It’s Me Eugene Badato.</p>
+					<p className="intro__body">Hello, It’s Me Eugene.</p>
 					<h1 className="intro__title">
 						I <span>design</span> and <span>develop</span> things
 						for the web.

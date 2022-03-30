@@ -3,6 +3,8 @@
 	src: url(../../public/CascadiaCode.woff2);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&display=swap");
+
 @font-face {
 	font-family: "Segoe UI";
 	src: url("../../public/Segoe UI.woff");
@@ -12,5 +14,5 @@
 
 body {
 	font-size: 1.6rem;
-	font-family: "Nunito";
+	font-family: "Kanit";
 }
