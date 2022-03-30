@@ -37,6 +37,7 @@ export async function getStaticProps() {
 			projects: res.items,
 			experieces: res2.items,
 		},
+		revalidate: 1,
 	};
 }
 
