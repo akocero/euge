@@ -36,16 +36,16 @@ const AboutSection = () => {
 						</button>
 					</div>
 					<div className="card__content">
-						<h4 className="card__title">About</h4>
-						<h5 htmlFor="" className="card__subtitle">
+						<h4 className="heading__2">About</h4>
+						<h5 htmlFor="" className="heading__5">
 							what i love?
 						</h5>
 
-						<div className="card__body">
+						<p className="card__body">
 							{
 								"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. dummy text of the printing and typesetting industry."
 							}
-						</div>
+						</p>
 					</div>
 
 					<div className="tags">
