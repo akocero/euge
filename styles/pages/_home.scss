@@ -5,70 +5,86 @@
 .intro {
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	// flex-direction: column;
 	// background-color: blue;
 	// background-color: red;
 	// align-items: center;
 	justify-content: center;
+	align-items: center;
 	// transform: translateY(-10%);
 	position: relative;
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 30%;
-		right: 5%;
-		height: 237px;
-		width: 237px;
-		background-color: $accent;
-		z-index: -1;
-		// border-radius: 50%;
-		clip-path: polygon(
-			50% 0%,
-			90% 20%,
-			100% 60%,
-			75% 100%,
-			25% 100%,
-			0% 60%,
-			10% 20%
-		);
-		opacity: 90%;
-		transform: rotate(170deg);
+	// &::after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 30%;
+	// 	right: 5%;
+	// 	height: 237px;
+	// 	width: 237px;
+	// 	background-color: $accent;
+	// 	z-index: -1;
+	// 	// border-radius: 50%;
+	// 	clip-path: polygon(
+	// 		50% 0%,
+	// 		90% 20%,
+	// 		100% 60%,
+	// 		75% 100%,
+	// 		25% 100%,
+	// 		0% 60%,
+	// 		10% 20%
+	// 	);
+	// 	opacity: 90%;
+	// 	transform: rotate(170deg);
 
-		@include respond(phone) {
-			opacity: 7%;
-		}
+	// 	@include respond(phone) {
+	// 		opacity: 7%;
+	// 	}
+	// }
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 45%;
+	// 	right: 15%;
+	// 	height: 178px;
+	// 	width: 178px;
+	// 	background-color: rgb(100, 100, 100);
+	// 	z-index: -1;
+	// 	transform: rotate(100deg);
+	// 	clip-path: polygon(
+	// 		50% 0%,
+	// 		90% 20%,
+	// 		100% 60%,
+	// 		75% 100%,
+	// 		25% 100%,
+	// 		0% 60%,
+	// 		10% 20%
+	// 	);
+	// 	// border-radius: 50%;
+	// 	opacity: 67%;
+	// 	@include respond(phone) {
+	// 		opacity: 7%;
+	// 	}
+	// }
+
+	&__content {
+		padding-left: 8%;
+		width: 75%;
+		// background-color: red;
 	}
-	&::before {
-		content: "";
-		position: absolute;
-		top: 45%;
-		right: 15%;
-		height: 178px;
-		width: 178px;
-		background-color: rgb(100, 100, 100);
-		z-index: -1;
-		transform: rotate(100deg);
-		clip-path: polygon(
-			50% 0%,
-			90% 20%,
-			100% 60%,
-			75% 100%,
-			25% 100%,
-			0% 60%,
-			10% 20%
-		);
-		// border-radius: 50%;
-		opacity: 67%;
-		@include respond(phone) {
-			opacity: 7%;
+
+	&__img {
+		width: 25%;
+		// background-color: blue;
+		img {
+			width: 100%;
+			transform: rotateZ(-12deg);
 		}
 	}
 	&__title {
 		font-size: 6.2rem;
 		font-weight: 900;
 		line-height: 120%;
-		max-width: 70%;
+		// max-width: 70%;
 		letter-spacing: 2px;
 		margin-bottom: 4.2rem;
 		text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);

@@ -54,38 +54,49 @@ export default function Home({ projects, experieces }) {
 				<div className="rectangle">&nbsp;</div>
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
-				<p className="intro__body">Hello, It’s Me Eugene Badato.</p>
-				<h1 className="intro__title">
-					I <span>design</span> and <span>develop</span> things for
-					the web.
-				</h1>
 
-				<div className="intro__actions">
-					<Link href="#projects">
-						<a className="btn btn__primary">projects</a>
-					</Link>
+				<div className="intro__img">
+					<Image
+						src="/images/me.png"
+						alt=""
+						width="1140"
+						height="1234"
+					/>
+				</div>
+				<div className="intro__content">
+					<p className="intro__body">Hello, It’s Me Eugene Badato.</p>
+					<h1 className="intro__title">
+						I <span>design</span> and <span>develop</span> things
+						for the web.
+					</h1>
 
-					<div className="intro__links">
-						<Link href="https://github.com/akocero">
-							<a className="btn btn__link" target="__blank">
-								<FiGithub />
-							</a>
+					<div className="intro__actions">
+						<Link href="#projects">
+							<a className="btn btn__primary">projects</a>
 						</Link>
-						<Link href="https://gitlab.com/akocero">
-							<a className="btn btn__link" target="__blank">
-								<FiGitlab />
-							</a>
-						</Link>
-						<Link href="https://www.linkedin.com/in/eugenebadato/">
-							<a className="btn btn__link" target="__blank">
-								<FiLinkedin />
-							</a>
-						</Link>
-						<Link href="https://twitter.com/eugenebadato">
-							<a className="btn btn__link" target="__blank">
-								<FiTwitter />
-							</a>
-						</Link>
+
+						<div className="intro__links">
+							<Link href="https://github.com/akocero">
+								<a className="btn btn__link" target="__blank">
+									<FiGithub />
+								</a>
+							</Link>
+							<Link href="https://gitlab.com/akocero">
+								<a className="btn btn__link" target="__blank">
+									<FiGitlab />
+								</a>
+							</Link>
+							<Link href="https://www.linkedin.com/in/eugenebadato/">
+								<a className="btn btn__link" target="__blank">
+									<FiLinkedin />
+								</a>
+							</Link>
+							<Link href="https://twitter.com/eugenebadato">
+								<a className="btn btn__link" target="__blank">
+									<FiTwitter />
+								</a>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</section>
