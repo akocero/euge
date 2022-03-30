@@ -2,8 +2,8 @@ const ExperienceItem = ({ experiece }) => {
 	const { title, position, body } = experiece.fields;
 	return (
 		<div className="experience__item">
-			<h4 className="experience__title">{title}</h4>
-			<h5 className="experience__subtitle">{position}</h5>
+			<h3 className="heading__5">{title}</h3>
+			<label className="experience__subtitle">{position}</label>
 			<p className="">{body}</p>
 		</div>
 	);
