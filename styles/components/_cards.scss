@@ -24,23 +24,6 @@
 			margin-left: 1rem;
 		}
 	}
-	&__subtitle {
-		font-size: 1.6rem;
-		color: $accent;
-		// letter-spacing: 1.2px;
-		font-weight: 400;
-		font-family: "Cascadia Code";
-	}
-	&__title {
-		font-size: 2.4rem;
-		font-weight: 600;
-		letter-spacing: 1.2px;
-	}
-	&__body {
-		margin: 2rem 0;
-		letter-spacing: 1.2px;
-		font-size: 1.6rem;
-	}
 
 	&::after {
 		content: "";

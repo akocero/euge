@@ -1,22 +1,4 @@
 .featured {
-	&__title {
-		font-size: 3.2rem;
-		font-weight: 600;
-	}
-
-	&__subtitle {
-		font-size: 1.8rem;
-		color: $accent;
-		font-family: "Cascadia Code";
-		font-weight: 400;
-	}
-
-	&__body {
-		margin: 2.4rem 0;
-		font-size: 1.6rem;
-		letter-spacing: 1.2px;
-	}
-
 	&__actions {
 		display: flex;
 		align-items: center;

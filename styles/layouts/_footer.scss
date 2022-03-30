@@ -5,6 +5,11 @@
 	align-items: center;
 	h5 {
 		font-size: 1.6rem;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		@include respond(phone) {
 			margin-top: 4rem;
 		}
@@ -13,6 +18,7 @@
 		svg {
 			fill: white;
 			width: 18px;
+			margin: 0 4px;
 		}
 	}
 

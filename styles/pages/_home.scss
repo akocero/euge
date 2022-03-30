@@ -87,31 +87,15 @@
 		}
 	}
 	&__title {
-		font-size: 6.2rem;
-		// font-weight: 900;
-		line-height: 120%;
-		// max-width: 70%;
-		letter-spacing: 2px;
 		margin-bottom: 4.2rem;
-		text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
-
-		span {
-			color: $accent;
-		}
 
 		@include respond(phone) {
 			max-width: 100%;
-			font-size: 5.8rem;
 		}
 	}
 
-	&__body {
-		font-size: 2.2rem;
-		font-family: "Cascadia Code";
+	&__subtitle {
 		margin-bottom: 2rem;
-		letter-spacing: 0.6px;
-		// color: hsl(0, 0%, 44%);
-		// font-weight: 900;
 	}
 
 	&__actions {
@@ -134,36 +118,11 @@
 	}
 }
 
-.section__heading {
-	margin-bottom: 4.8rem;
-
-	@include respond(phone) {
-		text-align: center;
-	}
-	h2 {
-		font-weight: 700;
-		font-size: 3.6rem;
-		// font-weight: 900;
-		text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
-	}
-
-	label {
-		font-size: 2.2rem;
-		color: $accent;
-		font-family: "Cascadia Code";
-	}
-}
-
 .contact {
 	position: relative;
-	padding-top: 16rem;
+	margin: 16rem 0;
 	text-align: center;
 	// background-color: red;
-	h1 {
-		font-size: 3.8rem;
-		font-weight: 900;
-		margin-bottom: 2.4rem;
-	}
 	.card {
 		padding-top: 2.4rem;
 		padding-bottom: 2.4rem;

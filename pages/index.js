@@ -64,8 +64,10 @@ export default function Home({ projects, experieces }) {
 					/>
 				</div>
 				<div className="intro__content">
-					<p className="intro__body">Hello, It’s Me Eugene.</p>
-					<h1 className="intro__title">
+					<h4 className="intro__subtitle heading__4">
+						Hello, It’s Me Eugene.
+					</h4>
+					<h1 className="intro__title heading__1">
 						I <span>design</span> and <span>develop</span> things
 						for the web.
 					</h1>
@@ -104,7 +106,7 @@ export default function Home({ projects, experieces }) {
 			<section className="featured" id="featured">
 				<SectionHeading
 					title="featured project"
-					subtitle="- latest projects"
+					subtitle="latest projects"
 				/>
 				{projects
 					.filter((project) => project.fields.featured)
@@ -149,7 +151,7 @@ export default function Home({ projects, experieces }) {
 
 			<section className="contact" id="contact">
 				<div className="card">
-					<h1>{"Let's Work Together"}</h1>
+					<h2 className="heading__2">{"Let's Work Together"}</h2>
 					<button className="btn btn__primary">message me</button>
 				</div>
 				<div className="triangle">&nbsp;</div>

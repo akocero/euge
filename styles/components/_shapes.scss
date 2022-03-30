@@ -9,7 +9,7 @@
 	background-color: rgb(100, 100, 100);
 	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
 	transform: rotateZ(30deg);
-	opacity: 40%;
+	opacity: $shape-opacity;
 	// overflow: hidden;
 
 	@include respond(phone) {
@@ -26,6 +26,7 @@
 	background-color: $accent;
 	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
 	transform: rotateZ(30deg);
+	opacity: $shape-opacity;
 
 	@include respond(phone) {
 		opacity: $shape-opacity;
@@ -40,6 +41,7 @@
 	width: 60px;
 	background-color: #353535;
 	transform: rotateZ(4deg);
+	opacity: $shape-opacity;
 
 	@include respond(phone) {
 		opacity: $shape-opacity;
@@ -65,6 +67,7 @@
 	width: 60px;
 	background-color: #353535;
 	transform: rotateZ(4deg);
+	opacity: $shape-opacity;
 
 	@include respond(phone) {
 		opacity: $shape-opacity;

@@ -22,12 +22,12 @@ const ProjectItem = ({ project }) => {
 				</a>
 			</div>
 			<div className="card__content">
-				<h4 className="card__title">{title}</h4>
-				<h5 htmlFor="" className="card__subtitle">
+				<h4 className="heading__3">{title}</h4>
+				<h5 htmlFor="" className="heading__5">
 					{subtitle}
 				</h5>
 
-				<div className="card__body">{body}</div>
+				<p className="card__body">{body}</p>
 			</div>
 
 			<div className="tags">

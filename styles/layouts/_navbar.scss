@@ -1,22 +1,20 @@
 .navbar {
 	position: absolute;
-	// top: 0;
-	// left: 0;
 	width: 100%;
 	max-width: $max-width;
 	display: flex;
 	margin: 0 auto;
-	// background-color: red;
+
 	align-items: center;
 	justify-content: space-between;
 	height: 7.2rem;
 	font-size: 1.6rem;
 	font-family: "Kanit";
+	font-weight: 300;
 	z-index: 99;
 	letter-spacing: 0.6px;
 
 	&__nav-list {
-		// font-weight: 600;
 		display: flex;
 
 		& > * {

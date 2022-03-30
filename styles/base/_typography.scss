@@ -16,3 +16,67 @@ body {
 	font-size: 1.6rem;
 	font-family: "Kanit";
 }
+
+.heading {
+	&__1 {
+		font-size: 6.2rem;
+		line-height: 120%;
+		letter-spacing: 2px;
+		text-shadow: $text-shadow;
+
+		span {
+			color: $accent;
+		}
+
+		@include respond(phone) {
+			font-size: 5.8rem;
+		}
+	}
+
+	&__2 {
+		font-weight: 700;
+		font-size: 3.6rem;
+		text-shadow: $text-shadow;
+		line-height: 110%;
+		margin-bottom: 0.8rem;
+	}
+
+	&__4 {
+		font-size: 2.2rem;
+		font-weight: 600;
+		font-family: "Cascadia Code";
+		letter-spacing: 0.6px;
+	}
+
+	&__3 {
+		font-size: 2.4rem;
+		font-weight: 600;
+		letter-spacing: 0.6px;
+	}
+
+	&__5 {
+		font-size: 1.6rem;
+		color: $accent;
+		font-family: "Cascadia Code";
+		font-weight: 400;
+	}
+}
+
+.section__heading {
+	margin-bottom: 4.2rem;
+
+	@include respond(phone) {
+		text-align: center;
+	}
+
+	label {
+		font-size: 2.2rem;
+		color: $accent;
+		letter-spacing: 0.4px;
+		// font-family: "Cascadia Code";
+	}
+}
+
+p {
+	margin: 1.6rem 0 2.4rem 0;
+}
