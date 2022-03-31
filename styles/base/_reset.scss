@@ -19,17 +19,12 @@ body {
 	background-color: $dark;
 	color: $light;
 	overflow-x: hidden;
-
-	@include respond(phone) {
-		padding: 3.2rem;
-		// width: 100%;
-	}
 }
 
 section {
-	// overflow-x: hidden;
-	position: relative;
-	// padding: 0 3.2rem;
+	@include respond(phone) {
+		padding: 0 3.2rem;
+	}
 }
 
 ul {
