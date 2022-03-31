@@ -1,120 +1,38 @@
-// section:not(:first-child) {
-// 	margin-bottom: 10rem;
-// }
-
 .intro {
-	height: 100vh;
 	display: flex;
-	// flex-direction: column;
-	// background-color: blue;
-	// background-color: red;
-	// align-items: center;
-	// justify-content: center;
+	gap: 3.2rem;
+	flex-wrap: wrap;
 	align-items: center;
-	// transform: translateY(-5%);
-	position: relative;
+	height: 100vh;
+	width: 100%;
 
-	// &::after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 30%;
-	// 	right: 5%;
-	// 	height: 237px;
-	// 	width: 237px;
-	// 	background-color: $accent;
-	// 	z-index: -1;
-	// 	// border-radius: 50%;
-	// 	clip-path: polygon(
-	// 		50% 0%,
-	// 		90% 20%,
-	// 		100% 60%,
-	// 		75% 100%,
-	// 		25% 100%,
-	// 		0% 60%,
-	// 		10% 20%
-	// 	);
-	// 	opacity: 90%;
-	// 	transform: rotate(170deg);
-
-	// 	@include respond(phone) {
-	// 		opacity: 7%;
-	// 	}
-	// }
-	// &::before {
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 45%;
-	// 	right: 15%;
-	// 	height: 178px;
-	// 	width: 178px;
-	// 	background-color: rgb(100, 100, 100);
-	// 	z-index: -1;
-	// 	transform: rotate(100deg);
-	// 	clip-path: polygon(
-	// 		50% 0%,
-	// 		90% 20%,
-	// 		100% 60%,
-	// 		75% 100%,
-	// 		25% 100%,
-	// 		0% 60%,
-	// 		10% 20%
-	// 	);
-	// 	// border-radius: 50%;
-	// 	opacity: 67%;
-	// 	@include respond(phone) {
-	// 		opacity: 7%;
-	// 	}
-	// }
-
-	&__content {
-		margin-top: -6%;
-		padding-left: 8%;
-		width: 75%;
-		// background-color: red;
+	& > * {
+		// flex-grow: 0;
+		// flex-shrink: 1;
+		flex: 1;
 	}
 
-	&__img {
-		margin-top: -6%;
-		width: 25%;
-		// background-color: blue;
-		img {
-			width: 100%;
-		}
-
-		&:hover {
-			transform: rotateZ(-8deg) scale(1.1);
-			// transition: all 0.2s ease;
-		}
+	.heading__1 {
+		margin-bottom: 5rem;
 	}
-	&__title {
-		margin-bottom: 4.2rem;
+
+	.intro__img {
+		min-width: 280px;
+		max-width: 280px;
 
 		@include respond(phone) {
-			max-width: 100%;
+			display: none;
 		}
-	}
-
-	&__subtitle {
-		margin-bottom: 2rem;
 	}
 
 	&__actions {
 		display: flex;
 		align-items: center;
-		& > a {
-			margin-right: 2.4rem;
-		}
+		gap: 2.8rem;
 	}
 
-	&__links {
-		& > * {
-			margin-right: 0.8rem;
-		}
-	}
-
-	.rectangle {
-		bottom: 10%;
-		right: -5%;
+	&__links > a:not(:last-child) {
+		margin-right: 1rem;
 	}
 }
 

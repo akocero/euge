@@ -46,12 +46,12 @@ export default function Home({ projects, experieces }) {
 	// 	// console.log(projects);
 	// }, []);
 	return (
-		<div className="wrapper">
+		<>
 			<Head>
 				<title>@eugenebadato</title>
 			</Head>
 			<section className="intro" id="home">
-				<div className="rectangle">&nbsp;</div>
+				{/* <div className="rectangle">&nbsp;</div> */}
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
 
@@ -157,6 +157,6 @@ export default function Home({ projects, experieces }) {
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
 			</section>
-		</div>
+		</>
 	);
 }

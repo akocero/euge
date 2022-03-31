@@ -22,8 +22,14 @@ body {
 
 	@include respond(phone) {
 		padding: 3.2rem;
-		width: 100%;
+		// width: 100%;
 	}
+}
+
+section {
+	// overflow-x: hidden;
+	position: relative;
+	// padding: 0 3.2rem;
 }
 
 ul {

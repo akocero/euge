@@ -33,36 +33,10 @@
 	}
 }
 
-.rectangle {
-	position: absolute;
-	bottom: -20%;
-	right: 10%;
-	height: 60px;
-	width: 60px;
-	background-color: #353535;
-	transform: rotateZ(4deg);
-	opacity: $shape-opacity;
-
-	@include respond(phone) {
-		opacity: $shape-opacity;
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-
-		transform: translate(20%, 30%);
-
-		background-color: $accent;
-	}
-}
-
 .rectangle2 {
 	position: absolute;
 	top: -16%;
-	right: 0;
+	right: 10%;
 	height: 60px;
 	width: 60px;
 	background-color: #353535;
