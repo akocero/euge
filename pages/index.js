@@ -24,18 +24,20 @@ export async function getStaticProps() {
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 	});
 
-	const res = await client.getEntries({
+	const projects = await client.getEntries({
 		content_type: "project",
+		order: "fields.rank",
 	});
 
-	const res2 = await client.getEntries({
+	const experiences = await client.getEntries({
 		content_type: "experiences",
+		order: "fields.rank",
 	});
 
 	return {
 		props: {
-			projects: res.items,
-			experieces: res2.items,
+			projects: projects.items,
+			experieces: experiences.items,
 		},
 		revalidate: 1,
 	};
@@ -45,6 +47,19 @@ export default function Home({ projects, experieces }) {
 	// useEffect(() => {
 	// 	// console.log(projects);
 	// }, []);
+	console.log(projects);
+
+	const compare = (a, b) => {
+		if (a.fields.rank < b.fields.rank) {
+			return -1;
+		}
+		if (a.fields.rank > b.fields.rank) {
+			return 1;
+		}
+		console.log(a.fields.rank);
+		return 0;
+	};
+
 	return (
 		<>
 			<Head>
