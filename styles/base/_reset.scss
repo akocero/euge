@@ -22,6 +22,7 @@ body {
 }
 
 section {
+	padding-top: 8rem;
 	@include respond(phone) {
 		padding: 0 3.2rem;
 	}
@@ -40,9 +41,6 @@ img {
 	width: 100%;
 }
 
-section {
-	padding-top: 8rem;
-}
 p {
 	font-family: "Kanit";
 	font-weight: 300;

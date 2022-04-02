@@ -4,6 +4,10 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 4.8rem;
+
+		@include respond(phone) {
+			display: block;
+		}
 	}
 
 	&__subtitle {
@@ -15,5 +19,11 @@
 	&__body {
 		margin-top: 1rem;
 		letter-spacing: 1.2px;
+	}
+
+	&__item {
+		@include respond(phone) {
+			margin-bottom: 4.2rem;
+		}
 	}
 }

@@ -1,7 +1,7 @@
 .triangle {
 	position: absolute;
 
-	left: -5.8%;
+	left: 32.3%;
 	bottom: 8%;
 	height: 60px;
 	width: 60px;
@@ -13,13 +13,14 @@
 	// overflow: hidden;
 
 	@include respond(phone) {
+		transform: rotateZ(-30deg);
 		opacity: $shape-opacity;
 	}
 }
 
 .triangle2 {
 	position: absolute;
-	left: -5%;
+	left: 32.8%;
 	bottom: 10%;
 	height: 60px;
 	width: 60px;
@@ -29,32 +30,7 @@
 	opacity: $shape-opacity;
 
 	@include respond(phone) {
+		transform: rotateZ(-30deg);
 		opacity: $shape-opacity;
-	}
-}
-
-.rectangle2 {
-	position: absolute;
-	top: -16%;
-	right: 10%;
-	height: 60px;
-	width: 60px;
-	background-color: #353535;
-	transform: rotateZ(4deg);
-	opacity: $shape-opacity;
-
-	@include respond(phone) {
-		opacity: $shape-opacity;
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-
-		transform: translate(20%, 30%);
-
-		background-color: $accent;
 	}
 }

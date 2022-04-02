@@ -3,19 +3,19 @@ import SiteAuthor from "./SiteAuthor";
 const Footer = () => {
 	return (
 		<footer className="footer">
-			<div className="intro__links ">
-				<button className="btn btn__link">
+			<div className="footer__links">
+				<a className="btn btn__link">
 					<FiGithub />
-				</button>
-				<button className="btn btn__link">
+				</a>
+				<a className="btn btn__link">
 					<FiGitlab />
-				</button>
-				<button className="btn btn__link">
+				</a>
+				<a className="btn btn__link">
 					<FiLinkedin />
-				</button>
-				<button className="btn btn__link">
+				</a>
+				<a className="btn btn__link">
 					<FiTwitter />
-				</button>
+				</a>
 			</div>
 			<SiteAuthor />
 		</footer>

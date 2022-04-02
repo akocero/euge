@@ -11,7 +11,9 @@
 		// flex-shrink: 1;
 		flex: 1;
 	}
-
+	.heading__4 {
+		margin-bottom: 1.8rem;
+	}
 	.heading__1 {
 		margin-bottom: 5rem;
 	}
@@ -33,37 +35,5 @@
 
 	&__links > a:not(:last-child) {
 		margin-right: 1rem;
-	}
-}
-
-.contact {
-	position: relative;
-	margin: 16rem 0;
-	text-align: center;
-	// background-color: red;
-	.card {
-		padding-top: 2.4rem;
-		padding-bottom: 2.4rem;
-		width: 60%;
-		margin: 0 auto;
-
-		@include respond(phone) {
-			width: 100%;
-		}
-	}
-
-	h2 {
-		margin-bottom: 2.4rem;
-	}
-
-	.triangle,
-	.triangle2 {
-		bottom: -20%;
-		left: 40%;
-	}
-
-	.triangle {
-		bottom: -24%;
-		left: 39.2%;
 	}
 }

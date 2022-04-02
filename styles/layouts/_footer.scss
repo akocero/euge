@@ -25,4 +25,8 @@
 	@include respond(phone) {
 		flex-direction: column;
 	}
+
+	&__links > a:not(:last-child) {
+		margin-right: 1rem;
+	}
 }
