@@ -38,19 +38,25 @@ const AboutSection = () => {
 					<div className="card__content">
 						<h4 className="heading__2">About</h4>
 						<h5 htmlFor="" className="heading__5">
-							what i love?
+							What I love to do?
 						</h5>
 
 						<p className="card__body">
 							{
-								"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. dummy text of the printing and typesetting industry."
+								"Eugene is a front-end developer, designer, and mentor. He’s currently a software engineer, focused on building microservices applications like payroll enterprise cloud (PEC). "
+							}
+							<br />
+							<br />
+							{
+								"	Moreover, he created PelikulaPH an application for movie lovers like him, and an automated monitoring system. He loves to help aspirant developers not only to help them but to learn from it as well, in his free time he enjoys building a game and learning new tech trends."
 							}
 						</p>
 					</div>
 
 					<div className="tags">
-						<span className="tag">$teaching</span>
+						<span className="tag">$mentoring</span>
 						<span className="tag">$coding</span>
+						<span className="tag">$learning</span>
 						<span className="tag">$goals</span>
 					</div>
 				</div>

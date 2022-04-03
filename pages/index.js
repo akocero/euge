@@ -47,18 +47,6 @@ export default function Home({ projects, experieces }) {
 	// useEffect(() => {
 	// 	// console.log(projects);
 	// }, []);
-	console.log(projects);
-
-	const compare = (a, b) => {
-		if (a.fields.rank < b.fields.rank) {
-			return -1;
-		}
-		if (a.fields.rank > b.fields.rank) {
-			return 1;
-		}
-		console.log(a.fields.rank);
-		return 0;
-	};
 
 	return (
 		<>
@@ -120,8 +108,8 @@ export default function Home({ projects, experieces }) {
 
 			<section className="featured" id="featured">
 				<SectionHeading
-					title="featured project"
-					subtitle="latest projects"
+					title="featured projects"
+					subtitle="Selected projects"
 				/>
 				{projects
 					.filter((project) => project.fields.featured)
@@ -136,7 +124,7 @@ export default function Home({ projects, experieces }) {
 			<section className="project" id="projects">
 				<SectionHeading
 					title="noteworthy projects"
-					subtitle="what i have done?"
+					subtitle="What I'm capable of?"
 				/>
 
 				<div className="card__list">
@@ -149,7 +137,7 @@ export default function Home({ projects, experieces }) {
 			<section className="experience" id="experiences">
 				<SectionHeading
 					title="experiences"
-					subtitle="what i have done?"
+					subtitle="What I have done?"
 				/>
 
 				<div className="experience__list">
