@@ -36,9 +36,9 @@ const AboutSection = () => {
 						</button>
 					</div>
 					<div className="card__content">
-						<h4 className="heading__2">About</h4>
+						<h4 className="heading__2">about</h4>
 						<h5 htmlFor="" className="heading__5">
-							What I love to do?
+							what i love to do?
 						</h5>
 
 						<p className="card__body">

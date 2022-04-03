@@ -60,7 +60,7 @@ export default function Home({ projects, experieces }) {
 
 				<div className="intro__img">
 					<Image
-						src="/images/me-final3.png"
+						src="/images/me.png"
 						alt=""
 						width="350"
 						height="396"
@@ -109,7 +109,7 @@ export default function Home({ projects, experieces }) {
 			<section className="featured" id="featured">
 				<SectionHeading
 					title="featured projects"
-					subtitle="Selected projects"
+					subtitle="selected projects"
 				/>
 				{projects
 					.filter((project) => project.fields.featured)
@@ -124,7 +124,7 @@ export default function Home({ projects, experieces }) {
 			<section className="project" id="projects">
 				<SectionHeading
 					title="noteworthy projects"
-					subtitle="What I'm capable of?"
+					subtitle="what i'm capable of?"
 				/>
 
 				<div className="card__list">
@@ -137,7 +137,7 @@ export default function Home({ projects, experieces }) {
 			<section className="experience" id="experiences">
 				<SectionHeading
 					title="experiences"
-					subtitle="What I have done?"
+					subtitle="what i have done?"
 				/>
 
 				<div className="experience__list">

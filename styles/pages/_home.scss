@@ -21,9 +21,14 @@
 	.intro__img {
 		min-width: 280px;
 		max-width: 280px;
+		transform: rotateZ(-12deg);
 
 		@include respond(phone) {
 			display: none;
+		}
+
+		&:hover {
+			transform: rotateZ(0deg);
 		}
 	}
 
