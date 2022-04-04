@@ -17,9 +17,16 @@ const ProjectItem = ({ project }) => {
 				<a className="btn btn__link" href={github} target="__blank">
 					<FiGithub />
 				</a>
-				<a className="btn btn__link" href={website} target="__blank">
-					<FiExternalLink />
-				</a>
+
+				{website && (
+					<a
+						className="btn btn__link"
+						href={website}
+						target="__blank"
+					>
+						<FiExternalLink />
+					</a>
+				)}
 			</div>
 			<div className="card__content">
 				<h4 className="heading__3">{title}</h4>
