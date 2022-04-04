@@ -12,6 +12,9 @@
 		min-width: 280px;
 		max-width: 280px;
 		align-self: flex-end;
+		@include respond(phone) {
+			display: none;
+		}
 	}
 	@include respond(phone) {
 		margin: 0 0 16rem 0;

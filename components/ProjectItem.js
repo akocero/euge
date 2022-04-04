@@ -1,22 +1,15 @@
-import {
-	FiGithub,
-	FiLinkedin,
-	FiTwitter,
-	FiGitlab,
-	FiCode,
-	FiExternalLink,
-	FiPlus,
-} from "react-icons/fi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const ProjectItem = ({ project }) => {
-	const { title, subtitle, body, tools, github, website, image } =
-		project.fields;
+	const { title, subtitle, body, tools, github, website } = project.fields;
 	return (
 		<div className="card">
 			<div className="card__actions">
-				<a className="btn btn__link" href={github} target="__blank">
-					<FiGithub />
-				</a>
+				{github && (
+					<a className="btn btn__link" href={github} target="__blank">
+						<FiGithub />
+					</a>
+				)}
 
 				{website && (
 					<a
