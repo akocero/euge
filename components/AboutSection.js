@@ -77,20 +77,18 @@ const AboutSection = () => {
 					/>
 				</div>
 				<div className="about__thumbnail">
-					<Image
-						src="/images/about.jpg"
-						alt=""
-						width={960}
-						height={640}
-					/>
+					<Image src="/images/about.jpg" alt="" layout="fill" />
 				</div>
 				<div className="about__thumbnail">
 					<Image
 						src="/images/about3.jpg"
 						alt=""
 						width={1880}
-						height={1536}
+						height={1736}
 					/>
+				</div>
+				<div className="about__thumbnail">
+					<Image src="/images/about.jpg" alt="" layout="fill" />
 				</div>
 			</div>
 		</section>

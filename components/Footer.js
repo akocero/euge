@@ -1,21 +1,30 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
 import SiteAuthor from "./SiteAuthor";
+import Link from "next/link";
 const Footer = () => {
 	return (
 		<footer className="footer">
 			<div className="footer__links">
-				<a className="btn btn__link">
-					<FiGithub />
-				</a>
-				<a className="btn btn__link">
-					<FiGitlab />
-				</a>
-				<a className="btn btn__link">
-					<FiLinkedin />
-				</a>
-				<a className="btn btn__link">
-					<FiTwitter />
-				</a>
+				<Link href="https://github.com/akocero">
+					<a className="btn btn__link" target="__blank">
+						<FiGithub />
+					</a>
+				</Link>
+				<Link href="https://gitlab.com/akocero">
+					<a className="btn btn__link" target="__blank">
+						<FiGitlab />
+					</a>
+				</Link>
+				<Link href="https://www.linkedin.com/in/eugenebadato/">
+					<a className="btn btn__link" target="__blank">
+						<FiLinkedin />
+					</a>
+				</Link>
+				<Link href="https://twitter.com/eugenebadato">
+					<a className="btn btn__link" target="__blank">
+						<FiTwitter />
+					</a>
+				</Link>
 			</div>
 			<SiteAuthor />
 		</footer>

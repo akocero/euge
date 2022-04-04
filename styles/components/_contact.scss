@@ -3,6 +3,10 @@
 	margin: 16rem 0;
 	text-align: center;
 	// background-color: red;
+
+	@include respond(phone) {
+		margin: 0 0 16rem 0;
+	}
 	.card {
 		padding-top: 2.4rem;
 		padding-bottom: 2.4rem;

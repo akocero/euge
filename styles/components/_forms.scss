@@ -1,28 +1,27 @@
-form {
-}
-
-label {
-	display: block;
-	text-align: left;
-	margin-bottom: 2rem;
-	font-weight: 300;
-
-	& > * {
+.contact {
+	label {
 		display: block;
-	}
+		text-align: left;
+		margin-bottom: 2rem;
+		font-weight: 300;
 
-	input,
-	textarea {
-		width: 100%;
-		border: none;
-		outline: none;
-		background-color: $dark-2;
-		padding: 1rem 2rem;
-		border-radius: 1rem;
-		color: white;
-		font-family: "Consolas";
-	}
-	span {
-		margin-bottom: 0.6rem;
+		& > * {
+			display: block;
+		}
+
+		input,
+		textarea {
+			width: 100%;
+			border: none;
+			outline: none;
+			background-color: $dark-2;
+			padding: 1rem 2rem;
+			border-radius: 1rem;
+			color: white;
+			font-family: "Consolas";
+		}
+		span {
+			margin-bottom: 0.6rem;
+		}
 	}
 }
