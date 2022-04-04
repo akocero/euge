@@ -175,6 +175,16 @@ export default function Home({ projects, experieces }) {
 			<AboutSection />
 
 			<section className="contact" id="contact">
+				<div className="contact__img">
+					<Image
+						src="/images/me.png"
+						alt=""
+						width={350}
+						height={396}
+						priority
+						quality={100}
+					/>
+				</div>
 				<div className="card">
 					<h2 className="heading__2">{"Let's Work Together"}</h2>
 					<form action="post" onSubmit={handleSubmit}>
