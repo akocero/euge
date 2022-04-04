@@ -9,8 +9,8 @@ export default function handler(req, res) {
 	let transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.PASSWORD,
+			user: process.env.MAIL_EMAIL,
+			pass: process.env.MAIL_PASSWORD,
 		},
 	});
 
@@ -21,7 +21,7 @@ export default function handler(req, res) {
 
 	let mailOptions = {
 		from: body.email,
-		to: process.env.EMAIL,
+		to: process.env.MAIL_EMAIL,
 		subject: "Email From My Portfolio",
 		text: message,
 		html: message.replace(/\r\n/g, "<br>"),
