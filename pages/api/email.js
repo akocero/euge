@@ -7,10 +7,9 @@ export default function handler(req, res) {
 	res.status(200).json({ status: "Ok" });
 
 	let transporter = nodemailer.createTransport({
-		host: "localhost",
 		service: "gmail",
 		port: 465,
-		secure: true,
+		secureConnection: true,
 		auth: {
 			user: process.env.MAIL_EMAIL,
 			pass: process.env.MAIL_PASSWORD,
