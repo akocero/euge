@@ -13,6 +13,11 @@
 	font-weight: 300;
 	z-index: 99;
 	letter-spacing: 0.6px;
+	&__name {
+		@include respond(phone) {
+			margin-left: 3.2rem;
+		}
+	}
 
 	&__nav-list {
 		display: flex;
