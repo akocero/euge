@@ -62,8 +62,9 @@ export default function Home({ projects, experieces }) {
 					<Image
 						src="/images/me.png"
 						alt=""
-						width="350"
-						height="396"
+						width={350}
+						height={396}
+						priority
 					/>
 				</div>
 				<div className="intro__content">

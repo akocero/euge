@@ -2,7 +2,7 @@
 	padding: 1rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 2.4rem;
+	grid-gap: 3.2rem;
 
 	@include respond(phone) {
 		grid-template-columns: repeat(1, 1fr);
