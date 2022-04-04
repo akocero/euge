@@ -7,6 +7,7 @@ export default function handler(req, res) {
 	res.status(200).json({ status: "Ok" });
 
 	let transporter = nodemailer.createTransport({
+		host: "https://eugenebadato.vercel.app/",
 		service: "gmail",
 		port: 465,
 		secureConnection: true,
