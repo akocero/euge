@@ -5,6 +5,7 @@ label {
 	display: block;
 	text-align: left;
 	margin-bottom: 2rem;
+	font-weight: 300;
 
 	& > * {
 		display: block;
@@ -19,6 +20,7 @@ label {
 		padding: 1rem 2rem;
 		border-radius: 1rem;
 		color: white;
+		font-family: "Consolas";
 	}
 	span {
 		margin-bottom: 0.6rem;

@@ -48,6 +48,22 @@ export default function Home({ projects, experieces }) {
 	// 	// console.log(projects);
 	// }, []);
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const formData = {};
+		Array.from(e.currentTarget.elements).forEach((field) => {
+			if (!field.name) return;
+			formData[field.name] = field.value;
+		});
+
+		fetch("/api/email", {
+			method: "post",
+			body: JSON.stringify(formData),
+		});
+		console.log(formData);
+	};
+
 	return (
 		<>
 			<Head>
@@ -156,23 +172,31 @@ export default function Home({ projects, experieces }) {
 			<section className="contact" id="contact">
 				<div className="card">
 					<h2 className="heading__2">{"Let's Work Together"}</h2>
-					<form action="">
+					<form action="post" onSubmit={handleSubmit}>
 						<label>
 							<span>Your Email</span>
-							<input type="text" placeholder="Email..." />
+							<input
+								type="email"
+								placeholder="Email..."
+								name="email"
+								required
+							/>
 						</label>
 						<label>
 							<span>Message</span>
 							<textarea
-								name=""
+								name="message"
 								id=""
 								cols="30"
-								rows="10"
+								rows="5"
+								placeholder="Message..."
+								required
 							></textarea>
 						</label>
+						<button type="submit" className="btn btn__primary">
+							message me
+						</button>
 					</form>
-
-					<button className="btn btn__primary">message me</button>
 				</div>
 				<div className="triangle">&nbsp;</div>
 				<div className="triangle2">&nbsp;</div>
