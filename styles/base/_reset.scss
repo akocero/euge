@@ -7,7 +7,7 @@
 }
 html {
 	font-size: 62.5%;
-
+	scroll-behavior: smooth;
 	@include respond(tab-port) {
 		// width < 900?
 		font-size: 50%; //1 rem = 8px, 8/16 = 50%

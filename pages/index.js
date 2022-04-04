@@ -9,6 +9,7 @@ import {
 	FiCode,
 	FiExternalLink,
 	FiPlus,
+	FiHome,
 } from "react-icons/fi";
 import React from "react";
 import { createClient } from "contentful";
@@ -69,6 +70,9 @@ export default function Home({ projects, experieces }) {
 			<Head>
 				<title>@eugenebadato</title>
 			</Head>
+			<a href="#home" className="btn btn__up">
+				<FiHome />
+			</a>
 			<section className="intro" id="home">
 				{/* <div className="rectangle">&nbsp;</div> */}
 				<div className="triangle">&nbsp;</div>
