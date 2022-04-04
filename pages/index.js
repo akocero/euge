@@ -85,6 +85,7 @@ export default function Home({ projects, experieces }) {
 						width={350}
 						height={396}
 						priority
+						quality={100}
 					/>
 				</div>
 				<div className="intro__content">
