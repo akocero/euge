@@ -42,5 +42,6 @@
 		color: white;
 		transform: rotateZ(-1.5deg);
 		border-radius: $border-rad;
+		z-index: -1;
 	}
 }

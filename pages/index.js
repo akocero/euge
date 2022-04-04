@@ -156,6 +156,22 @@ export default function Home({ projects, experieces }) {
 			<section className="contact" id="contact">
 				<div className="card">
 					<h2 className="heading__2">{"Let's Work Together"}</h2>
+					<form action="">
+						<label>
+							<span>Your Email</span>
+							<input type="text" placeholder="Email..." />
+						</label>
+						<label>
+							<span>Message</span>
+							<textarea
+								name=""
+								id=""
+								cols="30"
+								rows="10"
+							></textarea>
+						</label>
+					</form>
+
 					<button className="btn btn__primary">message me</button>
 				</div>
 				<div className="triangle">&nbsp;</div>
