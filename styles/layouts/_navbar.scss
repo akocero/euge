@@ -6,7 +6,7 @@
 	z-index: 999999;
 	background-color: rgba(var(--navbar-bg), 0.7);
 	backdrop-filter: blur(8px);
-	height: 7.2rem;
+	height: 9.2rem;
 	transition: height 0.3s ease-in-out;
 	&__container {
 		position: relative;
@@ -78,6 +78,6 @@
 	}
 
 	&.scroll-up {
-		height: 5.8rem;
+		height: 6.4rem;
 	}
 }
