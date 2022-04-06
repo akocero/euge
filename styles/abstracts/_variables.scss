@@ -12,6 +12,7 @@ $shape-opacity: 36%;
 $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 
 :root {
+	--navbar-bg: 240, 255, 253;
 	--bg-color: hsl(173, 100%, 97%);
 	--text-color: hsl(150, 100%, 10%);
 	--accent: hsl(150, 100%, 40%);
@@ -21,6 +22,7 @@ $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 	//0.568
 }
 .dark {
+	--navbar-bg: 23, 23, 23;
 	--bg-color: hsl(0, 0%, 9%);
 	--text-color: hsl(0, 0%, 96%);
 	--accent: hsl(150, 100%, 45%);

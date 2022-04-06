@@ -1,18 +1,30 @@
 .navbar {
-	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	max-width: $max-width;
-	display: flex;
-	margin: 0 auto;
-
-	align-items: center;
-	// justify-content: space-between;
+	z-index: 999999;
+	background-color: rgba(var(--navbar-bg), 0.7);
+	backdrop-filter: blur(8px);
 	height: 7.2rem;
-	font-size: 1.6rem;
-	font-family: "Kanit";
-	font-weight: 300;
-	z-index: 99;
-	letter-spacing: 0.6px;
+	transition: height 0.3s ease-in-out;
+	&__container {
+		position: relative;
+		max-width: $max-width;
+		display: flex;
+		margin: 0 auto;
+
+		align-items: center;
+		// justify-content: space-between;
+		height: 100%;
+		font-size: 1.6rem;
+		font-family: "Kanit";
+		font-weight: 300;
+
+		letter-spacing: 0.6px;
+
+		backdrop-filter: blur(100px);
+	}
 
 	&__nav {
 		margin-left: auto;
@@ -59,5 +71,13 @@
 		display: flex;
 		align-items: center;
 		margin-left: 2.4rem;
+	}
+
+	&.scroll-down {
+		top: -100%;
+	}
+
+	&.scroll-up {
+		height: 5.8rem;
 	}
 }
