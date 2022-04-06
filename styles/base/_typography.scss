@@ -75,3 +75,15 @@ p {
 	margin: 1.6rem 0 2.4rem 0;
 	text-align: justify;
 }
+
+.light {
+	.section__heading {
+		color: var(--text-color);
+		// font-weight: 00;
+	}
+
+	.heading__5 {
+		color: var(--text-color);
+		font-weight: 300;
+	}
+}

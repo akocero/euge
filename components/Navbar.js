@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { RiSunLine, RiMoonClearLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -10,7 +11,6 @@ const Navbar = () => {
 		darkMode = localStorage.getItem("darkmode");
 		if (darkMode == "dark") {
 			enableDarkMode();
-			console.log("umabot");
 		} else {
 			disableDarkMode();
 		}
@@ -90,7 +90,7 @@ const Navbar = () => {
 					toggleDarkMode();
 				}}
 			>
-				{isDark == "dark" ? <FiSun /> : <FiMoon />}
+				{isDark == "dark" ? <RiSunLine /> : <RiMoonClearLine />}
 			</button>
 		</header>
 	);

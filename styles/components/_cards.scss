@@ -48,6 +48,10 @@
 
 .light {
 	.card {
-		// box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+		background-color: hsla(151, 100%, 10%, 0.032);
+
+		&::after {
+			border: 2px solid hsla(151, 100%, 10%, 0.089);
+		}
 	}
 }

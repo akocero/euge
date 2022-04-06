@@ -68,3 +68,15 @@
 		}
 	}
 }
+
+.light {
+	.featured__item {
+		&::after {
+			background-color: hsla(151, 100%, 10%, 0.032);
+		}
+
+		&::before {
+			border: 2px solid hsla(151, 100%, 10%, 0.089);
+		}
+	}
+}
