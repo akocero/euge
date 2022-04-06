@@ -18,7 +18,7 @@
 	}
 
 	&__link {
-		background-color: $dark-2;
+		background-color: var(--bg-color-2);
 		height: 4.8rem;
 		width: 4.8rem;
 		border-radius: 4rem;
@@ -60,7 +60,7 @@
 	position: absolute;
 	top: 3%;
 	left: 3%;
-	border: 1px solid $dark-2;
+	border: 1px solid var(--bg-color-2);
 	background: transparent;
 	height: 104%;
 	width: 104%;

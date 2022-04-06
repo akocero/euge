@@ -10,3 +10,22 @@ $max-width: 1200px;
 $shape-opacity: 36%;
 
 $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
+
+:root {
+	--bg-color: hsl(173, 100%, 97%);
+	--text-color: hsl(150, 100%, 10%);
+	--accent: hsl(150, 100%, 40%);
+	--bg-color-2: hsl(0, 0%, 31%);
+	--bg-color-3: hsl(0, 0%, 88%);
+	--bg-color-4: hsl(0, 0%, 93%);
+}
+.dark {
+	--bg-color: hsl(0, 0%, 9%);
+	--text-color: hsl(0, 0%, 96%);
+	--accent: hsl(150, 100%, 45%);
+	--bg-color-2: hsl(0, 0%, 16%);
+	--bg-color-3: hsl(0, 0%, 16%);
+	--bg-color-4: hsl(0, 0%, 12%);
+}
+
+// light EFFFFD

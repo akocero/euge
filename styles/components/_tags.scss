@@ -4,9 +4,9 @@
 		margin-bottom: 1rem;
 	}
 	.tag {
-		color: rgb(201, 201, 201);
+		color: var(--text-color);
 		// font-size: 1.6rem;
-		background-color: $dark-2;
+		background-color: var(--bg-color-3);
 		border-radius: $border-rad;
 		padding: 0.4rem 1rem;
 		display: inline-block;

@@ -6,16 +6,27 @@
 	margin: 0 auto;
 
 	align-items: center;
-	justify-content: space-between;
+	// justify-content: space-between;
 	height: 7.2rem;
 	font-size: 1.6rem;
 	font-family: "Kanit";
 	font-weight: 300;
 	z-index: 99;
 	letter-spacing: 0.6px;
+
+	&__nav {
+		margin-left: auto;
+		// background-color: red;
+	}
 	&__name {
 		@include respond(phone) {
 			margin-left: 3.2rem;
+		}
+	}
+
+	&__toggle {
+		@include respond(phone) {
+			margin-right: 3.2rem;
 		}
 	}
 
@@ -31,9 +42,22 @@
 		}
 	}
 
-	.navbar__link {
+	&__link {
 		&:hover {
 			color: $accent;
 		}
+	}
+
+	&__toggle {
+		// padding: 1rem;
+		border: none;
+		background-color: transparent;
+		color: var(--text-color);
+		font-size: 2.8rem;
+		cursor: pointer;
+		// background-color: blue;
+		display: flex;
+		align-items: center;
+		margin-left: 2.4rem;
 	}
 }

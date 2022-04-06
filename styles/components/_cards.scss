@@ -10,7 +10,7 @@
 }
 
 .card {
-	background-color: $dark-4;
+	background-color: var(--bg-color-4);
 	padding: 1.6rem 2.4rem;
 	border-radius: $border-rad;
 	position: relative;
@@ -35,7 +35,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		border: 2px solid $dark-4;
+		border: 2px solid var(--bg-color-4);
 		height: 102%;
 		width: 102%;
 		// border-radius: 4rem;
@@ -43,5 +43,11 @@
 		transform: rotateZ(-1.5deg);
 		border-radius: $border-rad;
 		z-index: -1;
+	}
+}
+
+.light {
+	.card {
+		// box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 	}
 }

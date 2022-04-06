@@ -16,8 +16,8 @@ html {
 
 body {
 	box-sizing: border-box;
-	background-color: $dark;
-	color: $light;
+	background-color: var(--bg-color);
+	color: var(--text-color);
 	overflow-x: hidden;
 }
 
@@ -35,7 +35,17 @@ ul {
 
 a {
 	text-decoration: none;
-	color: $light;
+	color: var(--text-color);
+}
+
+.light {
+	a {
+		font-weight: 500;
+	}
+
+	p {
+		font-weight: 400;
+	}
 }
 
 img {
@@ -45,4 +55,5 @@ img {
 p {
 	font-family: "Kanit";
 	font-weight: 300;
+	opacity: 70%;
 }
