@@ -69,6 +69,18 @@ export default function Home({ projects, experieces }) {
 		<>
 			<Head>
 				<title>@eugenebadato</title>
+				<meta
+					property="og:description"
+					content="I design and develop things for the web."
+				/>
+				<meta
+					property="og:title"
+					content="Eugene Paul | Web Developer Portfolio"
+				/>
+				<meta
+					property="og:description"
+					content="I design and develop things for the web."
+				/>
 			</Head>
 			<a href="#home" className="btn btn__up">
 				<FiHome />
