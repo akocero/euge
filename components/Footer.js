@@ -27,6 +27,7 @@ const Footer = () => {
 						</a>
 					</Link>
 				</div>
+
 				<SiteAuthor />
 			</div>
 		</footer>

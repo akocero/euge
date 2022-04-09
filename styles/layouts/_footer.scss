@@ -1,11 +1,18 @@
 .footer {
 	padding: 5rem 0;
+	span {
+		font-family: "Arial";
+	}
 	&__container {
 		max-width: $max-width;
 		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@include respond(phone) {
+			flex-direction: column;
+		}
 	}
 	h5 {
 		font-size: 1.6rem;
@@ -20,14 +27,10 @@
 	}
 	.site-author {
 		svg {
-			fill: white;
+			fill: var(--text-color);
 			width: 18px;
 			margin: 0 4px;
 		}
-	}
-
-	@include respond(phone) {
-		flex-direction: column;
 	}
 
 	&__links > a:not(:last-child) {
