@@ -1,6 +1,6 @@
 .contact {
 	position: relative;
-	margin: 16rem 0;
+	margin: 8rem 0;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -33,14 +33,13 @@
 		margin-bottom: 2.4rem;
 	}
 
-	.triangle,
 	.triangle2 {
-		bottom: -20%;
-		left: 40%;
+		bottom: -10%;
+		right: 41%;
 	}
 
 	.triangle {
-		bottom: -24%;
-		left: 39.2%;
+		bottom: -10%;
+		right: 40%;
 	}
 }

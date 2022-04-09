@@ -18,6 +18,7 @@ import ProjectItem from "../components/ProjectItem";
 import ExperienceItem from "../components/ExperienceItem";
 import AboutSection from "../components/AboutSection";
 import SectionHeading from "../components/SectionHeading";
+import TestimonialItem from "../components/TestimonialItem";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -188,6 +189,17 @@ export default function Home({ projects, experieces }) {
 			</section>
 
 			<AboutSection />
+			<section className="testimonials">
+				<SectionHeading
+					title="testimonials"
+					subtitle="people i work with?"
+				/>
+				<div className="testimonials__list">
+					{[1, 2, 3, 4].map((project) => (
+						<TestimonialItem key={project} />
+					))}
+				</div>
+			</section>
 
 			<section className="contact" id="contact">
 				<div className="contact__img">

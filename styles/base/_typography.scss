@@ -87,3 +87,17 @@ p {
 		font-weight: 300;
 	}
 }
+
+.lead {
+	font-family: "Cascadia Code";
+	font-size: 1.8rem;
+	color: var(--text-color);
+	opacity: 100%;
+	text-align: left;
+	margin: 0;
+
+	span {
+		font-size: 1.6rem;
+		opacity: 70%;
+	}
+}

@@ -1,0 +1,51 @@
+.testimonials {
+	&__list {
+		display: flex;
+		gap: 2rem;
+		overflow-x: auto;
+		padding: 5rem 0.5rem 2rem 0.5rem;
+
+		.card {
+			max-width: 280px;
+		}
+
+		&::-webkit-scrollbar {
+			height: 0.8rem;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			border-radius: 6px;
+			background: var(--bg-color-4);
+		}
+
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: var(--bg-color-2);
+		}
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__profile-img {
+		position: absolute;
+		top: -4rem;
+		right: 2rem;
+		img {
+			max-height: 80px;
+		}
+	}
+
+	&__content {
+		margin-top: 3rem;
+		max-height: 22rem;
+		overflow-y: auto;
+	}
+}

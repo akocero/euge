@@ -13,11 +13,7 @@ const Navbar = () => {
 	useEffect(() => {
 		// setIsDark(localStorage.getItem("darkmode"));
 		darkMode = localStorage.getItem("darkmode");
-		if (darkMode == "dark") {
-			enableDarkMode();
-		} else {
-			disableDarkMode();
-		}
+		darkMode == "dark" ? enableDarkMode() : disableDarkMode();
 	}, []);
 
 	useEffect(() => {
