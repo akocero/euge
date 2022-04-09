@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FiSun, FiMoon } from "react-icons/fi";
 import { RiSunLine, RiMoonClearLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
 
