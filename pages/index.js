@@ -153,7 +153,7 @@ export default function Home({ projects, experieces }) {
 
 			<AboutSection />
 
-			<section className="testimonials">
+			{/* <section className="testimonials">
 				<SectionHeading
 					title="testimonials"
 					subtitle="people i work with?"
@@ -163,7 +163,7 @@ export default function Home({ projects, experieces }) {
 						<TestimonialItem key={project} />
 					))}
 				</div>
-			</section>
+			</section> */}
 
 			<ContactSection />
 		</>
