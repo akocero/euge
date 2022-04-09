@@ -23,6 +23,8 @@ body {
 
 section {
 	padding-top: 8rem;
+	max-width: $max-width;
+	margin: 0 auto;
 	@include respond(phone) {
 		padding: 0 3.2rem;
 		padding-top: 8rem;

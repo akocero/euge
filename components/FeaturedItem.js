@@ -1,14 +1,5 @@
-import {
-	FiGithub,
-	FiLinkedin,
-	FiTwitter,
-	FiGitlab,
-	FiCode,
-	FiExternalLink,
-	FiPlus,
-} from "react-icons/fi";
+import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
 
 const FeaturedItem = ({ featuredProject }) => {
 	const { title, subtitle, body, tools, github, website, image } =

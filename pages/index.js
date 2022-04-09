@@ -68,24 +68,6 @@ export default function Home({ projects, experieces }) {
 
 	return (
 		<>
-			<Head>
-				<title>@eugenebadato</title>
-				<meta
-					property="og:url"
-					content="https://eugenebadato.vercel.app/"
-				/>
-				<meta property="og:type" content="website" />
-				<meta
-					property="og:title"
-					content="Eugene Paul Badato | Website Portfolio"
-				/>
-				<meta name="twitter:card" content="summary" />
-				<meta
-					property="og:description"
-					content="I design and develop things for the web."
-				/>
-				<meta property="og:image" content="/images/portfolio-ss.png" />
-			</Head>
 			<a href="#home" className="btn btn__up">
 				<FiHome />
 			</a>

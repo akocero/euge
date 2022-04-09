@@ -8,6 +8,7 @@
 	backdrop-filter: blur(8px);
 	height: 9.2rem;
 	transition: height 0.3s ease-in-out;
+
 	&__container {
 		position: relative;
 		max-width: $max-width;
@@ -79,5 +80,6 @@
 
 	&.scroll-up {
 		height: 6.4rem;
+		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 	}
 }
