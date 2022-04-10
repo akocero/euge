@@ -12,7 +12,9 @@ import Button from "./Button";
 
 export default function IntroSection() {
 	const one = (
-		<h4 className="intro__subtitle heading__4">Hello, It’s Me Eugene.</h4>
+		<h4 className="intro__subtitle heading__4">
+			Hello, they call me Eugene.
+		</h4>
 	);
 	const two = (
 		<h1 className="intro__title heading__1">

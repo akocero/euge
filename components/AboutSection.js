@@ -8,7 +8,8 @@ import {
 	FiPlus,
 } from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
+
+import Button from "./Button";
 
 const AboutSection = () => {
 	return (
@@ -20,26 +21,30 @@ const AboutSection = () => {
 
 			<div className="card about__content">
 				<div className="card__actions">
-					<Link href="https://github.com/akocero">
-						<a className="btn btn__link" target="__blank">
-							<FiGithub />
-						</a>
-					</Link>
-					<Link href="https://gitlab.com/akocero">
-						<a className="btn btn__link" target="__blank">
-							<FiGitlab />
-						</a>
-					</Link>
-					<Link href="https://www.linkedin.com/in/eugenebadato/">
-						<a className="btn btn__link" target="__blank">
-							<FiLinkedin />
-						</a>
-					</Link>
-					<Link href="https://twitter.com/eugenebadato">
-						<a className="btn btn__link" target="__blank">
-							<FiTwitter />
-						</a>
-					</Link>
+					<Button
+						href="https://github.com/akocero"
+						className="btn btn__link"
+						target="__blank"
+						text={<FiGithub />}
+					/>
+					<Button
+						href="https://gitlab.com/akocero"
+						className="btn btn__link"
+						target="__blank"
+						text={<FiGitlab />}
+					/>
+					<Button
+						href="https://www.linkedin.com/in/eugenebadato/"
+						className="btn btn__link"
+						target="__blank"
+						text={<FiLinkedin />}
+					/>
+					<Button
+						href="https://twitter.com/eugenebadato"
+						className="btn btn__link"
+						target="__blank"
+						text={<FiTwitter />}
+					/>
 				</div>
 				<div className="card__content">
 					<h4 className="heading__2">about</h4>
@@ -54,7 +59,7 @@ const AboutSection = () => {
 						<br />
 						<br />
 						{
-							"	Moreover, he created PelikulaPH an application for movie lovers like him, and an automated monitoring system. He loves to help aspirant developers not only to help them but to learn from it as well, in his free time he enjoys building a game and learning new tech trends."
+							"	Moreover, he created PelikulaPH an application for movie lovers like him, and an automated monitoring system. He loves to help aspirant developers not only to push them to become a developer but to learn from them as well, in his free time he enjoys devising a game and accumulating an understanding of new web tech trends."
 						}
 					</p>
 				</div>
@@ -69,15 +74,15 @@ const AboutSection = () => {
 
 			<div className="about__gallery">
 				<div className="about__thumbnail">
+					<Image src="/images/about.jpg" alt="" layout="fill" />
+				</div>
+				<div className="about__thumbnail">
 					<Image
 						src="/images/about2.jpg"
 						alt=""
 						width={1503}
 						height={2015}
 					/>
-				</div>
-				<div className="about__thumbnail">
-					<Image src="/images/about.jpg" alt="" layout="fill" />
 				</div>
 				<div className="about__thumbnail">
 					<Image
@@ -88,7 +93,7 @@ const AboutSection = () => {
 					/>
 				</div>
 				<div className="about__thumbnail">
-					<Image src="/images/about.jpg" alt="" layout="fill" />
+					<Image src="/images/about4.jpg" alt="" layout="fill" />
 				</div>
 			</div>
 		</section>
