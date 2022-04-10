@@ -1,9 +1,8 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-	IntroParentVariants,
+	IntroSectionVariants,
 	springRTL,
 	springLTR,
 	slideUp,
@@ -27,7 +26,7 @@ export default function IntroSection() {
 		<motion.section
 			className="intro"
 			id="home"
-			variants={IntroParentVariants}
+			variants={IntroSectionVariants}
 			initial="hidden"
 			animate="visible"
 		>

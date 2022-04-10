@@ -1,9 +1,11 @@
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { slideUp } from "../src/utils/animationVariants";
 
 const ProjectItem = ({ project }) => {
 	const { title, subtitle, body, tools, github, website } = project.fields;
 	return (
-		<div className="card">
+		<motion.div className="card" variants={slideUp}>
 			<div className="card__actions">
 				{github && (
 					<a className="btn btn__link" href={github} target="__blank">
@@ -37,7 +39,7 @@ const ProjectItem = ({ project }) => {
 					</span>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

@@ -1,12 +1,15 @@
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 
+import { motion } from "framer-motion";
+import { slideUp } from "../src/utils/animationVariants";
+
 const FeaturedItem = ({ featuredProject }) => {
 	const { title, subtitle, body, tools, github, website, image } =
 		featuredProject.fields;
 
 	return (
-		<article className="featured__item">
+		<motion.article className="featured__item" variants={slideUp}>
 			<div className="featured__img-container">
 				{image && (
 					<Image
@@ -43,7 +46,7 @@ const FeaturedItem = ({ featuredProject }) => {
 					</a>
 				</div>
 			</div>
-		</article>
+		</motion.article>
 	);
 };
 

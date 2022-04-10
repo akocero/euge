@@ -1,4 +1,4 @@
-export const IntroParentVariants = {
+export const IntroSectionVariants = {
 	hidden: {
 		opacity: 0,
 	},
@@ -89,6 +89,16 @@ export const fadeIn = {
 		transition: {
 			duration: 0.3,
 			ease: "easeInOut",
+		},
+	},
+};
+
+export const sectionVariants = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.2,
+			when: "beforeChildren",
 		},
 	},
 };
