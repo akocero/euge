@@ -13,11 +13,14 @@
 		display: flex;
 		// background-color: orangered;
 		//
-		@include respond(phone) {
-			flex-direction: column;
-		}
+
 		position: relative;
 		margin: 10rem 0;
+
+		@include respond(phone) {
+			flex-direction: column;
+			margin: 16rem 0;
+		}
 
 		&:after {
 			content: "";

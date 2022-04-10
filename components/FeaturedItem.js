@@ -1,9 +1,9 @@
-import { FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { slideUp } from "../src/utils/animationVariants";
-
+import Button from "./Button";
 const FeaturedItem = ({ featuredProject }) => {
 	const { title, subtitle, body, tools, github, website, image } =
 		featuredProject.fields;
@@ -34,16 +34,18 @@ const FeaturedItem = ({ featuredProject }) => {
 				</div>
 
 				<div className="featured__actions">
-					<a
-						className="btn btn__primary"
+					<Button
 						href={website}
 						target="__blank"
-					>
-						take a look
-					</a>
-					<a className="btn btn__link" href={github} target="__blank">
-						<FiGithub />
-					</a>
+						className="btn btn__primary"
+						text="take a look"
+					/>
+					<Button
+						href={github}
+						target="__blank"
+						className="btn btn__link"
+						text={<FiGithub />}
+					/>
 				</div>
 			</div>
 		</motion.article>
