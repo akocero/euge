@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { RiSunLine, RiMoonClearLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
+import { slideDown, navParentVariants } from "../src/utils/animationVariants";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
 	const [isDark, setIsDark] = useState("");
@@ -8,6 +10,14 @@ const Navbar = () => {
 
 	const [lastScroll, setLastScroll] = useState(0);
 	const [scrollState, setScrollState] = useState("");
+
+	const navbarItems = [
+		"#home",
+		"#projects",
+		"#experiences",
+		"#about",
+		"#contact",
+	];
 
 	useEffect(() => {
 		// setIsDark(localStorage.getItem("darkmode"));
@@ -73,50 +83,44 @@ const Navbar = () => {
 
 	return (
 		<header className={`navbar ${scrollState}`}>
-			<div className="navbar__container">
-				<div className="navbar__name">
+			<motion.div
+				className="navbar__container"
+				variants={navParentVariants}
+				initial="hidden"
+				animate="visible"
+			>
+				<motion.div className="navbar__name" variants={slideDown}>
 					<Link href="/">
 						<a>@eugenebadato.</a>
 					</Link>
-				</div>
+				</motion.div>
 				<nav className="navbar__nav">
 					<ul className="navbar__nav-list">
-						<li className="navbar__item">
-							<Link href="#home">
-								<a className="navbar__link">home</a>
-							</Link>
-						</li>
-						<li className="navbar__item">
-							<Link href="#projects">
-								<a className="navbar__link">projects</a>
-							</Link>
-						</li>
-						<li className="navbar__item">
-							<Link href="#experiences">
-								<a className="navbar__link">experiences</a>
-							</Link>
-						</li>
-						<li className="navbar__item">
-							<Link href="#about">
-								<a className="navbar__link">about</a>
-							</Link>
-						</li>
-						<li className="navbar__item">
-							<Link href="#contact">
-								<a className="navbar__link">contact</a>
-							</Link>
-						</li>
+						{navbarItems.map((item) => (
+							<motion.li
+								className="navbar__item"
+								variants={slideDown}
+								key={item}
+							>
+								<Link href={item}>
+									<a className="navbar__link">
+										{item.substring(1)}
+									</a>
+								</Link>
+							</motion.li>
+						))}
 					</ul>
 				</nav>
-				<button
+				<motion.button
 					className="navbar__toggle"
 					onClick={() => {
 						toggleDarkMode();
 					}}
+					variants={slideDown}
 				>
 					{isDark == "dark" ? <RiSunLine /> : <RiMoonClearLine />}
-				</button>
-			</div>
+				</motion.button>
+			</motion.div>
 		</header>
 	);
 };

@@ -2,6 +2,14 @@ import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+	IntroParentVariants,
+	springRTL,
+	springLTR,
+	slideUp,
+	fadeIn,
+} from "../src/utils/animationVariants";
+import Button from "./Button";
 
 export default function IntroSection() {
 	const one = (
@@ -15,57 +23,23 @@ export default function IntroSection() {
 
 	const introTexts = [one, two];
 
-	const IntroContainerVariants = {
-		hidden: {
-			opacity: 0,
-		},
-		visible: {
-			opacity: 1,
-			transition: {
-				delay: 1,
-				staggerChildren: 0.2,
-				when: "beforeChildren",
-			},
-		},
-	};
-
-	const fadeUp = {
-		hidden: {
-			x: "100vw",
-		},
-		visible: {
-			x: 0,
-			transition: {
-				duration: 1,
-				type: "spring",
-			},
-		},
-	};
-
-	const slideRight = {
-		hidden: {
-			x: -500,
-		},
-		visible: {
-			x: 0,
-			transition: {
-				duration: 1.5,
-				type: "spring",
-			},
-		},
-	};
-
 	return (
 		<motion.section
 			className="intro"
 			id="home"
-			variants={IntroContainerVariants}
+			variants={IntroParentVariants}
 			initial="hidden"
 			animate="visible"
 		>
 			{/* <div className="rectangle">&nbsp;</div> */}
 
-			<motion.div className="intro__img" variants={slideRight}>
+			<motion.div
+				className="intro__img"
+				variants={springLTR}
+				whileHover={{
+					rotateZ: "-20deg",
+				}}
+			>
 				<Image
 					src="/images/me.png"
 					alt=""
@@ -77,43 +51,53 @@ export default function IntroSection() {
 			</motion.div>
 			<div className="intro__content">
 				{introTexts.map((text, i) => (
-					<motion.div variants={fadeUp} key={i}>
+					<motion.div variants={slideUp} key={i}>
 						{text}
 					</motion.div>
 				))}
 
-				<motion.div className="intro__actions" variants={fadeUp}>
-					<Link href="#projects">
-						<a className="btn btn__primary">projects</a>
-					</Link>
+				<motion.div className="intro__actions" variants={slideUp}>
+					<Button
+						href="#projects"
+						className="btn btn__primary"
+						text="projects"
+					/>
 
 					<div className="social__links">
-						<Link href="https://github.com/akocero">
-							<a className="btn btn__link" target="__blank">
-								<FiGithub />
-							</a>
-						</Link>
-						<Link href="https://gitlab.com/akocero">
-							<a className="btn btn__link" target="__blank">
-								<FiGitlab />
-							</a>
-						</Link>
-						<Link href="https://www.linkedin.com/in/eugenebadato/">
-							<a className="btn btn__link" target="__blank">
-								<FiLinkedin />
-							</a>
-						</Link>
-						<Link href="https://twitter.com/eugenebadato">
-							<a className="btn btn__link" target="__blank">
-								<FiTwitter />
-							</a>
-						</Link>
+						<Button
+							href="https://github.com/akocero"
+							className="btn btn__link"
+							target="__blank"
+							text={<FiGithub />}
+						/>
+						<Button
+							href="https://gitlab.com/akocero"
+							className="btn btn__link"
+							target="__blank"
+							text={<FiGitlab />}
+						/>
+						<Button
+							href="https://www.linkedin.com/in/eugenebadato/"
+							className="btn btn__link"
+							target="__blank"
+							text={<FiLinkedin />}
+						/>
+						<Button
+							href="https://twitter.com/eugenebadato"
+							className="btn btn__link"
+							target="__blank"
+							text={<FiTwitter />}
+						/>
 					</div>
 				</motion.div>
-
-				<div className="triangle">&nbsp;</div>
-				<div className="triangle2">&nbsp;</div>
 			</div>
+
+			<motion.div className="triangle" variants={fadeIn}>
+				&nbsp;
+			</motion.div>
+			<motion.div className="triangle2" variants={fadeIn}>
+				&nbsp;
+			</motion.div>
 		</motion.section>
 	);
 }
