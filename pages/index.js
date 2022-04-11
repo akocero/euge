@@ -1,12 +1,12 @@
 import React from "react";
 import { createClient } from "contentful";
 
-import IntroSection from "../components/IntroSection";
-import AboutSection from "../components/AboutSection";
-import ContactSection from "../components/ContactSection";
-import FeaturedSection from "../components/FeaturedSection";
-import ProjectSection from "../components/ProjectSection";
-import ExperieceSection from "../components/ExperieceSection";
+import IntroSection from "../components/sections/IntroSection";
+import AboutSection from "../components/sections/AboutSection";
+import ContactSection from "../components/sections/ContactSection";
+import FeaturedSection from "../components/sections/FeaturedSection";
+import ProjectSection from "../components/sections/ProjectSection";
+import ExperieceSection from "../components/sections/ExperieceSection";
 
 export async function getStaticProps() {
 	const client = createClient({

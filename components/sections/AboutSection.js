@@ -1,24 +1,11 @@
-import {
-	FiGithub,
-	FiLinkedin,
-	FiTwitter,
-	FiGitlab,
-	FiCode,
-	FiExternalLink,
-	FiPlus,
-} from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
 import Image from "next/image";
 
-import Button from "./Button";
+import Button from "../Button";
 
 const AboutSection = () => {
 	return (
 		<section className="about" id="about">
-			{/* <div className="triangle">&nbsp;</div>
-			<div className="triangle2">&nbsp;</div>
-			<div className="rectangle">&nbsp;</div>
-			<div className="rectangle2">&nbsp;</div> */}
-
 			<div className="card about__content">
 				<div className="card__actions">
 					<Button

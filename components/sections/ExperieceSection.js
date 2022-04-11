@@ -1,8 +1,8 @@
-import useAnimateWhenViewed from "../src/hooks/useAnimateWhenViewed";
+import useAnimateWhenViewed from "../../src/hooks/useAnimateWhenViewed";
 import { motion } from "framer-motion";
-import { sectionVariants } from "../src/utils/animationVariants";
-import SectionHeading from "../components/SectionHeading";
-import ExperienceItem from "../components/ExperienceItem";
+import { sectionVariants } from "../../src/utils/animationVariants";
+import SectionHeading from "../SectionHeading";
+import ExperienceItem from "../ExperienceItem";
 
 export default function ExperieceSection({ experieces }) {
 	const [ref, controls] = useAnimateWhenViewed(-250);

@@ -7,8 +7,8 @@ import {
 	springLTR,
 	slideUp,
 	fadeIn,
-} from "../src/utils/animationVariants";
-import Button from "./Button";
+} from "../../src/utils/animationVariants";
+import Button from "../Button";
 
 export default function IntroSection() {
 	const one = (

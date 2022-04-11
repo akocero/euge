@@ -1,8 +1,8 @@
-import useAnimateWhenViewed from "../src/hooks/useAnimateWhenViewed";
+import useAnimateWhenViewed from "../../src/hooks/useAnimateWhenViewed";
 import { motion } from "framer-motion";
-import { sectionVariants } from "../src/utils/animationVariants";
-import SectionHeading from "../components/SectionHeading";
-import ProjectItem from "../components/ProjectItem";
+import { sectionVariants } from "../../src/utils/animationVariants";
+import SectionHeading from "../SectionHeading";
+import ProjectItem from "../ProjectItem";
 export default function ProjectSection({ projects }) {
 	const [ref, controls] = useAnimateWhenViewed(-250);
 	return (
