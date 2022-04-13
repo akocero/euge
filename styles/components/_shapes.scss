@@ -14,9 +14,8 @@
 	// overflow: hidden;
 
 	@include respond(phone) {
-		display: none;
-		// transform: rotateZ(-30deg);
-		// opacity: $shape-opacity;
+		transform: rotateZ(-30deg);
+		opacity: $shape-opacity;
 	}
 }
 
@@ -32,8 +31,7 @@
 	opacity: $shape-opacity;
 
 	@include respond(phone) {
-		display: none;
-		// transform: rotateZ(-30deg);
-		// opacity: $shape-opacity;
+		transform: rotateZ(-30deg);
+		opacity: $shape-opacity;
 	}
 }
