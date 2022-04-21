@@ -4,8 +4,7 @@
 	left: 0;
 	width: 100%;
 	z-index: 999999;
-	background-color: rgba(var(--navbar-bg), 0.7);
-	backdrop-filter: blur(8px);
+	// background-color: transparent;
 	height: 9.2rem;
 	transition: height 0.3s ease-in-out;
 
@@ -81,5 +80,7 @@
 	&.scroll-up {
 		height: 6.4rem;
 		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+		background-color: rgba(var(--navbar-bg), 0.7);
+		backdrop-filter: blur(8px);
 	}
 }
