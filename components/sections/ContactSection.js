@@ -1,7 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function ContactSection() {
+	const [isLoading, setIsLoading] = useState(false);
+	const [isEmailSent, setIsEmailSent] = useState(null);
+
 	const handleSubmit = async (e) => {
+		setIsLoading(true);
 		e.preventDefault();
 
 		const formData = {};
@@ -10,11 +15,23 @@ export default function ContactSection() {
 			formData[field.name] = field.value;
 		});
 
-		fetch("/api/email", {
-			method: "post",
+		const res = await fetch('/api/email', {
+			method: 'post',
 			body: JSON.stringify(formData),
 		});
-		console.log(formData);
+		const data = await res.json();
+
+		e.target.reset();
+		setIsLoading(false);
+		emailIsSent();
+	};
+
+	const emailIsSent = () => {
+		setIsEmailSent("I've received your message! Thank you :)");
+
+		setTimeout(() => {
+			setIsEmailSent(null);
+		}, 5000);
 	};
 	return (
 		<section className="contact" id="contact">
@@ -30,6 +47,7 @@ export default function ContactSection() {
 			</div>
 			<div className="card">
 				<h2 className="heading__2">{"Let's Work Together"}</h2>
+				{isEmailSent && <div className="mb-2">{isEmailSent}</div>}
 				<form action="post" onSubmit={handleSubmit}>
 					<label>
 						<span>Your Email</span>
@@ -51,9 +69,20 @@ export default function ContactSection() {
 							required
 						></textarea>
 					</label>
-					<button type="submit" className="btn btn__primary">
-						message me
-					</button>
+					{isLoading && (
+						<button
+							type="submit"
+							className="btn btn__primary"
+							disabled
+						>
+							Sending..
+						</button>
+					)}
+					{!isLoading && (
+						<button type="submit" className="btn btn__primary">
+							message me
+						</button>
+					)}
 				</form>
 			</div>
 			<div className="triangle">&nbsp;</div>

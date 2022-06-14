@@ -2,7 +2,7 @@
 	position: relative;
 	border: none;
 	color: white;
-	font-family: "Cascadia Code";
+	font-family: 'Cascadia Code';
 	text-transform: lowercase;
 	cursor: pointer;
 	font-size: 1.6rem;
@@ -38,7 +38,7 @@
 }
 
 .btn__primary::before {
-	content: "";
+	content: '';
 	position: absolute;
 	top: -2%;
 	left: -2%;
@@ -51,8 +51,13 @@
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+.btn__primary:disabled,
+.btn__primary[disabled] {
+	cursor: not-allowed;
+}
+
 .btn__link::before {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 3%;
 	left: 3%;

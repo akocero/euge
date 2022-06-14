@@ -3,7 +3,6 @@ const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
 	const body = JSON.parse(req.body);
-	console.log(body);
 
 	let transporter = nodemailer.createTransport({
 		host: 'https://eugenebadato.vercel.app/',
@@ -31,14 +30,11 @@ export default function handler(req, res) {
 
 	transporter.sendMail(mailOptions, (err, data) => {
 		if (err) {
-			res.status(400).json({ status: 'Bad' });
 			console.log('Error occurs', err);
-			return;
+			res.status(400).json({ status: 'Bad' });
 		} else {
 			console.log('email sent');
 			res.status(200).json({ status: 'Ok' });
-			return;
 		}
-		return console.log('Email sent!!!');
 	});
 }
