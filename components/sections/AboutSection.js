@@ -1,7 +1,7 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
-import Image from "next/image";
+import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from 'react-icons/fi';
+import Image from 'next/image';
 
-import Button from "../Button";
+import Button from '../Button';
 
 const AboutSection = () => {
 	return (
@@ -34,19 +34,19 @@ const AboutSection = () => {
 					/>
 				</div>
 				<div className="card__content">
-					<h4 className="heading__2">about</h4>
+					<h4 className="heading__2">Meet the Dev</h4>
 					<h5 htmlFor="" className="heading__5">
-						what i love to do?
+						My path, my passion, my purpose.
 					</h5>
 
 					<p className="card__body">
 						{
-							"Eugene is a front-end developer, designer, and mentor. He’s currently a software engineer, focused on building microservices applications like payroll enterprise cloud (PEC). "
+							'He’s the creator of PelikulaPH, a platform for fellow movie lovers, an automated monitoring system, and a fun Hunter x Hunter API built for fans of the anime community. Eugene is also passionate about mentoring aspiring developers — not just to help them grow, but to learn from their journeys too.'
 						}
 						<br />
 						<br />
 						{
-							"	Moreover, he created PelikulaPH an application for movie lovers like him, and an automated monitoring system. He loves to help aspirant developers not only to push them to become a developer but to learn from them as well, in his free time he enjoys devising a game and accumulating an understanding of new web tech trends."
+							'	When he’s not coding, you’ll find him exploring game design, experimenting with creative ideas, or staying up to date with the latest in web tech.'
 						}
 					</p>
 				</div>

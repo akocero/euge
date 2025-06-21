@@ -1,25 +1,69 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from 'react-icons/fi';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import {
 	IntroSectionVariants,
 	springRTL,
 	springLTR,
 	slideUp,
 	fadeIn,
-} from "../../src/utils/animationVariants";
-import Button from "../Button";
+} from '../../src/utils/animationVariants';
+import Button from '../Button';
+import { useState, useEffect } from 'react';
 
 export default function IntroSection() {
-	const one = (
-		<h4 className="intro__subtitle heading__4">
-			Hello, they call me Eugene.
-		</h4>
-	);
+	const one = <h4 className="intro__subtitle heading__4">Hey, I’m Eugene</h4>;
+
+	const titles = [
+		<>
+			Design comes <span>naturally</span>. Code comes with{' '}
+			<span>effort</span>. I do both.
+		</>,
+		<>
+			Creative by <span>nature</span>, coder by <span>choice</span>.
+		</>,
+		<>
+			Building digital <span>experiences</span>, one line at a{' '}
+			<span>time</span>.
+		</>,
+		<>
+			Ideas into <span>interfaces</span>. Coffee into <span>code</span>.
+		</>,
+		<>
+			Good code is <span>invisible</span>. Good design is{' '}
+			<span>felt</span>.
+		</>,
+		<>
+			Pixels, logic, and a bit of <span>magic</span>.
+		</>,
+		<>
+			From whiteboard to <span>web</span>, I make it <span>real</span>.
+		</>,
+		<>
+			Designs that catch the <span>eye</span>. Code that keeps it{' '}
+			<span>smooth</span>.
+		</>,
+		<>
+			I don't just ship <span>features</span>, I craft{' '}
+			<span>experiences</span>.
+		</>,
+		<>
+			Making the web a little more <span>human</span>, one project at a{' '}
+			<span>time</span>.
+		</>,
+	];
+
+	const [titleIndex, setTitleIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTitleIndex((prev) => (prev + 1) % titles.length);
+		}, 4000);
+		return () => clearInterval(interval);
+	}, []);
+
 	const two = (
-		<h1 className="intro__title heading__1">
-			I <span>design</span> and <span>develop</span> things for the web.
-		</h1>
+		<h1 className="intro__title heading__1">{titles[titleIndex]}</h1>
 	);
 
 	const introTexts = [one, two];
@@ -38,7 +82,7 @@ export default function IntroSection() {
 				className="intro__img"
 				variants={springLTR}
 				whileHover={{
-					rotateZ: "-20deg",
+					rotateZ: '-20deg',
 				}}
 			>
 				<Image

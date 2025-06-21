@@ -1,8 +1,8 @@
-import useAnimateWhenViewed from "../../src/hooks/useAnimateWhenViewed";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../../src/utils/animationVariants";
-import SectionHeading from "../SectionHeading";
-import ProjectItem from "../ProjectItem";
+import useAnimateWhenViewed from '../../src/hooks/useAnimateWhenViewed';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../../src/utils/animationVariants';
+import SectionHeading from '../SectionHeading';
+import ProjectItem from '../ProjectItem';
 export default function ProjectSection({ projects }) {
 	const [ref, controls] = useAnimateWhenViewed(-250);
 	return (
@@ -15,8 +15,8 @@ export default function ProjectSection({ projects }) {
 			ref={ref}
 		>
 			<SectionHeading
-				title="noteworthy projects"
-				subtitle="what i'm capable of?"
+				title="Things I’ve Built"
+				subtitle="From late-night ideas to fully working apps."
 			/>
 
 			<div className="card__list">
