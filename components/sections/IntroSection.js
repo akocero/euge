@@ -20,20 +20,6 @@ export default function IntroSection() {
 			<span>effort</span>. I do both.
 		</>,
 		<>
-			Creative by <span>nature</span>, coder by <span>choice</span>.
-		</>,
-		<>
-			Building digital <span>experiences</span>, one line at a{' '}
-			<span>time</span>.
-		</>,
-		<>
-			Ideas into <span>interfaces</span>. Coffee into <span>code</span>.
-		</>,
-		<>
-			Good code is <span>invisible</span>. Good design is{' '}
-			<span>felt</span>.
-		</>,
-		<>
 			Pixels, logic, and a bit of <span>magic</span>.
 		</>,
 		<>
@@ -48,8 +34,7 @@ export default function IntroSection() {
 			<span>experiences</span>.
 		</>,
 		<>
-			Making the web a little more <span>human</span>, one project at a{' '}
-			<span>time</span>.
+			Creative by <span>nature</span>, coder by <span>choice</span>.
 		</>,
 	];
 
