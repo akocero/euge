@@ -44,7 +44,7 @@ export default function IntroSection() {
 			<span>smooth</span>.
 		</>,
 		<>
-			I don't just ship <span>features</span>, I craft{' '}
+			I don&apos;t just ship <span>features</span>, I craft{' '}
 			<span>experiences</span>.
 		</>,
 		<>
