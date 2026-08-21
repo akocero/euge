@@ -6,31 +6,33 @@ const Footer = () => {
 		<footer className="footer">
 			<div className="footer__container">
 				<div className="footer__links">
-					<Link href="https://github.com/akocero" legacyBehavior>
-						<a className="btn btn__link" target="__blank">
-							<FiGithub />
-						</a>
+					<Link
+						href="https://github.com/akocero"
+						className="btn btn__link"
+						target="__blank"
+					>
+						<FiGithub />
 					</Link>
-					<Link href="https://gitlab.com/akocero" legacyBehavior>
-						<a className="btn btn__link" target="__blank">
-							<FiGitlab />
-						</a>
+					<Link
+						href="https://gitlab.com/akocero"
+						className="btn btn__link"
+						target="__blank"
+					>
+						<FiGitlab />
 					</Link>
 					<Link
 						href="https://www.linkedin.com/in/eugenebadato/"
-						legacyBehavior
+						className="btn btn__link"
+						target="__blank"
 					>
-						<a className="btn btn__link" target="__blank">
-							<FiLinkedin />
-						</a>
+						<FiLinkedin />
 					</Link>
 					<Link
 						href="https://twitter.com/eugenebadato"
-						legacyBehavior
+						className="btn btn__link"
+						target="__blank"
 					>
-						<a className="btn btn__link" target="__blank">
-							<FiTwitter />
-						</a>
+						<FiTwitter />
 					</Link>
 				</div>
 
