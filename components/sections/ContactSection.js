@@ -40,9 +40,8 @@ export default function ContactSection() {
 					src="/images/me.png"
 					alt=""
 					width={350}
-					height={396}
+					height={396 * 0.8}
 					priority
-					quality={100}
 				/>
 			</div>
 			<div className="card">
