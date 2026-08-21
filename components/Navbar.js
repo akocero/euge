@@ -86,7 +86,7 @@ const Navbar = () => {
 				animate="visible"
 			>
 				<motion.div className="navbar__name" variants={slideDown}>
-					<Link href="/">
+					<Link href="/" legacyBehavior>
 						<a>@eugenebadato.</a>
 					</Link>
 				</motion.div>
@@ -98,7 +98,7 @@ const Navbar = () => {
 								variants={slideDown}
 								key={item}
 							>
-								<Link href={item}>
+								<Link href={item} legacyBehavior>
 									<a className="navbar__link">
 										{item.substring(1)}
 									</a>
