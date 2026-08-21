@@ -23,9 +23,6 @@ export default function IntroSection() {
 			Pixels, logic, and a bit of <span>magic</span>.
 		</>,
 		<>
-			From whiteboard to <span>web</span>, I make it <span>real</span>.
-		</>,
-		<>
 			Designs that catch the <span>eye</span>. Code that keeps it{' '}
 			<span>smooth</span>.
 		</>,
