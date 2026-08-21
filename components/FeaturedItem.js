@@ -12,12 +12,7 @@ const FeaturedItem = ({ featuredProject }) => {
 		<motion.article className="featured__item" variants={slideUp}>
 			<div className="featured__img-container">
 				{image && (
-					<Image
-						src={'https:' + image.fields.file.url}
-						alt={title}
-						width={image.fields.file.details.image.width}
-						height={image.fields.file.details.image.height * 0.5}
-					/>
+					<img src={'https:' + image.fields.file.url} alt={title} />
 				)}
 			</div>
 			<div className="featured__content">
