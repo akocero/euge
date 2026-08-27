@@ -19,15 +19,22 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	overflow-x: hidden;
+	padding-left: $sidebar-width;
+
+	@include respond(tab-port) {
+		padding-left: 0;
+	}
 }
 
 section {
 	padding-top: 8rem;
+	padding-bottom: 16rem;
 	max-width: $max-width;
 	margin: 0 auto;
 	@include respond(phone) {
 		padding: 0 3.2rem;
 		padding-top: 8rem;
+		padding-bottom: 16rem;
 	}
 }
 
