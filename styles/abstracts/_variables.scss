@@ -6,8 +6,9 @@ $dark-4: hsl(0, 0%, 12%);
 $light: hsl(0, 0%, 96%);
 $grey: hsl(0, 0%, 37%);
 $border-rad: 2rem;
-$max-width: 1200px;
+$max-width: 1100px;
 $shape-opacity: 36%;
+$sidebar-width: 24rem;
 
 $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 
@@ -19,6 +20,7 @@ $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 	--bg-color-2: hsla(151, 100%, 10%, 0.726);
 	--bg-color-3: hsl(0, 0%, 88%);
 	--bg-color-4: hsl(0, 0%, 93%);
+	--sidebar-border: rgba(0, 0, 0, 0.15);
 	//0.568
 }
 .dark {
@@ -29,6 +31,7 @@ $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 	--bg-color-2: hsl(0, 0%, 16%);
 	--bg-color-3: hsl(0, 0%, 16%);
 	--bg-color-4: hsl(0, 0%, 12%);
+	--sidebar-border: rgba(255, 255, 255, 0.1);
 }
 
 // light EFFFFD
