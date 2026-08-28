@@ -1,6 +1,9 @@
 module.exports = {
 	reactStrictMode: true,
 	images: {
-		domains: ["images.ctfassets.net"],
+		remotePatterns: [{ hostname: "images.ctfassets.net" }],
+	},
+	sassOptions: {
+		silenceDeprecations: ["import"],
 	},
 };

@@ -61,7 +61,7 @@ const AboutSection = () => {
 
 			<div className="about__gallery">
 				<div className="about__thumbnail">
-					<Image src="/images/about.jpg" alt="" layout="fill" />
+					<Image src="/images/about.jpg" alt="" fill style={{ objectFit: 'cover' }} />
 				</div>
 				<div className="about__thumbnail">
 					<Image
@@ -80,7 +80,7 @@ const AboutSection = () => {
 					/>
 				</div>
 				<div className="about__thumbnail">
-					<Image src="/images/about4.jpg" alt="" layout="fill" />
+					<Image src="/images/about4.jpg" alt="" fill style={{ objectFit: 'cover' }} />
 				</div>
 			</div>
 		</section>
