@@ -7,6 +7,7 @@ import ContactSection from "../components/sections/ContactSection";
 import FeaturedSection from "../components/sections/FeaturedSection";
 import ProjectSection from "../components/sections/ProjectSection";
 import ExperieceSection from "../components/sections/ExperieceSection";
+import ServicesSection from "../components/sections/ServicesSection";
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -43,6 +44,8 @@ export default function Home({ projects, experieces }) {
 			<ProjectSection projects={projects} />
 
 			<ExperieceSection experieces={experieces} />
+
+			<ServicesSection />
 
 			<AboutSection />
 
