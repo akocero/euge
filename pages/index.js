@@ -10,6 +10,13 @@ import ExperieceSection from "../components/sections/ExperieceSection";
 import ServicesSection from "../components/sections/ServicesSection";
 
 export async function getStaticProps() {
+	if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
+		return {
+			props: { projects: [], experieces: [] },
+			revalidate: 1,
+		};
+	}
+
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE_ID,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
