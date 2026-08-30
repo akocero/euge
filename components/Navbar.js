@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { RiSunLine, RiMoonClearLine, RiRobot2Line } from 'react-icons/ri';
+import { RiSunLine, RiMoonClearLine, RiRobot2Line, RiComputerLine } from 'react-icons/ri';
 import { FiGithub, FiLinkedin, FiTwitter, FiGitlab, FiHome, FiStar, FiFolder, FiBriefcase, FiUser, FiMail, FiZap, FiX } from 'react-icons/fi';
 import { SiNextdotjs } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react';
@@ -9,6 +9,51 @@ import { motion } from 'framer-motion';
 function pick(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
+
+// ── Input phase greeting variants ────────────────────────────────
+const GREETINGS = [
+	"ask me anything.",
+	"go ahead, ask.",
+	"what's on your mind?",
+	"i'm listening.",
+	"talk to me.",
+	"shoot your shot.",
+];
+
+const SUBTITLES = [
+	"i can answer all your questions.",
+	"no question is too weird.",
+	"i've heard it all. try me.",
+	"don't be shy, i won't judge.",
+	"seriously, anything.",
+	"i'm basically omniscient.",
+];
+
+const PLACEHOLDERS = [
+	"what do you want to ask?",
+	"type your question here...",
+	"what are you curious about?",
+	"ask away...",
+	"what's your question?",
+	"go on, ask something...",
+];
+
+// ── Thinking / Analyzing ─────────────────────────────────────────
+const THINKING_LINES = [
+	"thinking...",
+	"processing...",
+	"hold on...",
+	"let me think...",
+	"one sec...",
+];
+
+const ANALYZING_LINES = [
+	"analyzing...",
+	"digging in...",
+	"running diagnostics...",
+	"checking my sources...",
+	"almost there...",
+];
 
 // ── Intro ────────────────────────────────────────────────────────
 const INTROS = [
@@ -33,6 +78,22 @@ const IP_SUGGESTIONS = [
 	"that ip is basically your home address on the internet.",
 	"every website you visit knows this. not just me.",
 	"fun fact: with just that ip, anyone can estimate your location.",
+];
+
+// ── ISP ──────────────────────────────────────────────────────────
+const ISP_LINES = (isp) => [
+	`your isp is ${isp}.`,
+	`internet provider: ${isp}. they can see everything you do online.`,
+	`${isp} is your internet provider, by the way.`,
+	`connected through ${isp}. noted.`,
+	`oh, and you're on ${isp}.`,
+];
+const ISP_SUGGESTIONS = [
+	"your isp logs every site you visit. a vpn encrypts that traffic.",
+	"with a vpn, your isp sees encrypted data — not the actual sites.",
+	"your isp can throttle certain traffic. a vpn can help bypass that.",
+	"every request you make goes through them unencrypted without a vpn.",
+	"they could sell your browsing data in some countries. vpn helps.",
 ];
 
 // ── Browser ──────────────────────────────────────────────────────
@@ -91,19 +152,46 @@ const DEVICE_LINES = (device) => [
 	`${device} detected.`,
 ];
 const DEVICE_SUGGESTIONS = (device) => {
-	if (device.includes('mobile')) return [
-		"browsing a dev portfolio on mobile. bold move.",
+	const d = device.toLowerCase();
+	if (d.includes('iphone') || (d.includes('android') && d.includes('phone'))) return [
+		"browsing a dev portfolio on your phone. bold move.",
 		"this site looks better on desktop — just saying.",
 		"mobile user detected. hope the sidebar isn't in your way.",
-		"on your phone huh. the sidebar collapses on mobile btw.",
+		"on your phone, huh. the sidebar collapses on mobile btw.",
 		"mobile browsing. your attention span is impressive.",
 	];
-	if (device.includes('tablet')) return [
+	if (d.includes('ipad') || d.includes('android tablet')) return [
 		"tablet user. the rare middle ground.",
 		"tablets are an interesting choice for portfolio browsing.",
 		"a tablet. not quite mobile, not quite desktop. i see you.",
 		"tablet detected. landscape mode recommended.",
 		"on a tablet — this site was designed with you in mind too.",
+	];
+	if (d.includes('chromebook')) return [
+		"a chromebook. practical choice.",
+		"chromebook user — you clearly don't need more than a browser.",
+		"chromebooks are underrated for web browsing. solid pick.",
+	];
+	if (d.includes('mac')) return [
+		"a mac. you probably paid a lot for that notch.",
+		"mac user — you're either a designer, a developer, or both.",
+		"macOS detected. let me guess, you also use arc browser.",
+		"a mac. nice build quality, shame about the port selection.",
+		"mac user. welcome. hope you're not on battery saver mode.",
+	];
+	if (d.includes('windows')) return [
+		"windows pc. classic.",
+		"windows detected. hope you're not on the default browser.",
+		"a windows machine. you've got options — use them.",
+		"windows user. taskbar on the bottom, i assume.",
+		"pc master race or just practical? either way, noted.",
+	];
+	if (d.includes('linux')) return [
+		"linux. of course. i respect the commitment.",
+		"a linux user visiting my portfolio. you clearly know things.",
+		"linux detected. i won't ask which distro. everyone does.",
+		"running linux. you probably compiled this page before reading it.",
+		"linux user. i'm not surprised. you seem like the type.",
 	];
 	return [
 		"desktop user. the way this site was meant to be seen.",
@@ -156,6 +244,16 @@ const TRANSITION_LINES = (question) => [
 	`so. "${question}". you really asked that.`,
 ];
 
+// ── Softeners (shown after roast so no one actually gets mad) ────
+const SOFTENERS = [
+	{ pre: "but hey — if that was a real question, ", link: "reach out here", post: ". i actually reply." },
+	{ pre: "jokes aside though. got a real question? ", link: "send me a message", post: ". i'm friendly, i promise." },
+	{ pre: "no hard feelings — if you meant business, ", link: "drop me a line", post: ". i read everything." },
+	{ pre: "p.s. i'm actually approachable. ", link: "say hi for real", post: " and i'll give you a proper answer." },
+	{ pre: "seriously though — real questions get real answers. ", link: "hit me up here", post: "." },
+	{ pre: "in all seriousness, if you have a genuine question, ", link: "let's talk", post: ". i don't bite." },
+];
+
 // ── Roasts ───────────────────────────────────────────────────────
 const ROASTS = [
 	"bold of you to think i'd spend tokens on that. have you tried google? it's free.",
@@ -166,15 +264,44 @@ const ROASTS = [
 	"error 418: i'm a portfolio, not your personal assistant. ask chatgpt.",
 ];
 
+const LINK_MAP = {
+	'google.com': 'https://google.com',
+	'google': 'https://google.com',
+	'chatgpt': 'https://chatgpt.com',
+	'brave': 'https://brave.com',
+	'firefox': 'https://www.mozilla.org/firefox',
+	'youtube': 'https://youtube.com',
+	'arc': 'https://arc.net',
+};
+
+function renderWithLinks(text) {
+	const pattern = /\b(google\.com|google|chatgpt|brave|firefox|youtube|arc)\b/gi;
+	const parts = text.split(pattern);
+	return parts.map((part, i) => {
+		const href = LINK_MAP[part.toLowerCase()];
+		if (href) {
+			return <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="chat-overlay__link">{part}</a>;
+		}
+		return part;
+	});
+}
+
 function sleep(ms) {
 	return new Promise((r) => setTimeout(r, ms));
 }
 
 async function fetchVisitorInfo() {
 	try {
-		const res = await fetch('https://ipapi.co/json/');
+		const res = await fetch('https://ipwho.is/');
 		const data = await res.json();
-		return { ip: data.ip, city: data.city, region: data.region, country: data.country_name, org: data.org };
+		if (!data.success) return null;
+		return {
+			ip: data.ip,
+			city: data.city,
+			region: data.region,
+			country: data.country,
+			isp: data.connection?.isp || data.connection?.org || null,
+		};
 	} catch {
 		return null;
 	}
@@ -194,10 +321,17 @@ function getBrowserName() {
 function getDeviceType() {
 	if (typeof navigator === 'undefined') return 'a desktop';
 	const ua = navigator.userAgent;
-	if (/Mobi|Android/i.test(ua)) return 'a mobile device';
-	if (/iPad|Tablet/i.test(ua)) return 'a tablet';
+	if (/iPhone/i.test(ua)) return 'an iPhone';
+	if (/iPad/i.test(ua)) return 'an iPad';
+	if (/Android/i.test(ua) && /Mobile/i.test(ua)) return 'an Android phone';
+	if (/Android/i.test(ua)) return 'an Android tablet';
+	if (/CrOS/i.test(ua)) return 'a Chromebook';
+	if (/Windows/i.test(ua)) return 'a Windows PC';
+	if (/Macintosh|Mac OS X/i.test(ua)) return 'a Mac';
+	if (/Linux/i.test(ua)) return 'a Linux machine';
 	return 'a desktop';
 }
+
 
 const FADE_OUT_MS = 350;
 
@@ -207,8 +341,7 @@ function readingTime(text, msPerWord = 450, minMs = 2400) {
 }
 
 const Navbar = () => {
-	const [isDark, setIsDark] = useState('');
-	let darkMode = '';
+	const [isDark, setIsDark] = useState('dark');
 
 	const [lastScroll, setLastScroll] = useState(0);
 	const [scrollState, setScrollState] = useState('');
@@ -220,20 +353,26 @@ const Navbar = () => {
 	const [chatInput, setChatInput] = useState('');
 	const [currentLine, setCurrentLine] = useState(null); // { text, type }
 	const [lineVisible, setLineVisible] = useState(false);
+	const [greeting, setGreeting] = useState(GREETINGS[0]);
+	const [subtitle, setSubtitle] = useState(SUBTITLES[0]);
+	const [placeholder, setPlaceholder] = useState(PLACEHOLDERS[0]);
+	const [softener, setSoftener] = useState(SOFTENERS[0]);
 
 	const navbarItems = [
-		{ href: '#home', label: 'home', icon: <FiHome /> },
+		{ href: '#home', label: 'intro', icon: <FiHome /> },
 		{ href: '#featured', label: 'featured', icon: <FiStar /> },
 		{ href: '#projects', label: 'projects', icon: <FiFolder /> },
 		{ href: '#experiences', label: 'experiences', icon: <FiBriefcase /> },
-		{ href: '#services', label: 'services', icon: <FiZap /> },
+		{ href: '#services', label: 'services', icon: <FiZap />, badge: 'new' },
 		{ href: '#about', label: 'about', icon: <FiUser /> },
 		{ href: '#contact', label: 'contact', icon: <FiMail /> },
 	];
 
 	useEffect(() => {
-		darkMode = localStorage.getItem('darkmode');
-		darkMode == 'dark' ? enableDarkMode() : disableDarkMode();
+		const saved = localStorage.getItem('darkmode');
+		if (saved === 'light') disableDarkMode();
+		else if (saved === 'system') enableSystemMode();
+		else enableDarkMode();
 	}, []);
 
 	useEffect(() => {
@@ -276,6 +415,14 @@ const Navbar = () => {
 		return () => window.removeEventListener('keydown', onKey);
 	}, [chatOpen]);
 
+	useEffect(() => {
+		if (chatOpen) {
+			setGreeting(pick(GREETINGS));
+			setSubtitle(pick(SUBTITLES));
+			setPlaceholder(pick(PLACEHOLDERS));
+		}
+	}, [chatOpen]);
+
 	function handleClose() {
 		setChatOpen(false);
 		setPhase('input');
@@ -295,7 +442,16 @@ const Navbar = () => {
 	async function startReveal(question) {
 		setPhase('reveal');
 
-		const [visitor] = await Promise.all([fetchVisitorInfo(), sleep(300)]);
+		// fetch in parallel while showing thinking/analyzing
+		const visitorPromise = fetchVisitorInfo();
+
+		const showQuick = async (text, type = 'text', holdMs = 2000) =>
+			showLine(text, type, holdMs);
+
+		await showQuick(pick(THINKING_LINES));
+		await showQuick(pick(ANALYZING_LINES));
+
+		const visitor = await visitorPromise;
 		const browser = getBrowserName();
 		const device = getDeviceType();
 
@@ -318,6 +474,11 @@ const Navbar = () => {
 		await show(ipLine);
 		await show(pick(IP_SUGGESTIONS), 'suggestion');
 
+		if (visitor?.isp) {
+			await show(pick(ISP_LINES(visitor.isp)));
+			await show(pick(ISP_SUGGESTIONS), 'suggestion');
+		}
+
 		const browserLine = pick(BROWSER_LINES(browser));
 		await show(browserLine);
 		await show(pick(BROWSER_SUGGESTIONS(browser)), 'suggestion');
@@ -339,6 +500,7 @@ const Navbar = () => {
 		// final roast — stays visible
 		setCurrentLine({ text: pick(ROASTS), type: 'text' });
 		setLineVisible(true);
+		setSoftener(pick(SOFTENERS));
 		setPhase('done');
 	}
 
@@ -357,19 +519,26 @@ const Navbar = () => {
 	}
 
 	const enableDarkMode = () => {
-		document.body.classList.add('dark');
-		const body = document.querySelector('.dark');
-		body.setAttribute('class', 'dark');
+		document.body.setAttribute('class', 'dark');
 		localStorage.setItem('darkmode', 'dark');
 		setIsDark('dark');
 	};
 
 	const disableDarkMode = () => {
-		document.body.classList.add('light');
-		const body = document.querySelector('.light');
-		body.setAttribute('class', 'light');
+		document.body.setAttribute('class', 'light');
 		localStorage.setItem('darkmode', 'light');
 		setIsDark('light');
+	};
+
+	const enableSystemMode = () => {
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.body.setAttribute('class', prefersDark ? 'dark' : 'light');
+		localStorage.setItem('darkmode', 'system');
+		setIsDark('system');
+
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		const handler = (e) => document.body.setAttribute('class', e.matches ? 'dark' : 'light');
+		mediaQuery.addEventListener('change', handler);
 	};
 
 	return (
@@ -387,11 +556,18 @@ const Navbar = () => {
 					<div className="navbar__controls">
 						<div className="navbar__theme-toggle">
 							<button
-								className={`navbar__theme-btn${isDark !== 'dark' ? ' active' : ''}`}
+								className={`navbar__theme-btn${isDark === 'light' ? ' active' : ''}`}
 								onClick={disableDarkMode}
 								aria-label="Light mode"
 							>
 								<RiSunLine />
+							</button>
+							<button
+								className={`navbar__theme-btn${isDark === 'system' ? ' active' : ''}`}
+								onClick={enableSystemMode}
+								aria-label="System mode"
+							>
+								<RiComputerLine />
 							</button>
 							<button
 								className={`navbar__theme-btn${isDark === 'dark' ? ' active' : ''}`}
@@ -406,8 +582,8 @@ const Navbar = () => {
 							onClick={() => setChatOpen(true)}
 							aria-label="Open AI chat"
 						>
+							<span>Ask my</span>
 							<RiRobot2Line className="navbar__chat-icon" />
-							<span>Ask my AI</span>
 						</button>
 					</div>
 				</motion.div>
@@ -426,6 +602,7 @@ const Navbar = () => {
 								>
 									<span className="navbar__link-icon">{item.icon}</span>
 									<span className="navbar__link-label">{item.label}</span>
+									{item.badge && <span className="navbar__badge">{item.badge}</span>}
 								</Link>
 							</motion.li>
 						))}
@@ -433,11 +610,18 @@ const Navbar = () => {
 				</nav>
 				<div className="navbar__mobile-toggle">
 					<button
-						className={`navbar__theme-btn${isDark !== 'dark' ? ' active' : ''}`}
+						className={`navbar__theme-btn${isDark === 'light' ? ' active' : ''}`}
 						onClick={disableDarkMode}
 						aria-label="Light mode"
 					>
 						<RiSunLine />
+					</button>
+					<button
+						className={`navbar__theme-btn${isDark === 'system' ? ' active' : ''}`}
+						onClick={enableSystemMode}
+						aria-label="System mode"
+					>
+						<RiComputerLine />
 					</button>
 					<button
 						className={`navbar__theme-btn${isDark === 'dark' ? ' active' : ''}`}
@@ -476,12 +660,12 @@ const Navbar = () => {
 				<div className="chat-overlay__content">
 					{phase === 'input' ? (
 						<div className="chat-overlay__input-wrap">
-							<p className="chat-overlay__greeting">ask me anything.</p>
-							<p className="chat-overlay__prompt">i can answer all your questions.</p>
+							<p className="chat-overlay__greeting">{greeting}</p>
+							<p className="chat-overlay__prompt">{subtitle}</p>
 							<input
 								className="chat-overlay__input"
 								type="text"
-								placeholder="what do you want to ask?"
+								placeholder={placeholder}
 								value={chatInput}
 								onChange={(e) => setChatInput(e.target.value)}
 								onKeyDown={handleChatKey}
@@ -492,13 +676,22 @@ const Navbar = () => {
 						<div className="chat-overlay__stage">
 							{currentLine && (
 								<p className={`chat-overlay__text${currentLine.type === 'suggestion' ? ' chat-overlay__text--suggestion' : ''}${lineVisible ? ' visible' : ''}`}>
-									{currentLine.text}
+									{renderWithLinks(currentLine.text)}
 								</p>
 							)}
 							{phase === 'done' && (
-								<button className="chat-overlay__dismiss" onClick={handleClose}>
-									[ close ]
-								</button>
+								<>
+									<button className="chat-overlay__dismiss" onClick={handleClose}>
+										[ close ]
+									</button>
+									<p className="chat-overlay__softener">
+										{softener.pre}
+										<a href="#contact" className="chat-overlay__softener-link" onClick={handleClose}>
+											{softener.link}
+										</a>
+										{softener.post}
+									</p>
+								</>
 							)}
 						</div>
 					)}
