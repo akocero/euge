@@ -11,9 +11,10 @@ import ServicesSection from "../components/sections/ServicesSection";
 
 export async function getStaticProps() {
 	if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
-		throw new Error(
-			'Missing Contentful env vars: CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN must be set'
-		);
+		return {
+			props: { projects: [], experieces: [] },
+			revalidate: 1,
+		};
 	}
 
 	const client = createClient({
