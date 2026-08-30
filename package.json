@@ -31,5 +31,15 @@
 	},
 	"engines": {
 		"node": "22.x"
+	},
+	"pnpm": {
+		"neverBuiltDependencies": [
+			"@parcel/watcher",
+			"contentful",
+			"esbuild",
+			"sharp",
+			"unrs-resolver",
+			"workerd"
+		]
 	}
 }
