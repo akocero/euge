@@ -2,9 +2,9 @@
 	position: fixed;
 	inset: 0;
 	z-index: 9999999; // must beat navbar z-index: 999999
-	background: rgba(0, 0, 0, 0.35);
-	backdrop-filter: blur(14px);
-	-webkit-backdrop-filter: blur(14px);
+	background: rgba(0, 0, 0, 0.55);
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(40px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -51,22 +51,20 @@
 		position: absolute;
 		top: 2.4rem;
 		right: 2.4rem;
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		color: rgba(255, 255, 255, 0.5);
-		width: 4rem;
-		height: 4rem;
-		border-radius: 50%;
+		background: transparent;
+		border: none;
+		color: rgba(255, 255, 255, 0.45);
+		padding: 0;
+		font-size: 4rem;
+		line-height: 1;
+		cursor: pointer;
+		transition: color 0.2s;
+		z-index: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 1.8rem;
-		cursor: pointer;
-		transition: all 0.2s;
-		z-index: 1;
 
 		&:hover {
-			background: rgba(255, 255, 255, 0.12);
 			color: white;
 		}
 	}
@@ -149,6 +147,41 @@
 		&--suggestion.visible { opacity: 1; }
 	}
 
+	&__softener {
+		font-family: 'Cascadia Code', monospace;
+		font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+		color: rgba(255, 255, 255, 0.3);
+		margin-top: 2rem;
+		line-height: 1.6;
+		text-align: center;
+		animation: softenerFadeIn 0.6s ease-out 0.4s both;
+	}
+
+	&__softener-link {
+		color: rgba(255, 255, 255, 0.55);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-color: rgba(255, 255, 255, 0.25);
+		transition: color 0.2s, text-decoration-color 0.2s;
+
+		&:hover {
+			color: white;
+			text-decoration-color: white;
+		}
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-color: rgba(255, 255, 255, 0.4);
+		transition: text-decoration-color 0.2s;
+
+		&:hover {
+			text-decoration-color: white;
+		}
+	}
+
 	&__dismiss {
 		background: transparent;
 		border: none;
@@ -168,4 +201,9 @@
 @keyframes overlayFadeIn {
 	from { opacity: 0; }
 	to   { opacity: 1; }
+}
+
+@keyframes softenerFadeIn {
+	from { opacity: 0; transform: translateY(6px); }
+	to   { opacity: 1; transform: translateY(0); }
 }

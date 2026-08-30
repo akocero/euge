@@ -1,4 +1,3 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from 'react-icons/fi';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
@@ -89,32 +88,11 @@ export default function IntroSection() {
 						text="projects"
 					/>
 
-					<div className="social__links">
-						<Button
-							href="https://github.com/akocero"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiGithub />}
-						/>
-						<Button
-							href="https://gitlab.com/akocero"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiGitlab />}
-						/>
-						<Button
-							href="https://www.linkedin.com/in/eugenebadato/"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiLinkedin />}
-						/>
-						<Button
-							href="https://twitter.com/eugenebadato"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiTwitter />}
-						/>
-					</div>
+					<Button
+						href="#contact"
+						className="btn btn__dark"
+						text="let's talk"
+					/>
 				</motion.div>
 			</div>
 

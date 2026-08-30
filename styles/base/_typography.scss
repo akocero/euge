@@ -13,9 +13,9 @@ body {
 
 .heading {
 	&__1 {
-		font-size: 6.2rem;
+		font-size: 5rem;
 		line-height: 120%;
-		letter-spacing: 2px;
+		letter-spacing: 1.5px;
 		text-shadow: $text-shadow;
 
 		span {
@@ -23,13 +23,13 @@ body {
 		}
 
 		@include respond(phone) {
-			font-size: 5.8rem;
+			font-size: 4.4rem;
 		}
 	}
 
 	&__2 {
 		font-weight: 700;
-		font-size: 3.6rem;
+		font-size: 2.8rem;
 		text-shadow: $text-shadow;
 		line-height: 110%;
 		margin-bottom: 0.8rem;
@@ -64,7 +64,7 @@ body {
 	}
 
 	label {
-		font-size: 2.2rem;
+		font-size: 1.7rem;
 		color: var(--accent);
 		letter-spacing: 0.4px;
 		// font-family: "Cascadia Code";

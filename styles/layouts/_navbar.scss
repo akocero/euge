@@ -21,7 +21,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		padding: 4rem 2.4rem;
+		padding: 2.4rem 2.4rem;
 		font-size: 1.6rem;
 		font-family: 'Kanit';
 		font-weight: 300;
@@ -117,7 +117,7 @@
 		width: 100%;
 		height: 1px;
 		background-color: var(--sidebar-border);
-		margin: 2.4rem 0;
+		margin: 1.4rem 0;
 
 		@include respond(tab-port) {
 			display: none;
@@ -133,7 +133,7 @@
 	&__nav-list {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1.2rem;
 
 		@include respond(tab-port) {
 			flex-direction: row;
@@ -171,6 +171,22 @@
 		}
 	}
 
+	&__badge {
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		background: var(--accent);
+		color: var(--bg-color);
+		padding: 0.15rem 0.6rem;
+		border-radius: 10rem;
+		line-height: 1.6;
+
+		@include respond(tab-port) {
+			display: none;
+		}
+	}
+
 	&__link-icon {
 		display: flex;
 		align-items: center;
@@ -192,7 +208,7 @@
 		margin-top: auto;
 		display: flex;
 		flex-direction: column;
-		gap: 1.4rem;
+		gap: 1rem;
 
 		@include respond(tab-port) {
 			display: none;

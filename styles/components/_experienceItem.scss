@@ -1,5 +1,6 @@
 .experience {
 	padding-bottom: 10rem;
+
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -10,20 +11,110 @@
 		}
 	}
 
-	&__subtitle {
-		// font-size: 1.8rem;
-		font-weight: 400;
-		color: $grey;
-	}
-
-	&__body {
-		margin-top: 1rem;
-		letter-spacing: 1.2px;
-	}
-
 	&__item {
 		@include respond(phone) {
 			margin-bottom: 4.2rem;
 		}
+	}
+
+	&__logo-wrap {
+		height: 3rem;
+		margin-bottom: 2.4rem;
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		height: 100%;
+		width: auto;
+		display: block;
+		border-radius: 1rem;
+	}
+
+	&__company {
+		margin-bottom: 0.3rem;
+	}
+
+	&__location {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 1.3rem;
+		color: $grey;
+		margin-bottom: 0.6rem;
+	}
+
+	// &__position,
+	// &__body {
+	// 	font-size: 1.6rem;
+	// 	font-weight: 300;
+	// 	color: var(--text-color);
+	// 	opacity: 0.9;
+	// 	letter-spacing: 0.3px;
+	// }
+
+	&__position {
+		font-size: 1.6rem;
+		font-weight: 300;
+		color: var(--text-color);
+		opacity: 0.9;
+		letter-spacing: 0.3px;
+		font-family: 'Kanit';
+		margin-bottom: 0.6rem;
+	}
+
+	&__body {
+		display: block;
+		padding-bottom: 2.8rem;
+		// text-align: justify;
+		font-weight: 400;
+		font-size: 1.5rem;
+		color: $grey;
+	}
+
+	&__subtitle {
+		font-weight: 400;
+		color: $grey;
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+	}
+
+	&__date {
+		font-size: 1.3rem;
+		color: $grey;
+	}
+
+	&__duration {
+		font-size: 1.3rem;
+		color: var(--accent);
+	}
+
+	&__current {
+		color: var(--accent);
+		font-weight: 600;
+	}
+
+	&__body {
+		margin-bottom: 1.2rem;
+		letter-spacing: 1.2px;
+		// text-align: justify;
+	}
+}
+
+.light {
+	.experience__company {
+		font-weight: 600;
+		opacity: 0.85;
+	}
+
+	.experience__body {
+		color: var(--text-color) !important;
+		opacity: 0.9;
 	}
 }

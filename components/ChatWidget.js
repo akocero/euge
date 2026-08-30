@@ -20,14 +20,15 @@ function sleep(ms) {
 
 async function fetchVisitorInfo() {
 	try {
-		const res = await fetch('https://ipapi.co/json/');
+		const res = await fetch('https://ipwho.is/');
 		const data = await res.json();
+		if (!data.success) return null;
 		return {
 			ip: data.ip,
 			city: data.city,
 			region: data.region,
-			country: data.country_name,
-			org: data.org,
+			country: data.country,
+			isp: data.connection?.isp || data.connection?.org || null,
 		};
 	} catch {
 		return null;
@@ -92,7 +93,7 @@ export default function ChatWidget() {
 			await sleep(600);
 			addMessage({ role: 'system', text: `> Country: ${visitor.country}` });
 			await sleep(600);
-			addMessage({ role: 'system', text: `> Network: ${visitor.org}` });
+			addMessage({ role: 'system', text: `> ISP: ${visitor.isp ?? 'unknown'}` });
 			await sleep(800);
 		} else {
 			addMessage({ role: 'system', text: '> Location: unknown (nice VPN)' });
