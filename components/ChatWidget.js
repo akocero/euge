@@ -133,7 +133,7 @@ export default function ChatWidget() {
 						<div className="chat-modal__header">
 							<span className="chat-modal__header-title">
 								<span className="chat-modal__dot" />
-								Ask Eugene's AI
+								Ask Eugene&apos;s AI
 							</span>
 							<button
 								className="chat-modal__close"
