@@ -104,7 +104,7 @@ export default function ServicesSection() {
 			ref={ref}
 		>
 			<SectionHeading
-				title="What I Offer"
+				title="What I Do"
 				subtitle="Services I offer to clients and collaborators."
 			/>
 
