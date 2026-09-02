@@ -68,7 +68,7 @@ export default function IntroSection() {
 			>
 				<Image
 					src="/images/me.png"
-					alt="Eugene Badato - Designer & Web Developer"
+					alt="Eugene Badato - AI & Software Engineer"
 					width={350}
 					height={396 * 0.8}
 					priority
