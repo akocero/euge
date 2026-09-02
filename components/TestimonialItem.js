@@ -6,7 +6,7 @@ export default function TestimonialItem() {
 			<div className="testimonials__profile-img">
 				<Image
 					src="/images/me.png"
-					alt=""
+					alt="Eugene Badato"
 					width={350}
 					height={396}
 					priority

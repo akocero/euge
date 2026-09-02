@@ -61,12 +61,12 @@ const AboutSection = () => {
 
 			<div className="about__gallery">
 				<div className="about__thumbnail">
-					<Image src="/images/about.jpg" alt="" fill style={{ objectFit: 'cover' }} />
+					<Image src="/images/about.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
 				<div className="about__thumbnail">
 					<Image
 						src="/images/about2.jpg"
-						alt=""
+						alt="Eugene Badato"
 						width={450}
 						height={600}
 					/>
@@ -74,13 +74,13 @@ const AboutSection = () => {
 				<div className="about__thumbnail">
 					<Image
 						src="/images/about3.jpg"
-						alt=""
+						alt="Eugene Badato"
 						width={450}
 						height={430}
 					/>
 				</div>
 				<div className="about__thumbnail">
-					<Image src="/images/about4.jpg" alt="" fill style={{ objectFit: 'cover' }} />
+					<Image src="/images/about4.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
 			</div>
 		</section>
