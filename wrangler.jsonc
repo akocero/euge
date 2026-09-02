@@ -22,6 +22,8 @@
 		"binding": "IMAGES"
 	},
 	"vars": {
-		"CONTENTFUL_SPACE_ID": "16zwqt7odl38"
+		"CONTENTFUL_SPACE_ID": "16zwqt7odl38",
+		"NEXT_PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAEhzhKEsySLp9uKd",
+		"RESEND_FROM": "Eugene's Portfolio <no-reply@eugenebadato.com>"
 	}
 }
