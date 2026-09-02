@@ -3,9 +3,9 @@ import Head from "next/head";
 
 const SITE_URL = "https://eugenebadato.com";
 const OG_IMAGE = `${SITE_URL}/images/portfolio-ss.png`;
-const TITLE = "Eugene Badato | Designer & Web Developer Portfolio";
+const TITLE = "Eugene Badato | AI & Software Engineer Portfolio";
 const DESCRIPTION =
-	"Eugene Paul Badato is a designer and web developer who builds engaging, high-performance experiences for the web. Explore projects, experience, and get in touch.";
+	"Eugene Paul Badato is an AI & Software Engineer who builds engaging, high-performance experiences for the web. Explore projects, experience, and get in touch.";
 
 const personJsonLd = {
 	"@context": "https://schema.org",
@@ -14,7 +14,7 @@ const personJsonLd = {
 	alternateName: "Eugene Paul Badato",
 	url: SITE_URL,
 	image: OG_IMAGE,
-	jobTitle: "Designer & Web Developer",
+	jobTitle: "AI & Software Engineer",
 	description: DESCRIPTION,
 	sameAs: [
 		"https://github.com/akocero",
@@ -68,6 +68,7 @@ const Layout = ({ children }) => {
 						__html: JSON.stringify(personJsonLd),
 					}}
 				/>
+			<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "003caf889c8e4357911a489d0c65de2d"}'></script>
 			</Head>
 			<Navbar />
 
