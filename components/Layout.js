@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Head from "next/head";
+import Script from "next/script";
 
 const SITE_URL = "https://eugenebadato.com";
 const OG_IMAGE = `${SITE_URL}/images/portfolio-ss.png`;
@@ -68,8 +69,12 @@ const Layout = ({ children }) => {
 						__html: JSON.stringify(personJsonLd),
 					}}
 				/>
-			<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "003caf889c8e4357911a489d0c65de2d"}'></script>
 			</Head>
+			<Script
+				src="https://static.cloudflareinsights.com/beacon.min.js"
+				data-cf-beacon='{"token": "003caf889c8e4357911a489d0c65de2d"}'
+				strategy="afterInteractive"
+			/>
 			<Navbar />
 
 			{children}
