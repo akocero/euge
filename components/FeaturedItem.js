@@ -1,9 +1,9 @@
-import { FiExternalLink, FiGithub } from "react-icons/fi";
-import Image from "next/image";
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import Image from 'next/image';
 
-import { motion } from "framer-motion";
-import { slideUp } from "../src/utils/animationVariants";
-import Button from "./Button";
+import { motion } from 'framer-motion';
+import { slideUp } from '../src/utils/animationVariants';
+import Button from './Button';
 const FeaturedItem = ({ featuredProject }) => {
 	const { title, subtitle, body, tools, github, website, image } =
 		featuredProject.fields;
@@ -12,12 +12,7 @@ const FeaturedItem = ({ featuredProject }) => {
 		<motion.article className="featured__item" variants={slideUp}>
 			<div className="featured__img-container">
 				{image && (
-					<Image
-						src={"https:" + image.fields.file.url}
-						alt={title}
-						width={image.fields.file.details.image.width}
-						height={image.fields.file.details.image.height}
-					/>
+					<img src={'https:' + image.fields.file.url} alt={title} />
 				)}
 			</div>
 			<div className="featured__content">

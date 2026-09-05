@@ -7,8 +7,9 @@ import ContactSection from "../components/sections/ContactSection";
 import FeaturedSection from "../components/sections/FeaturedSection";
 import ProjectSection from "../components/sections/ProjectSection";
 import ExperieceSection from "../components/sections/ExperieceSection";
+import ServicesSection from "../components/sections/ServicesSection";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE_ID,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -29,7 +30,6 @@ export async function getStaticProps() {
 			projects: projects.items,
 			experieces: experiences.items,
 		},
-		revalidate: 1,
 	};
 }
 
@@ -43,6 +43,8 @@ export default function Home({ projects, experieces }) {
 			<ProjectSection projects={projects} />
 
 			<ExperieceSection experieces={experieces} />
+
+			<ServicesSection />
 
 			<AboutSection />
 

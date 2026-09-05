@@ -1,0 +1,29 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "euge",
+	"compatibility_date": "2026-08-21",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Self-reference service binding, the service name must match the worker name
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "euge"
+		}
+	],
+	"images": {
+		// Enable image optimization
+		// see https://opennext.js.org/cloudflare/howtos/image
+		"binding": "IMAGES"
+	},
+	"vars": {
+		"CONTENTFUL_SPACE_ID": "16zwqt7odl38",
+		"NEXT_PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAEhzhKEsySLp9uKd",
+		"RESEND_FROM": "Eugene's Portfolio <no-reply@eugenebadato.com>"
+	}
+}

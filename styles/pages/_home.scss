@@ -1,6 +1,9 @@
 .intro {
-	margin-top: -4.6rem;
 	display: flex;
+
+	@include respond(tab-port) {
+		margin-top: -4.6rem;
+	}
 	gap: 4.8rem;
 	flex-wrap: wrap;
 	align-items: center;
@@ -35,17 +38,33 @@
 
 	&__actions {
 		display: flex;
+		align-items: end;
+		gap: 2rem;
+	}
+
+	&__icon-actions {
+		display: flex;
 		align-items: center;
-		gap: 2.8rem;
+		gap: 1.2rem;
+		margin-left: 1rem;
+
+		.navbar__social-link {
+			width: 5rem;
+			height: 5rem;
+			font-size: 2.2rem;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
 	}
 
 	.triangle {
-		left: 20%;
-		bottom: 17%;
+		left: 37%;
+		bottom: 20%;
 	}
 
 	.triangle2 {
-		left: 19.5%;
-		bottom: 15%;
+		left: 36%;
+		bottom: 20%;
 	}
 }

@@ -1,25 +1,52 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import {
 	IntroSectionVariants,
 	springRTL,
 	springLTR,
 	slideUp,
 	fadeIn,
-} from "../../src/utils/animationVariants";
-import Button from "../Button";
+} from '../../src/utils/animationVariants';
+import Button from '../Button';
+import { useState, useEffect } from 'react';
+import { FiMail } from 'react-icons/fi';
+import { RiRobot2Line } from 'react-icons/ri';
 
 export default function IntroSection() {
-	const one = (
-		<h4 className="intro__subtitle heading__4">
-			Hello, they call me Eugene.
-		</h4>
-	);
+	const one = <h4 className="intro__subtitle heading__4">Hey, I’m Eugene</h4>;
+
+	const titles = [
+		<>
+			Design comes <span>naturally</span>. Code comes with{' '}
+			<span>effort</span>. I do both.
+		</>,
+		<>
+			Pixels, logic, and a bit of <span>magic</span>.
+		</>,
+		<>
+			Designs that catch the <span>eye</span>. Code that keeps it{' '}
+			<span>smooth</span>.
+		</>,
+		<>
+			I don&apos;t just ship <span>features</span>, I craft{' '}
+			<span>experiences</span>.
+		</>,
+		<>
+			Creative by <span>nature</span>, coder by <span>choice</span>.
+		</>,
+	];
+
+	const [titleIndex, setTitleIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTitleIndex((prev) => (prev + 1) % titles.length);
+		}, 4000);
+		return () => clearInterval(interval);
+	}, []);
+
 	const two = (
-		<h1 className="intro__title heading__1">
-			I <span>design</span> and <span>develop</span> things for the web.
-		</h1>
+		<h1 className="intro__title heading__1">{titles[titleIndex]}</h1>
 	);
 
 	const introTexts = [one, two];
@@ -38,16 +65,15 @@ export default function IntroSection() {
 				className="intro__img"
 				variants={springLTR}
 				whileHover={{
-					rotateZ: "-20deg",
+					rotateZ: '-20deg',
 				}}
 			>
 				<Image
 					src="/images/me.png"
-					alt=""
+					alt="Eugene Badato - AI & Software Engineer"
 					width={350}
-					height={396}
+					height={396 * 0.8}
 					priority
-					quality={100}
 				/>
 			</motion.div>
 			<div className="intro__content">
@@ -64,31 +90,18 @@ export default function IntroSection() {
 						text="projects"
 					/>
 
-					<div className="social__links">
-						<Button
-							href="https://github.com/akocero"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiGithub />}
-						/>
-						<Button
-							href="https://gitlab.com/akocero"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiGitlab />}
-						/>
-						<Button
-							href="https://www.linkedin.com/in/eugenebadato/"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiLinkedin />}
-						/>
-						<Button
-							href="https://twitter.com/eugenebadato"
-							className="btn btn__link"
-							target="__blank"
-							text={<FiTwitter />}
-						/>
+					<div className="intro__icon-actions">
+						<a href="#contact" className="navbar__social-link" title="Let's talk">
+							<FiMail />
+						</a>
+
+						<button
+							className="navbar__social-link"
+							onClick={() => window.dispatchEvent(new Event('open-chat'))}
+							title="Ask my AI"
+						>
+							<RiRobot2Line />
+						</button>
 					</div>
 				</motion.div>
 			</div>

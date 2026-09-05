@@ -1,45 +1,290 @@
 .contact {
 	position: relative;
-	margin: 8rem 0;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	gap: 10rem;
-	// justify-content: space-around;
-	// background-color: red;
-	&__img {
-		// margin: 0 auto;
-		min-width: 280px;
-		max-width: 280px;
-		align-self: flex-end;
-		@include respond(phone) {
-			display: none;
-		}
-	}
+	margin: 8rem auto;
+
 	@include respond(phone) {
 		margin: 0 0 16rem 0;
 	}
-	.card {
-		padding-top: 2.4rem;
-		padding-bottom: 2.4rem;
-		width: 40%;
 
-		@include respond(phone) {
-			width: 100%;
+	&__inner {
+		display: flex;
+		gap: 6rem;
+		align-items: center;
+
+		@include respond(tab-port) {
+			flex-direction: column;
+			gap: 4rem;
 		}
 	}
 
-	h2 {
-		margin-bottom: 2.4rem;
+	// Left info panel
+	&__left {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		flex: 1;
+		min-width: 0;
+	}
+
+	&__badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		background-color: var(--bg-color-3);
+		border-radius: $border-rad;
+		padding: 0.4rem 1.2rem;
+		width: fit-content;
+		font-family: "Cascadia Code";
+		font-size: 1.3rem;
+		color: var(--accent);
+	}
+
+	&__status-dot {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 50%;
+		background-color: var(--accent);
+		flex-shrink: 0;
+		animation: contact-pulse 2s ease-in-out infinite;
+	}
+
+	// span in heading__2
+	h2 span {
+		color: var(--accent);
+	}
+
+	&__desc {
+		font-size: 1.5rem;
+		opacity: 0.65;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	&__info-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	&__info-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-size: 1.4rem;
+		opacity: 0.65;
+
+		svg {
+			color: var(--accent);
+			flex-shrink: 0;
+			font-size: 1.6rem;
+		}
+
+		&--link {
+			text-decoration: none;
+			color: inherit;
+			transition: opacity 0.2s;
+
+			&:hover {
+				opacity: 1;
+				color: var(--accent);
+			}
+		}
+	}
+
+	// Right form card — extends .card
+	&__right {
+		flex: 1.2;
+		min-width: 0;
+		padding: 3.6rem 2.4rem;
+	}
+
+	// Form layout
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+
+		label {
+			display: block;
+			text-align: left;
+			margin-bottom: 2rem;
+			font-weight: 300;
+
+			& > * {
+				display: block;
+			}
+
+			span {
+				font-size: 1.3rem;
+				opacity: 0.55;
+				margin-bottom: 0.8rem;
+				letter-spacing: 0.3px;
+			}
+
+			input,
+			textarea {
+				width: 100%;
+				border: none;
+				outline: none;
+				background-color: var(--bg-color-3);
+				padding: 1rem 1.6rem;
+				border-radius: 1rem;
+				color: var(--text-color);
+				font-family: 'Kanit', sans-serif;
+				font-size: 1.5rem;
+				font-weight: 300;
+				resize: none;
+				transition: background-color 0.2s;
+
+				&::placeholder {
+					opacity: 0.35;
+				}
+
+				&:focus {
+					background-color: rgba(0, 230, 118, 0.07);
+				}
+			}
+		}
+	}
+
+	&__form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.6rem;
+
+		@include respond(phone) {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+	}
+
+	&__quote-for {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 2rem;
+
+		& > span:first-child {
+			font-size: 1.3rem;
+			font-weight: 300;
+			opacity: 0.55;
+			letter-spacing: 0.3px;
+			white-space: nowrap;
+		}
+	}
+
+	&__chip--quote {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&__quote-clear {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 1.6rem;
+		line-height: 1;
+		opacity: 0.5;
+		color: var(--text-color);
+		padding: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__service-field {
+		margin-bottom: 2rem;
+
+		& > span {
+			display: block;
+			font-size: 1.3rem;
+			font-weight: 300;
+			opacity: 0.55;
+			letter-spacing: 0.3px;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__chips {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__chip {
+		border: none;
+		cursor: pointer;
+		font-family: "Cascadia Code";
+		background-color: var(--bg-color-3);
+		color: var(--text-color);
+		transition: all 0.15s;
+
+		&:hover {
+			color: var(--accent);
+		}
+
+		&--active {
+			background-color: rgba(0, 230, 118, 0.15);
+			color: var(--accent);
+		}
+	}
+
+	&__submit {
+		align-self: flex-start;
+		margin-top: 0.4rem;
+	}
+
+	// Success state
+	&__success {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 4rem 2rem;
+		gap: 1.2rem;
+
+		p {
+			font-size: 1.5rem;
+			opacity: 0.6;
+			margin: 0;
+		}
+	}
+
+	&__success-icon {
+		font-size: 4.8rem;
+		color: var(--accent);
 	}
 
 	.triangle2 {
-		bottom: -10%;
+		bottom: 10%;
 		right: 41%;
 	}
 
 	.triangle {
-		bottom: -10%;
+		bottom: 10%;
 		right: 40%;
+	}
+}
+
+@keyframes contact-pulse {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.light {
+	.contact {
+		input,
+		textarea {
+			background-color: hsla(151, 100%, 10%, 0.08);
+		}
+
+		.contact__chip {
+			background-color: hsla(151, 100%, 10%, 0.08);
+			color: var(--text-color);
+
+			&--active {
+				background-color: rgba(0, 160, 80, 0.15);
+			}
+		}
 	}
 }
