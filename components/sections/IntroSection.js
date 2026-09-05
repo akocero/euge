@@ -9,6 +9,8 @@ import {
 } from '../../src/utils/animationVariants';
 import Button from '../Button';
 import { useState, useEffect } from 'react';
+import { FiMail } from 'react-icons/fi';
+import { RiRobot2Line } from 'react-icons/ri';
 
 export default function IntroSection() {
 	const one = <h4 className="intro__subtitle heading__4">Hey, I’m Eugene</h4>;
@@ -91,8 +93,15 @@ export default function IntroSection() {
 					<Button
 						href="#contact"
 						className="btn btn__dark"
-						text="let's talk"
+						text={<><FiMail /> let&apos;s talk</>}
 					/>
+
+					<button
+						className="btn btn__dark"
+						onClick={() => window.dispatchEvent(new Event('open-chat'))}
+					>
+						<RiRobot2Line /> ask my AI
+					</button>
 				</motion.div>
 			</div>
 

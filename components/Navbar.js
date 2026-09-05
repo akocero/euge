@@ -416,6 +416,12 @@ const Navbar = () => {
 	}, [chatOpen]);
 
 	useEffect(() => {
+		const handler = () => setChatOpen(true);
+		window.addEventListener('open-chat', handler);
+		return () => window.removeEventListener('open-chat', handler);
+	}, []);
+
+	useEffect(() => {
 		if (chatOpen) {
 			setGreeting(pick(GREETINGS));
 			setSubtitle(pick(SUBTITLES));
