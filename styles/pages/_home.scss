@@ -38,8 +38,24 @@
 
 	&__actions {
 		display: flex;
+		align-items: end;
+		gap: 2rem;
+	}
+
+	&__icon-actions {
+		display: flex;
 		align-items: center;
-		gap: 2.8rem;
+		gap: 1.2rem;
+		margin-left: 1rem;
+
+		.navbar__social-link {
+			width: 5rem;
+			height: 5rem;
+			font-size: 2.2rem;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
 	}
 
 	.triangle {
