@@ -13,7 +13,16 @@ export default function ContactSection() {
 	const [formData, setFormData] = useState({ name: '', email: '', services: [], message: '' });
 	const [turnstileToken, setTurnstileToken] = useState(null);
 	const [quoteFor, setQuoteFor] = useState(null);
+	const [turnstileTheme, setTurnstileTheme] = useState('dark');
 	const turnstileRef = useRef(null);
+
+	useEffect(() => {
+		const getTheme = () => document.body.className === 'light' ? 'light' : 'dark';
+		setTurnstileTheme(getTheme());
+		const observer = new MutationObserver(() => setTurnstileTheme(getTheme()));
+		observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+		return () => observer.disconnect();
+	}, []);
 
 	useEffect(() => {
 		const handler = (e) => {
@@ -193,7 +202,7 @@ export default function ContactSection() {
 								siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
 								onSuccess={setTurnstileToken}
 								onExpire={() => setTurnstileToken(null)}
-								options={{ theme: 'dark' }}
+								options={{ theme: turnstileTheme }}
 							/>
 
 							<button
