@@ -90,18 +90,19 @@ export default function IntroSection() {
 						text="projects"
 					/>
 
-					<Button
-						href="#contact"
-						className="btn btn__dark"
-						text={<><FiMail /> let&apos;s talk</>}
-					/>
+					<div className="intro__icon-actions">
+						<a href="#contact" className="navbar__social-link" title="Let's talk">
+							<FiMail />
+						</a>
 
-					<button
-						className="btn btn__dark"
-						onClick={() => window.dispatchEvent(new Event('open-chat'))}
-					>
-						<RiRobot2Line /> ask my AI
-					</button>
+						<button
+							className="navbar__social-link"
+							onClick={() => window.dispatchEvent(new Event('open-chat'))}
+							title="Ask my AI"
+						>
+							<RiRobot2Line />
+						</button>
+					</div>
 				</motion.div>
 			</div>
 

@@ -42,6 +42,12 @@
 		gap: 2.8rem;
 	}
 
+	&__icon-actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
 	.triangle {
 		left: 37%;
 		bottom: 20%;
