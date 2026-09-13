@@ -12,6 +12,10 @@ import { useState, useEffect } from 'react';
 import { FiMail, FiDownload } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
 
+function TerminalIcon() {
+	return <span style={{ fontFamily: "'Cascadia Code','Fira Code',monospace", fontSize: '1.8rem', fontWeight: 600, letterSpacing: '-0.5px', lineHeight: 1 }}>&gt;_</span>;
+}
+
 export default function IntroSection() {
 	const one = <h4 className="intro__subtitle heading__4">Hey, I’m Eugene</h4>;
 
@@ -37,6 +41,7 @@ export default function IntroSection() {
 	];
 
 	const [titleIndex, setTitleIndex] = useState(0);
+	const [tip, setTip] = useState(null);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -77,9 +82,8 @@ export default function IntroSection() {
 			<motion.div
 				className="intro__img"
 				variants={springLTR}
-				whileHover={{
-					rotateZ: '-20deg',
-				}}
+				whileHover={{ rotateZ: '-20deg' }}
+				style={{ position: 'relative' }}
 			>
 				<Image
 					src="/images/me.png"
@@ -88,6 +92,16 @@ export default function IntroSection() {
 					height={396 * 0.8}
 					priority
 				/>
+				{tip && (
+					<div key={tip} className="intro__speech-wrap">
+						<img
+							src="/images/msg_box.png"
+							alt=""
+							className="intro__speech-img"
+						/>
+						<span className="intro__speech-text">{tip}</span>
+					</div>
+				)}
 			</motion.div>
 			<div className="intro__content">
 				{introTexts.map((text, i) => (
@@ -101,6 +115,8 @@ export default function IntroSection() {
 						href="#projects"
 						className="btn btn__primary"
 						text="projects"
+						onMouseEnter={() => setTip('check out my work!')}
+						onMouseLeave={() => setTip(null)}
 					/>
 
 					<div className="intro__icon-actions">
@@ -108,21 +124,37 @@ export default function IntroSection() {
 							href="/Eugene_Badato_Resume.pdf"
 							download
 							className="navbar__social-link"
-							title="Download CV"
+							onMouseEnter={() => setTip('psst.. grab my resume!')}
+							onMouseLeave={() => setTip(null)}
 						>
 							<FiDownload />
 						</a>
 
-						<a href="#contact" className="navbar__social-link" title="Let's talk">
+						<a
+							href="#contact"
+							className="navbar__social-link"
+							onMouseEnter={() => setTip("let's build something!")}
+							onMouseLeave={() => setTip(null)}
+						>
 							<FiMail />
 						</a>
 
 						<button
 							className="navbar__social-link"
 							onClick={() => window.dispatchEvent(new Event('open-chat'))}
-							title="Ask my AI"
+							onMouseEnter={() => setTip('ask me anything!')}
+							onMouseLeave={() => setTip(null)}
 						>
 							<RiRobot2Line />
+						</button>
+
+						<button
+							className="navbar__social-link"
+							onClick={() => window.dispatchEvent(new Event('open-terminal'))}
+							onMouseEnter={() => setTip('try the terminal!')}
+							onMouseLeave={() => setTip(null)}
+						>
+							<TerminalIcon />
 						</button>
 					</div>
 				</motion.div>

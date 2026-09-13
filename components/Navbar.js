@@ -1,8 +1,17 @@
 import Link from 'next/link';
 import { RiSunLine, RiMoonClearLine, RiRobot2Line, RiComputerLine } from 'react-icons/ri';
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab, FiHome, FiStar, FiFolder, FiBriefcase, FiUser, FiMail, FiZap, FiX } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiGitlab, FiHome, FiStar, FiFolder, FiBriefcase, FiUser, FiMail, FiZap, FiX } from 'react-icons/fi';
+
+function XIcon(props) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" {...props}>
+			<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+		</svg>
+	);
+}
 import { SiNextdotjs } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react';
+
 import { slideDown, navParentVariants } from '../src/utils/animationVariants';
 import { motion } from 'framer-motion';
 
@@ -584,12 +593,20 @@ const Navbar = () => {
 							</button>
 						</div>
 						<button
-							className="navbar__chat-btn"
+							className="navbar__terminal-btn"
 							onClick={() => setChatOpen(true)}
 							aria-label="Open AI chat"
+							title="Ask my AI"
 						>
-							<span>Ask my</span>
-							<RiRobot2Line className="navbar__chat-icon" />
+							<RiRobot2Line />
+						</button>
+						<button
+							className="navbar__terminal-btn"
+							onClick={() => window.dispatchEvent(new Event('open-terminal'))}
+							aria-label="Open terminal"
+							title="Terminal (Ctrl+`)"
+						>
+							<span>&gt;_</span>
 						</button>
 					</div>
 				</motion.div>
@@ -643,7 +660,7 @@ const Navbar = () => {
 						<Link href="https://github.com/akocero" target="__blank" className="navbar__social-link"><FiGithub /></Link>
 						<Link href="https://gitlab.com/akocero" target="__blank" className="navbar__social-link"><FiGitlab /></Link>
 						<Link href="https://www.linkedin.com/in/eugenebadato/" target="__blank" className="navbar__social-link"><FiLinkedin /></Link>
-						<Link href="https://twitter.com/eugenebadato" target="__blank" className="navbar__social-link"><FiTwitter /></Link>
+						<Link href="https://x.com/eugenebadato" target="__blank" className="navbar__social-link"><XIcon /></Link>
 					</div>
 					<p className="navbar__available">Available for freelance &amp; professional services.</p>
 					<Link href="mailto:badatoeugenepaulm@gmail.com" className="navbar__email">

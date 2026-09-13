@@ -4,7 +4,7 @@ import { sectionVariants } from '../../src/utils/animationVariants';
 import SectionHeading from '../SectionHeading';
 import ExperienceItem from '../ExperienceItem';
 
-export default function ExperieceSection({ experieces }) {
+export default function ExperienceSection({ experiences }) {
 	const [ref, controls] = useAnimateWhenViewed(-250);
 	return (
 		<motion.section
@@ -21,10 +21,10 @@ export default function ExperieceSection({ experieces }) {
 			/>
 
 			<div className="experience__list">
-				{experieces.map((experiece) => (
+				{experiences.map((experience) => (
 					<ExperienceItem
-						key={experiece.sys.id}
-						experiece={experiece}
+						key={experience.sys.id}
+						experiece={experience}
 					/>
 				))}
 			</div>

@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
+import TerminalOverlay from "./TerminalOverlay";
 import Head from "next/head";
 import Script from "next/script";
+import { useState, useEffect } from "react";
 
 const SITE_URL = "https://eugenebadato.com";
 const OG_IMAGE = `${SITE_URL}/images/portfolio-ss.png`;
@@ -26,6 +28,25 @@ const personJsonLd = {
 };
 
 const Layout = ({ children }) => {
+	const [terminalOpen, setTerminalOpen] = useState(false);
+
+	useEffect(() => {
+		const handler = () => setTerminalOpen((v) => !v);
+		const openHandler = () => setTerminalOpen(true);
+		window.addEventListener('open-terminal', openHandler);
+		const onKey = (e) => {
+			if ((e.ctrlKey || e.metaKey) && e.key === '`') {
+				e.preventDefault();
+				setTerminalOpen((v) => !v);
+			}
+		};
+		window.addEventListener('keydown', onKey);
+		return () => {
+			window.removeEventListener('open-terminal', openHandler);
+			window.removeEventListener('keydown', onKey);
+		};
+	}, []);
+
 	return (
 		<div className="wrapper">
 			<Head>
@@ -78,6 +99,8 @@ const Layout = ({ children }) => {
 			<Navbar />
 
 			{children}
+
+			<TerminalOverlay open={terminalOpen} onClose={() => setTerminalOpen(false)} />
 		</div>
 	);
 };

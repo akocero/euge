@@ -1,16 +1,14 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function Button({ href, className, text, target }) {
+export default function Button({ href, className, text, target, ...props }) {
 	return (
 		<motion.a
 			href={href}
 			className={className}
 			target={target}
-			whileHover={{
-				scale: 1.1,
-				y: -2,
-			}}
+			whileHover={{ scale: 1.1, y: -2 }}
+			{...props}
 		>
 			{text}
 		</motion.a>
