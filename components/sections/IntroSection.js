@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
 	IntroSectionVariants,
 	springRTL,
@@ -9,7 +9,7 @@ import {
 } from '../../src/utils/animationVariants';
 import Button from '../Button';
 import { useState, useEffect } from 'react';
-import { FiMail } from 'react-icons/fi';
+import { FiMail, FiDownload } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
 
 export default function IntroSection() {
@@ -46,7 +46,20 @@ export default function IntroSection() {
 	}, []);
 
 	const two = (
-		<h1 className="intro__title heading__1">{titles[titleIndex]}</h1>
+		<h1 className="intro__title heading__1">
+			<AnimatePresence exitBeforeEnter>
+				<motion.span
+					key={titleIndex}
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: -10 }}
+					transition={{ duration: 0.4, ease: 'easeInOut' }}
+					style={{ display: 'block', color: 'inherit' }}
+				>
+					{titles[titleIndex]}
+				</motion.span>
+			</AnimatePresence>
+		</h1>
 	);
 
 	const introTexts = [one, two];
@@ -91,6 +104,15 @@ export default function IntroSection() {
 					/>
 
 					<div className="intro__icon-actions">
+						<a
+							href="/resume.pdf"
+							download
+							className="navbar__social-link"
+							title="Download CV"
+						>
+							<FiDownload />
+						</a>
+
 						<a href="#contact" className="navbar__social-link" title="Let's talk">
 							<FiMail />
 						</a>

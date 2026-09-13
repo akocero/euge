@@ -1,51 +1,79 @@
-.testimonials {
-	&__list {
+@keyframes marquee-scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.marquee-section {
+	padding: 2rem 0 4rem;
+	text-align: center;
+
+	&__label {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--text-color);
+		opacity: 0.4;
+		margin-bottom: 2.4rem;
+	}
+
+	&__track-wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__track {
 		display: flex;
-		gap: 2rem;
-		overflow-x: auto;
-		padding: 5rem 0.5rem 2rem 0.5rem;
+		align-items: center;
+		gap: 4rem;
+		width: max-content;
+		animation: marquee-scroll 24s linear infinite;
 
-		.card {
-			max-width: 280px;
-		}
-
-		&::-webkit-scrollbar {
-			height: 0.8rem;
-		}
-
-		/* Track */
-		&::-webkit-scrollbar-track {
-			background: transparent;
-		}
-
-		/* Handle */
-		&::-webkit-scrollbar-thumb {
-			border-radius: 6px;
-			background: var(--bg-color-4);
-		}
-
-		/* Handle on hover */
-		&::-webkit-scrollbar-thumb:hover {
-			background: var(--bg-color-2);
+		&:hover {
+			animation-play-state: paused;
 		}
 	}
 
 	&__item {
-		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 10rem;
 	}
 
-	&__profile-img {
-		position: absolute;
-		top: -4rem;
-		right: 2rem;
-		img {
-			max-height: 80px;
+	&__logo {
+		max-height: 3.2rem;
+		max-width: 12rem;
+		object-fit: contain;
+		opacity: 0.45;
+		filter: grayscale(100%);
+		transition: opacity 0.25s ease, filter 0.25s ease;
+
+		.marquee-section__item:hover & {
+			opacity: 1;
+			filter: grayscale(0%);
 		}
 	}
 
-	&__content {
-		margin-top: 3rem;
-		max-height: 22rem;
-		overflow-y: auto;
+	&__fade {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 8rem;
+		z-index: 1;
+		pointer-events: none;
+
+		&--left {
+			left: 0;
+			background: linear-gradient(to right, var(--bg-color), transparent);
+		}
+
+		&--right {
+			right: 0;
+			background: linear-gradient(to left, var(--bg-color), transparent);
+		}
 	}
 }
