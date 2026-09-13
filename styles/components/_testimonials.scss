@@ -21,8 +21,8 @@
 	}
 
 	&__star {
-		color: $accent;
-		fill: $accent;
+		color: var(--accent);
+		fill: var(--accent);
 		font-size: 1.4rem;
 	}
 
@@ -63,7 +63,7 @@
 
 	&__role {
 		font-size: 1.2rem;
-		color: $accent;
+		color: var(--accent);
 		opacity: 0.8;
 	}
 }

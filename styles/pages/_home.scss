@@ -1,4 +1,5 @@
 .intro {
+	position: relative;
 	display: flex;
 
 	@include respond(tab-port) {
