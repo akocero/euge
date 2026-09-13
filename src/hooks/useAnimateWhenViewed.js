@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useEffect } from 'react';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const useScrollReveal = (rootMargin) => {
 	const { ref, inView } = useInView({
@@ -11,8 +11,7 @@ const useScrollReveal = (rootMargin) => {
 	const animation = useAnimation();
 
 	useEffect(() => {
-		console.log("sdsd");
-		inView ? animation.start("visible") : animation.start("hidden");
+		inView ? animation.start('visible') : animation.start('hidden');
 	}, [inView, animation]);
 
 	return [ref, animation];

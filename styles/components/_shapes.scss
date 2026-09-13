@@ -26,7 +26,7 @@
 	// bottom: 10%;
 	height: 60px;
 	width: 60px;
-	background-color: $accent;
+	background-color: var(--accent);
 	clip-path: polygon(52% 16%, 0% 100%, 100% 100%);
 	transform: rotateZ(30deg);
 	opacity: $shape-opacity;

@@ -6,9 +6,11 @@ import AboutSection from "../components/sections/AboutSection";
 import ContactSection from "../components/sections/ContactSection";
 import FeaturedSection from "../components/sections/FeaturedSection";
 import ProjectSection from "../components/sections/ProjectSection";
-import ExperieceSection from "../components/sections/ExperieceSection";
+import ExperienceSection from "../components/sections/ExperieceSection";
+import ServicesSection from "../components/sections/ServicesSection";
+import LogoMarqueeSection from "../components/sections/LogoMarqueeSection";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE_ID,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -27,13 +29,12 @@ export async function getStaticProps() {
 	return {
 		props: {
 			projects: projects.items,
-			experieces: experiences.items,
+			experiences: experiences.items,
 		},
-		revalidate: 1,
 	};
 }
 
-export default function Home({ projects, experieces }) {
+export default function Home({ projects, experiences }) {
 	return (
 		<>
 			<IntroSection />
@@ -42,21 +43,13 @@ export default function Home({ projects, experieces }) {
 
 			<ProjectSection projects={projects} />
 
-			<ExperieceSection experieces={experieces} />
+			<ExperienceSection experiences={experiences} />
+
+			<LogoMarqueeSection />
+
+			<ServicesSection />
 
 			<AboutSection />
-
-			{/* <section className="testimonials">
-				<SectionHeading
-					title="testimonials"
-					subtitle="people i work with?"
-				/>
-				<div className="testimonials__list">
-					{[1, 2, 3, 4].map((project) => (
-						<TestimonialItem key={project} />
-					))}
-				</div>
-			</section> */}
 
 			<ContactSection />
 		</>

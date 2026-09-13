@@ -1,12 +1,32 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from "react-icons/fi";
-import Image from "next/image";
+import { FiGithub, FiLinkedin, FiGitlab } from 'react-icons/fi';
 
-import Button from "../Button";
+function XIcon(props) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" {...props}>
+			<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+		</svg>
+	);
+}
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { sectionVariants, slideUp } from '../../src/utils/animationVariants';
+import useAnimateWhenViewed from '../../src/hooks/useAnimateWhenViewed';
+
+import Button from '../Button';
 
 const AboutSection = () => {
+	const [ref, controls] = useAnimateWhenViewed(-250);
+
 	return (
-		<section className="about" id="about">
-			<div className="card about__content">
+		<motion.section
+			className="about"
+			id="about"
+			variants={sectionVariants}
+			initial="hidden"
+			animate={controls}
+			ref={ref}
+		>
+			<motion.div className="card about__content" variants={slideUp}>
 				<div className="card__actions">
 					<Button
 						href="https://github.com/akocero"
@@ -27,27 +47,23 @@ const AboutSection = () => {
 						text={<FiLinkedin />}
 					/>
 					<Button
-						href="https://twitter.com/eugenebadato"
+						href="https://x.com/eugenebadato"
 						className="btn btn__link"
 						target="__blank"
-						text={<FiTwitter />}
+						text={<XIcon />}
 					/>
 				</div>
 				<div className="card__content">
-					<h4 className="heading__2">about</h4>
+					<h4 className="heading__2">Meet the Dev</h4>
 					<h5 htmlFor="" className="heading__5">
-						what i love to do?
+						My path, my passion, my purpose.
 					</h5>
 
 					<p className="card__body">
-						{
-							"Eugene is a front-end developer, designer, and mentor. He’s currently a software engineer, focused on building microservices applications like payroll enterprise cloud (PEC). "
-						}
+						I build fast, purposeful web experiences &mdash; and I&apos;ve fully integrated AI into how I design, code, and ship. From ideation to deployment, AI-assisted workflows are baked into everything I do, letting me move faster without cutting corners on quality.
 						<br />
 						<br />
-						{
-							"	Moreover, he created PelikulaPH an application for movie lovers like him, and an automated monitoring system. He loves to help aspirant developers not only to push them to become a developer but to learn from them as well, in his free time he enjoys devising a game and accumulating an understanding of new web tech trends."
-						}
+						Outside client work, I&apos;m the creator of PelikulaPH (a community movie platform), an automated monitoring system, and a Hunter x Hunter API that anime fans actually use. I also mentor aspiring developers &mdash; not just to help them grow, but because teaching keeps me sharp too.
 					</p>
 				</div>
 
@@ -57,16 +73,16 @@ const AboutSection = () => {
 					<span className="tag">$learning</span>
 					<span className="tag">$goals</span>
 				</div>
-			</div>
+			</motion.div>
 
-			<div className="about__gallery">
+			<motion.div className="about__gallery" variants={slideUp}>
 				<div className="about__thumbnail">
-					<Image src="/images/about.jpg" alt="" layout="fill" />
+					<Image src="/images/about.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
 				<div className="about__thumbnail">
 					<Image
 						src="/images/about2.jpg"
-						alt=""
+						alt="Eugene Badato"
 						width={450}
 						height={600}
 					/>
@@ -74,16 +90,16 @@ const AboutSection = () => {
 				<div className="about__thumbnail">
 					<Image
 						src="/images/about3.jpg"
-						alt=""
+						alt="Eugene Badato"
 						width={450}
 						height={430}
 					/>
 				</div>
 				<div className="about__thumbnail">
-					<Image src="/images/about4.jpg" alt="" layout="fill" />
+					<Image src="/images/about4.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
-			</div>
-		</section>
+			</motion.div>
+		</motion.section>
 	);
 };
 
