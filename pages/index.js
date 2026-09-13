@@ -6,7 +6,7 @@ import AboutSection from "../components/sections/AboutSection";
 import ContactSection from "../components/sections/ContactSection";
 import FeaturedSection from "../components/sections/FeaturedSection";
 import ProjectSection from "../components/sections/ProjectSection";
-import ExperieceSection from "../components/sections/ExperieceSection";
+import ExperienceSection from "../components/sections/ExperieceSection";
 import ServicesSection from "../components/sections/ServicesSection";
 import LogoMarqueeSection from "../components/sections/LogoMarqueeSection";
 
@@ -29,12 +29,12 @@ export async function getServerSideProps() {
 	return {
 		props: {
 			projects: projects.items,
-			experieces: experiences.items,
+			experiences: experiences.items,
 		},
 	};
 }
 
-export default function Home({ projects, experieces }) {
+export default function Home({ projects, experiences }) {
 	return (
 		<>
 			<IntroSection />
@@ -43,7 +43,7 @@ export default function Home({ projects, experieces }) {
 
 			<ProjectSection projects={projects} />
 
-			<ExperieceSection experieces={experieces} />
+			<ExperienceSection experiences={experiences} />
 
 			<LogoMarqueeSection />
 

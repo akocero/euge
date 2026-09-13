@@ -41,7 +41,8 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-start;
+		gap: 0.6rem;
 		margin-top: 1.6rem;
 
 		@include respond(tab-port) {
@@ -77,6 +78,30 @@
 		font-size: 1.8rem;
 		color: $accent;
 		flex-shrink: 0;
+	}
+
+	&__terminal-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 3rem;
+		width: 3rem;
+		border: none;
+		background-color: var(--bg-color-2);
+		color: $accent;
+		border-radius: 0.6rem;
+		cursor: pointer;
+		font-family: 'Cascadia Code', 'Fira Code', monospace;
+		font-size: 1.3rem;
+		font-weight: 600;
+		letter-spacing: -0.5px;
+		transition: all 0.2s ease;
+		flex-shrink: 0;
+
+		&:hover {
+			background-color: var(--bg-color-3);
+			color: white;
+		}
 	}
 
 	&__name {
@@ -229,7 +254,7 @@
 		width: 3.6rem;
 		height: 3.6rem;
 		background-color: var(--bg-color-2);
-		border-radius: 4rem;
+		border-radius: 0.8rem;
 		font-size: 1.6rem;
 		color: white;
 		transition: all 0.2s;
@@ -251,16 +276,14 @@
 			background: transparent;
 			height: 104%;
 			width: 104%;
-			border-radius: 4rem;
+			border-radius: 0.8rem;
 			z-index: -1;
 			box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+			transform: rotateZ(-3.5deg);
 		}
 
 		&:hover {
-			color: $accent;
-			&::before {
-				border-color: $accent;
-			}
+			transform: scale(1.12);
 		}
 	}
 
@@ -327,6 +350,44 @@
 
 		svg {
 			flex-shrink: 0;
+		}
+	}
+
+	&__status-details {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+	}
+
+	&__status-row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.8rem;
+		font-size: 1.1rem;
+		line-height: 1.9;
+	}
+
+	&__status-key {
+		font-family: 'Kanit';
+		font-weight: 300;
+		color: var(--text-color);
+		opacity: 0.35;
+		min-width: 5rem;
+		flex-shrink: 0;
+	}
+
+	&__status-val {
+		font-family: 'Cascadia Code', 'Fira Code', monospace;
+		font-size: 1.05rem;
+		color: var(--text-color);
+		opacity: 0.65;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&--available {
+			color: $accent;
+			opacity: 1;
 		}
 	}
 
@@ -408,4 +469,9 @@
 @keyframes pulse {
 	0%, 100% { opacity: 1; }
 	50% { opacity: 0.3; }
+}
+
+@keyframes statusPulse {
+	0%, 100% { box-shadow: 0 0 0 3px rgba(0, 230, 115, 0.15); }
+	50%       { box-shadow: 0 0 0 5px rgba(0, 230, 115, 0.0); }
 }

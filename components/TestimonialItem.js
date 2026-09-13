@@ -1,28 +1,22 @@
-import Image from "next/image";
+import { FiStar } from 'react-icons/fi';
 
-export default function TestimonialItem() {
+export default function TestimonialItem({ name, role, body, avatar }) {
 	return (
 		<div className="card testimonials__item">
-			<div className="testimonials__profile-img">
-				<Image
-					src="/images/me.png"
-					alt="Eugene Badato"
-					width={350}
-					height={396}
-					priority
-					quality={100}
-				/>
+			<div className="testimonials__stars">
+				{[...Array(5)].map((_, i) => <FiStar key={i} className="testimonials__star" />)}
 			</div>
-			<div className="card__content testimonials__content">
-				<p className="lead ">
-					Jomar Yumul Regalrio <br /> <span>Sr. Web Developer</span>{" "}
-				</p>
-
-				<p className="card__body">
-					As a Mentee of sir eugene is an amazing experience, I really
-					appreciate your mentorship and guidance. Thank you so much
-					Master Yujin.
-				</p>
+			<p className="testimonials__body">&ldquo;{body}&rdquo;</p>
+			<div className="testimonials__author">
+				{avatar && (
+					<div className="testimonials__avatar">
+						<img src={avatar} alt={name} width={40} height={40} />
+					</div>
+				)}
+				<div>
+					<p className="testimonials__name">{name}</p>
+					<p className="testimonials__role">{role}</p>
+				</div>
 			</div>
 		</div>
 	);
