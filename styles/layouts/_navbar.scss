@@ -76,7 +76,7 @@
 
 	&__chat-icon {
 		font-size: 1.8rem;
-		color: $accent;
+		color: var(--accent);
 		flex-shrink: 0;
 	}
 
@@ -181,17 +181,17 @@
 		transition: color 0.2s ease;
 
 		&:hover {
-			color: $accent;
+			color: var(--accent);
 		}
 
 		&.active {
-			color: $accent;
+			color: var(--accent);
 			font-weight: 500;
 
 			.navbar__link-icon {
 				background-color: rgba(0, 230, 118, 0.12);
 				border-radius: 0.6rem;
-				color: $accent;
+				color: var(--accent);
 			}
 		}
 	}
@@ -345,7 +345,7 @@
 		margin: 0;
 
 		&:hover {
-			color: $accent;
+			color: var(--accent);
 		}
 
 		svg {
@@ -386,7 +386,7 @@
 		text-overflow: ellipsis;
 
 		&--available {
-			color: $accent;
+			color: var(--accent);
 			opacity: 1;
 		}
 	}
