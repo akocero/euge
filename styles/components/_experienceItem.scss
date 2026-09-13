@@ -29,6 +29,14 @@
 		width: auto;
 		display: block;
 		border-radius: 1rem;
+		filter: grayscale(100%);
+		opacity: 0.5;
+		transition: filter 0.25s ease, opacity 0.25s ease;
+
+		&:hover {
+			filter: grayscale(0%);
+			opacity: 1;
+		}
 	}
 
 	&__company {
@@ -116,5 +124,15 @@
 	.experience__body {
 		color: var(--text-color) !important;
 		opacity: 0.9;
+	}
+
+	.experience__logo {
+		filter: grayscale(0%);
+		opacity: 1;
+
+		&:hover {
+			filter: grayscale(0%);
+			opacity: 1;
+		}
 	}
 }

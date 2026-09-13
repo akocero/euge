@@ -1,12 +1,24 @@
 import { FiGithub, FiLinkedin, FiTwitter, FiGitlab } from 'react-icons/fi';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { sectionVariants, slideUp } from '../../src/utils/animationVariants';
+import useAnimateWhenViewed from '../../src/hooks/useAnimateWhenViewed';
 
 import Button from '../Button';
 
 const AboutSection = () => {
+	const [ref, controls] = useAnimateWhenViewed(-250);
+
 	return (
-		<section className="about" id="about">
-			<div className="card about__content">
+		<motion.section
+			className="about"
+			id="about"
+			variants={sectionVariants}
+			initial="hidden"
+			animate={controls}
+			ref={ref}
+		>
+			<motion.div className="card about__content" variants={slideUp}>
 				<div className="card__actions">
 					<Button
 						href="https://github.com/akocero"
@@ -40,14 +52,10 @@ const AboutSection = () => {
 					</h5>
 
 					<p className="card__body">
-						{
-							'He’s the creator of PelikulaPH, a platform for fellow movie lovers, an automated monitoring system, and a fun Hunter x Hunter API built for fans of the anime community. Eugene is also passionate about mentoring aspiring developers — not just to help them grow, but to learn from their journeys too.'
-						}
+						I build fast, purposeful web experiences &mdash; and I&apos;ve fully integrated AI into how I design, code, and ship. From ideation to deployment, AI-assisted workflows are baked into everything I do, letting me move faster without cutting corners on quality.
 						<br />
 						<br />
-						{
-							'	When he’s not coding, you’ll find him exploring game design, experimenting with creative ideas, or staying up to date with the latest in web tech.'
-						}
+						Outside client work, I&apos;m the creator of PelikulaPH (a community movie platform), an automated monitoring system, and a Hunter x Hunter API that anime fans actually use. I also mentor aspiring developers &mdash; not just to help them grow, but because teaching keeps me sharp too.
 					</p>
 				</div>
 
@@ -57,9 +65,9 @@ const AboutSection = () => {
 					<span className="tag">$learning</span>
 					<span className="tag">$goals</span>
 				</div>
-			</div>
+			</motion.div>
 
-			<div className="about__gallery">
+			<motion.div className="about__gallery" variants={slideUp}>
 				<div className="about__thumbnail">
 					<Image src="/images/about.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
@@ -82,8 +90,8 @@ const AboutSection = () => {
 				<div className="about__thumbnail">
 					<Image src="/images/about4.jpg" alt="Eugene Badato" fill style={{ objectFit: 'cover' }} />
 				</div>
-			</div>
-		</section>
+			</motion.div>
+		</motion.section>
 	);
 };
 

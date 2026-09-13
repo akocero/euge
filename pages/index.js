@@ -8,6 +8,7 @@ import FeaturedSection from "../components/sections/FeaturedSection";
 import ProjectSection from "../components/sections/ProjectSection";
 import ExperieceSection from "../components/sections/ExperieceSection";
 import ServicesSection from "../components/sections/ServicesSection";
+import LogoMarqueeSection from "../components/sections/LogoMarqueeSection";
 
 export async function getServerSideProps() {
 	const client = createClient({
@@ -44,21 +45,11 @@ export default function Home({ projects, experieces }) {
 
 			<ExperieceSection experieces={experieces} />
 
+			<LogoMarqueeSection />
+
 			<ServicesSection />
 
 			<AboutSection />
-
-			{/* <section className="testimonials">
-				<SectionHeading
-					title="testimonials"
-					subtitle="people i work with?"
-				/>
-				<div className="testimonials__list">
-					{[1, 2, 3, 4].map((project) => (
-						<TestimonialItem key={project} />
-					))}
-				</div>
-			</section> */}
 
 			<ContactSection />
 		</>
