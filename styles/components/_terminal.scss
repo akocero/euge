@@ -98,13 +98,13 @@
 		white-space: pre-wrap;
 		word-break: break-word;
 
-		&--header  { color: $accent; font-weight: 600; }
+		&--header  { color: var(--accent); font-weight: 600; }
 		&--line    { color: rgba(255, 255, 255, 0.85); }
 		&--prompt  { color: rgba(255, 255, 255, 0.45); margin-top: 0.8rem; }
-		&--accent  { color: $accent; }
+		&--accent  { color: var(--accent); }
 		&--muted   { color: rgba(255, 255, 255, 0.35); font-style: italic; }
 		&--error   { color: #ff5f57; }
-		&--prompt-label { color: $accent; flex-shrink: 0; }
+		&--prompt-label { color: var(--accent); flex-shrink: 0; }
 	}
 
 	&__input-row {
@@ -122,7 +122,7 @@
 		font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
 		font-size: 1.4rem;
 		color: rgba(255, 255, 255, 0.85);
-		caret-color: $accent;
+		caret-color: var(--accent);
 		padding: 0;
 		line-height: 1.8;
 	}
