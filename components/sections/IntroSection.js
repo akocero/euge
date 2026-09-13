@@ -105,7 +105,7 @@ export default function IntroSection() {
 
 					<div className="intro__icon-actions">
 						<a
-							href="/resume.pdf"
+							href="/Eugene_Badato_Resume.pdf"
 							download
 							className="navbar__social-link"
 							title="Download CV"
