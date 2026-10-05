@@ -6,25 +6,53 @@ import { useState, useEffect } from "react";
 
 const SITE_URL = "https://eugenebadato.com";
 const OG_IMAGE = `${SITE_URL}/images/portfolio-ss.png`;
-const TITLE = "Eugene Badato | AI & Software Engineer Portfolio";
+const TITLE = "Eugene Badato | AI & Software Engineer";
 const DESCRIPTION =
-	"Eugene Paul Badato is an AI & Software Engineer who builds engaging, high-performance experiences for the web. Explore projects, experience, and get in touch.";
+	"Eugene Paul Badato is an AI & Software Engineer specializing in React, Next.js, Node.js, and AI-powered web applications. Based in the Philippines. Explore projects, experience, and get in touch.";
 
 const personJsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Person",
-	name: "Eugene Badato",
-	alternateName: "Eugene Paul Badato",
+	name: "Eugene Paul Badato",
+	alternateName: ["Eugene Badato", "eugenebadato"],
 	url: SITE_URL,
-	image: OG_IMAGE,
+	image: `${SITE_URL}/images/me-final.png`,
 	jobTitle: "AI & Software Engineer",
 	description: DESCRIPTION,
+	nationality: "Filipino",
+	address: {
+		"@type": "PostalAddress",
+		addressCountry: "PH",
+	},
+	knowsAbout: [
+		"Artificial Intelligence",
+		"Software Engineering",
+		"Web Development",
+		"React",
+		"Next.js",
+		"Node.js",
+		"TypeScript",
+		"JavaScript",
+		"UI/UX Design",
+		"Full Stack Development",
+		"AI Integration",
+		"Large Language Models",
+	],
 	sameAs: [
 		"https://github.com/akocero",
 		"https://gitlab.com/akocero",
 		"https://www.linkedin.com/in/eugenebadato/",
 		"https://twitter.com/eugenebadato",
 	],
+};
+
+const websiteJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "Eugene Badato — Portfolio",
+	url: SITE_URL,
+	description: DESCRIPTION,
+	author: { "@type": "Person", name: "Eugene Paul Badato" },
 };
 
 const Layout = ({ children }) => {
@@ -55,7 +83,7 @@ const Layout = ({ children }) => {
 				<meta name="description" content={DESCRIPTION} />
 				<meta
 					name="keywords"
-					content="Eugene Badato, Eugene Paul Badato, portfolio, web developer, web designer, frontend developer, UI designer, Next.js developer"
+					content="Eugene Badato, Eugene Paul Badato, AI engineer, software engineer, web developer, React developer, Next.js developer, Node.js, TypeScript, full stack developer, Filipino developer, portfolio"
 				/>
 				<meta name="author" content="Eugene Paul Badato" />
 				<meta name="robots" content="index, follow" />
@@ -83,11 +111,17 @@ const Layout = ({ children }) => {
 				<meta name="twitter:description" content={DESCRIPTION} />
 				<meta name="twitter:image" content={OG_IMAGE} />
 
-				{/* Structured data: Person schema */}
+				{/* Structured data */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify(personJsonLd),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(websiteJsonLd),
 					}}
 				/>
 			</Head>

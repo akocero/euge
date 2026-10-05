@@ -1,0 +1,9 @@
+/* TEAM */
+Name: Eugene Paul Badato
+Role: AI & Software Engineer
+Location: Philippines
+LinkedIn: https://www.linkedin.com/in/eugenebadato/
+GitHub: https://github.com/akocero
+
+/* SITE */
+Built with: Next.js, Cloudflare Workers, Contentful

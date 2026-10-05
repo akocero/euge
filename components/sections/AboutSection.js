@@ -60,10 +60,13 @@ const AboutSection = () => {
 					</h5>
 
 					<p className="card__body">
-						I build fast, purposeful web experiences &mdash; and I&apos;ve fully integrated AI into how I design, code, and ship. From ideation to deployment, AI-assisted workflows are baked into everything I do, letting me move faster without cutting corners on quality.
+						I build fast, purposeful web experiences &mdash; with AI baked into how I design, code, and ship. From ideation to deployment, AI-assisted workflows are part of everything I do, letting me move faster without cutting corners on quality.
 						<br />
 						<br />
-						Outside client work, I&apos;m the creator of PelikulaPH (a community movie platform), an automated monitoring system, and a Hunter x Hunter API that anime fans actually use. I also mentor aspiring developers &mdash; not just to help them grow, but because teaching keeps me sharp too.
+						Outside client work, I&apos;m the creator of PelikulaPH, a community movie platform for fellow film lovers, and the Hunter x Hunter API &mdash; a database API that anime fans and developers actually use. I also built and run an automated monitoring system from scratch.
+						<br />
+						<br />
+						I mentor aspiring developers too &mdash; not just to help them grow, but because teaching keeps me sharp.
 					</p>
 				</div>
 

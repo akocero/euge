@@ -9,7 +9,7 @@ import {
 } from '../../src/utils/animationVariants';
 import Button from '../Button';
 import { useState, useEffect } from 'react';
-import { FiMail, FiDownload } from 'react-icons/fi';
+import { FiMail, FiFileText } from 'react-icons/fi';
 import { RiRobot2Line } from 'react-icons/ri';
 
 function TerminalIcon() {
@@ -122,12 +122,13 @@ export default function IntroSection() {
 					<div className="intro__icon-actions">
 						<a
 							href="/Eugene_Badato_Resume.pdf"
-							download
+							target="_blank"
+							rel="noopener noreferrer"
 							className="navbar__social-link"
 							onMouseEnter={() => setTip('psst.. grab my resume!')}
 							onMouseLeave={() => setTip(null)}
 						>
-							<FiDownload />
+							<FiFileText />
 						</a>
 
 						<a
